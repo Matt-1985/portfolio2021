@@ -3,7 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": [".eslintrc.json", , "plugin:react/recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -12,12 +12,5 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {
-    "no-unused-vars": [
-      "warn",
-      { "vars": "all", "args": "after-used", "ignoreRestSiblings": true }
-    ],
-    "import/no-anonymous-default-export": "off",
-    "react/react-in-jsx-scope": 0
-  }
+  "rules": {}
 }
