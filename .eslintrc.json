@@ -1,9 +1,14 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es6": true
   },
-  "extends": [".eslintrc.json", , "plugin:react/recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -12,5 +17,18 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {}
+  "rules": {
+    "react/jsx-key": ["warn"],
+    "no-undef": ["warn"],
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "import/no-anonymous-default-export": "off",
+    "react/react-in-jsx-scope": "off"
+  }
 }

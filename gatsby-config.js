@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   siteMetadata: {
     title: "Matthias_Rodrigues_de_França_Portfolio",
