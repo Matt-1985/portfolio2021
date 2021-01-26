@@ -29,5 +29,8 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
   }
 }
