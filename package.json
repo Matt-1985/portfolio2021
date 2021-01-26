@@ -20,6 +20,7 @@
     "gatsby-image": "^2.10.0",
     "gatsby-plugin-manifest": "^2.11.0",
     "gatsby-plugin-offline": "^3.9.0",
+    "gatsby-plugin-prettier-eslint": "^1.0.4",
     "gatsby-plugin-react-helmet": "^3.9.0",
     "gatsby-plugin-sharp": "^2.13.2",
     "gatsby-plugin-styled-components": "^3.9.0",
@@ -29,5 +30,10 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-plugin-react": "^7.22.0",
+    "prettier": "^2.2.1"
   }
 }
