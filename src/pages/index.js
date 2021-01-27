@@ -1,16 +1,18 @@
 import * as React from "react";
 import { GlobalStyle } from "../theme/global-style";
+import Rectangle from "../components/Rectangle";
 
-// markup
 const IndexPage = () => {
   return (
-    <GlobalStyle>
+    <>
+      <GlobalStyle />
       <main>
         <h1>test</h1>
         <p>hahahahahahah</p>
         <a href="www.ps5.de">Test</a>
+        <Rectangle />
       </main>
-    </GlobalStyle>
+    </>
   );
 };
 

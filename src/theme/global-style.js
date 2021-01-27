@@ -31,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
    --secondary-color: #f6f6f6;
    --main-font-color: #e879de;
    --secondary-font-color: #0090ff;
-   --highlight-color: #edff00;
+   --highlight-color: rgba(240, 255, 31, 0.39);
    }
 
 #root {
@@ -49,7 +49,10 @@ background-color: var(--primary-color)
 
 h1 {
 font-family: "NimbusRegular";
-font-size: 120px;
+font-size: 180px;
+color: var(--primary-color);
+-webkit-text-stroke-width: 0.2px;
+-webkit-text-stroke-color: var(--secondary-font-color);
 }
 a {
   text-decoration: none;
