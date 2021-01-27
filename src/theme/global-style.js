@@ -56,10 +56,6 @@ color: var(--primary-color);
 }
 a {
   text-decoration: none;
-  
-  :hover {
-    text-decoration:line-through;
-  }
 }
  
 `;

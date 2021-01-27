@@ -2,13 +2,14 @@ import * as React from "react";
 import { GlobalStyle } from "../theme/global-style";
 import Rectangle from "../components/Rectangle";
 import Name from "../components/Name";
+import { Nav } from "../components/Navigation";
 
 const IndexPage = () => {
   return (
     <>
       <GlobalStyle />
       <main>
-        <h1>Matthias Rodrigues de França</h1>
+        <Nav />
         <p>Portfolio</p>
         <a href="www.ps5.de">Test</a>
         <Rectangle />
