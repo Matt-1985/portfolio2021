@@ -33,11 +33,13 @@ export const GlobalStyle = createGlobalStyle`
    --secondary-font-color: #0090ff;
    --highlight-color: rgba(240, 255, 31, 0.39);
    }
-
-#root {
-  height:100%;
+html {
+  height: 100vh; 
 }
+
+
 body{
+min-height: 3000px;
 margin:0;
 font-size: 18;
 font-family: "SpaceMonoRegular";
@@ -46,6 +48,8 @@ font-family: "SpaceMonoRegular";
 color: var(--main-font-color);
 background-color: var(--primary-color)
 }
+
+
 
 h1 {
 font-family: "NimbusRegular";
@@ -57,6 +61,7 @@ color: var(--primary-color);
 a {
   text-decoration: none;
 }
+
  
 `;
 
