@@ -49,6 +49,19 @@ color: var(--main-font-color);
 background-color: var(--primary-color)
 }
 
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 2fr 2fr 2fr 2fr;
+  gap: 0em 0px;
+  grid-template-areas:
+    "navigation"
+    "landing"
+    "projects"
+    "vita"
+    "contact";
+}
+
 
 
 h1 {

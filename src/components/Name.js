@@ -15,11 +15,22 @@ const NameCointainer = styled.div`
   width: 100%;
   text-align: justify;
   position: absolute;
-  top: 50%;
-  left: -30%;
+  top: 25%;
+  left: -50%;
   transform: translateY(-50%);
   z-index: 1;
   word-break: break;
+  animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 `;
 
 const FullName = styled.span`
@@ -37,7 +48,7 @@ const FullName = styled.span`
 export default function Name() {
   return (
     <NameCointainer>
-      <FullName>Matthias Rodriges de França</FullName>
+      <FullName>Matthias Rodrigues de França</FullName>
     </NameCointainer>
   );
 }
