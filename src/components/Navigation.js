@@ -1,17 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import logoMe from "../images/logo2.png";
 
 export const NavWrapper = styled.nav`
   grid-area: navigation;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 `;
 
 const NavLink = styled(Link)`
-  font-size: 2em;
+  font-size: 1.5em;
   color: var(--main-font-color);
   font-weight: bold;
   text-decoration: none;
@@ -33,23 +32,14 @@ const NavLink = styled(Link)`
   }
 `;
 
-const Logo = styled.img`
-  width: 3em;
-  height: 3em;
-
-  margin: 10px 0 0 10px;
-`;
-
 export const Nav = () => {
   return (
     <>
       <NavWrapper>
-        <Logo src={logoMe} alt="Logo" />
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/projects">Projects</NavLink>
-        <NavLink to="/vita">Vita</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
-        <mask></mask>
+        <NavLink to="#">Home</NavLink>
+        <NavLink to="#projects">Projects</NavLink>
+        <NavLink to="#vita">Vita</NavLink>
+        <NavLink to="#contact">Contact</NavLink>
       </NavWrapper>
     </>
   );

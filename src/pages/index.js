@@ -59,12 +59,17 @@ const IndexPage = () => {
       <GlobalStyle />
       <main>
         <Nav />
-        <ParallaxContainer>
-          <Rectangle />
-          <Name />
-          <P>Portfolio</P>
-          <Img src={meGif} alt="Matt spinning his head" />
-        </ParallaxContainer>
+        <section id="home">
+          <ParallaxContainer>
+            <Rectangle />
+            <Name />
+            <P>Portfolio</P>
+            <Img src={meGif} alt="Matt spinning his head" />
+          </ParallaxContainer>
+        </section>
+        <section id="projects"></section>
+        <section id="vita"></section>
+        <section id="contact"></section>
       </main>
     </>
   );
