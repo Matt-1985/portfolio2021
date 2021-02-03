@@ -1,0 +1,81 @@
+import { createGlobalStyle } from "styled-components";
+import SpaceMonoRegular from "../fonts/SpaceMono-Regular.ttf";
+import SpaceMonoBold from "../fonts/SpaceMono-Bold.ttf";
+import NimbusRegular from "../fonts/Nimbus-Regular.ttf";
+
+export const GlobalStyle = createGlobalStyle`
+ * {
+   box-sizing:border-box;
+ }
+ @font-face {
+  font-family: "NimbusRegular";
+  font-style: normal;
+  font-weight: 400;
+  src: url(${NimbusRegular});
+ }
+  @font-face {
+  font-family: "SpaceMonoRegular";
+  font-style: regular;
+  font-weight: 400;
+  src: url(${SpaceMonoRegular})
+}
+  @font-face {
+  font-family: "SpaceMonoBold";
+  font-style: bold;
+  font-weight: 600;
+  src: url(${SpaceMonoBold})
+}
+ 
+ :root {
+   --primary-color: #fffffa;
+   --secondary-color: #f6f6f6;
+   --main-font-color: #e879de;
+   --secondary-font-color: #0090ff;
+   --highlight-color: rgba(240, 255, 31, 0.39);
+   }
+html {
+  height: 100vh; 
+}
+
+
+body{
+min-height: 3000px;
+margin:0;
+font-size: 18;
+font-family: "SpaceMonoRegular";
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+color: var(--main-font-color);
+background-color: var(--primary-color)
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 2fr 2fr 2fr 2fr;
+  gap: 0em 0px;
+  grid-template-areas:
+    "navigation"
+    "landing"
+    "projects"
+    "vita"
+    "contact";
+}
+
+
+
+h1 {
+font-family: "NimbusRegular";
+font-size: 180px;
+color: var(--primary-color);
+-webkit-text-stroke-width: 0.2px;
+-webkit-text-stroke-color: var(--secondary-font-color);
+}
+a {
+  text-decoration: none;
+}
+
+ 
+`;
+
+export default GlobalStyle;

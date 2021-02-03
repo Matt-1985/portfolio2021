@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   siteMetadata: {
     title: "Matthias_Rodrigues_de_França_Portfolio",
@@ -7,6 +8,7 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-offline",
+    "gatsby-plugin-react-svg",
     {
       resolve: "gatsby-plugin-prettier-eslint",
       options: {

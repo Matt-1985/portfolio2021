@@ -12,7 +12,10 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "eslint . --ext .js",
+    "prettify": "prettier --write .",
+    "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,html,css,json}\""
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
@@ -22,6 +25,7 @@
     "gatsby-plugin-offline": "^3.9.0",
     "gatsby-plugin-prettier-eslint": "^1.0.4",
     "gatsby-plugin-react-helmet": "^3.9.0",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.13.2",
     "gatsby-plugin-styled-components": "^3.9.0",
     "gatsby-source-filesystem": "^2.10.0",
