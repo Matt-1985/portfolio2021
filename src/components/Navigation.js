@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
-export const NavWrapper = styled.nav`
-  grid-area: navigation;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+const StyledNavWrapper = styled.div.attrs((props) => ({
+  className: props.className,
+}))`
+  &.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    &.navbar.active {
+      background: rgba(240, 255, 31, 0.5);
+    }
+  }
 `;
 
 const NavLink = styled(Link)`
-  font-size: 1.5em;
+  font-size: 1.5vw;
   color: var(--main-font-color);
   font-weight: bold;
   text-decoration: none;
@@ -32,15 +42,36 @@ const NavLink = styled(Link)`
   }
 `;
 
-export const Nav = () => {
+function Nav() {
+  const [navbar, setNavbar] = useState(false);
+
+  const changeBackground = () => {
+    if (window.scrollY >= 50) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeBackground);
+
   return (
     <>
-      <NavWrapper>
+      <StyledNavWrapper
+        key={navbar}
+        className={navbar ? "navbar active" : "navbar"}
+      >
         <NavLink to="#">Home</NavLink>
         <NavLink to="#projects">Projects</NavLink>
         <NavLink to="#vita">Vita</NavLink>
         <NavLink to="#contact">Contact</NavLink>
-      </NavWrapper>
+      </StyledNavWrapper>
     </>
   );
+}
+
+export default Nav;
+
+Nav.propTypes = {
+  className: PropTypes.string.isRequired,
 };

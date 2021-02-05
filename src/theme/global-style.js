@@ -33,16 +33,21 @@ export const GlobalStyle = createGlobalStyle`
    --secondary-font-color: #0090ff;
    --highlight-color: rgba(240, 255, 31, 0.39);
    }
+
 html {
-  height: 100vh; 
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
+  
+}
+html, body {
+  vertical-align: baseline;
 }
 
-
 body{
-min-height: 3000px;
+min-height: 100vh;
+min-width: 100vw;
 margin:0;
-font-size: 18;
+padding:0;
+font-size: 100%;
 font-family: "SpaceMonoRegular";
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
@@ -50,30 +55,29 @@ color: var(--main-font-color);
 background-color: var(--primary-color)
 }
 
-main {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: min-content 2fr 2fr 2fr 2fr;
-  gap: 0em 0px;
-  grid-template-areas:
-    "navigation"
-    "landing"
-    "projects"
-    "vita"
-    "contact";
+p {
+ font-size: 2.5vw;
 }
+
+
+
+main {
+	height: 100%;
+}
+
 
 
 
 h1 {
 font-family: "NimbusRegular";
-font-size: 180px;
+font-size: 9vw;
 color: var(--primary-color);
 -webkit-text-stroke-width: 0.2px;
 -webkit-text-stroke-color: var(--secondary-font-color);
 }
 a {
   text-decoration: none;
+  
 }
 
  
