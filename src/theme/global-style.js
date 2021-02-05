@@ -35,6 +35,7 @@ export const GlobalStyle = createGlobalStyle`
    }
 html {
   height: 100vh; 
+  scroll-behavior: smooth;
 }
 
 
