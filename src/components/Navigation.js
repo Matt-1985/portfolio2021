@@ -14,6 +14,7 @@ const StyledNavWrapper = styled.div.attrs((props) => ({
     top: 0;
     z-index: 999;
     &.navbar.active {
+      transform: skewY(1.5deg);
       background: rgba(240, 255, 31, 0.5);
       animation: flicker-in-1 2s linear both;
       @keyframes flicker-in-1 {
@@ -119,6 +120,7 @@ const NavLink = styled(Link)`
   font-size: 1.5vw;
   color: var(--main-font-color);
   font-weight: bold;
+  text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);
   text-decoration: none;
   margin: 15px;
   position: relative;

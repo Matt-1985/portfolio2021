@@ -65,7 +65,22 @@ main {
 	height: 100%;
 }
 
+span {
+margin: 0;
+text-align: center;
+font-size: 14vw;
+letter-spacing: 4vw;
+color: var(--primary-color);
 
+}
+
+
+
+button {
+  font-family: "SpaceMonoRegular";
+  color: var(--primary-color);
+  font-size: 1vw;
+}
 
 
 h1 {
