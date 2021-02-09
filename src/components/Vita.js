@@ -15,53 +15,6 @@ const Bubble1 = styled(animated.div)`
   z-index: 4;
 `;
 
-const Bubble2 = styled.div`
-  height: 300px;
-  width: 300px;
-  border-radius: 20% 80% 10% 90% / 53% 71% 29% 47%;
-  /* border-radius: 10px; */
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  z-index: 4;
-`;
-
-const Bubble3 = styled.div`
-  height: 300px;
-  width: 300px;
-  border-radius: 87% 13% 68% 32% / 53% 7% 93% 47%;
-
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  z-index: 4;
-`;
-
-const Bubble4 = styled.div`
-  height: 300px;
-  width: 300px;
-  border-radius: 43% 57% 70% 30% / 53% 46% 54% 47%;
-  /* border-radius: 10px; */
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  z-index: 4;
-`;
-const Bubble5 = styled.div`
-  height: 300px;
-  width: 300px;
-  border-radius: 22% 78% 68% 32% / 30% 37% 63% 70%;
-  /* border-radius: 10px; */
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  z-index: 4;
-`;
-
 const VitaContainer = styled.div`
   height: 70vh;
   width: 100%;
@@ -129,10 +82,6 @@ const Vita = () => {
             transform: props.xys.interpolate(trans),
           }}
         />
-        <Bubble2 />
-        <Bubble3 />
-        <Bubble4 />
-        <Bubble5 />
       </VitaContainer>
     </>
   );

@@ -7,6 +7,7 @@ import Nav from "../components/Navigation";
 import Landing from "../components/Landing";
 import Vita from "../components/Vita";
 import Projects from "../components/Projects";
+import Contact from "../components/Contact";
 
 const LandingContainer = styled.div`
   margin: 0;
@@ -15,11 +16,6 @@ const LandingContainer = styled.div`
   height: 100%;
   
   `};
-`;
-
-const ContactContainer = styled.div`
-  grid-area: "contact";
-  background-color: RGBA(79, 104, 78, 0.27);
 `;
 
 const IndexPage = () => {
@@ -40,14 +36,7 @@ const IndexPage = () => {
           <Vita />
         </section>
         <section id="contact">
-          <ContactContainer>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Dignissimos facilis, harum fugiat exercitationem totam magni
-              doloremque, saepe quibusdam aut quo deserunt, quia eligendi
-              repellat similique. Amet adipisci ipsa quod exercitationem.
-            </p>
-          </ContactContainer>
+          <Contact></Contact>
         </section>
       </main>
     </ParallaxProvider>
