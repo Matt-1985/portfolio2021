@@ -4,7 +4,7 @@ import { GlobalStyle } from "../theme/global-style";
 import styled from "styled-components";
 import { mediaQueries } from "../commons/MediaQueries";
 import Nav from "../components/Navigation";
-import Animation from "../components/AnimationContainer";
+import Landing from "../components/Landing";
 import Vita from "../components/Vita";
 import Projects from "../components/Projects";
 
@@ -30,7 +30,7 @@ const IndexPage = () => {
         <Nav />
         <section id="home">
           <LandingContainer>
-            <Animation />
+            <Landing />
           </LandingContainer>
         </section>
         <section id="projects">
