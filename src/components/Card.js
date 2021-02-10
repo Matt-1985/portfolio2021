@@ -2,6 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import cardImage from "../images/choicely.png";
 
+const ScrollBoxContainer = styled.div`
+  height: 100%;
+  display: inline-flex;
+`;
+
 const CardsContainer = styled.div`
   display: grid;
   overflow: hidden;
@@ -65,14 +70,16 @@ const CardButton = styled.a`
 export default function Cards(onClick) {
   return (
     <>
-      <CardsContainer>
-        <CardContentContainer>
-          <CardImage src={cardImage} alt="choicely App" />
-          <CardHeadline>choicely - The App for the Undecided</CardHeadline>
-          <CardParagraph>My first Web App!</CardParagraph>
-          <CardButton onClick={onClick}>To the project</CardButton>
-        </CardContentContainer>
-      </CardsContainer>
+      <ScrollBoxContainer>
+        <CardsContainer>
+          <CardContentContainer>
+            <CardImage src={cardImage} alt="choicely App" />
+            <CardHeadline>choicely - The App for the Undecided</CardHeadline>
+            <CardParagraph>My first Web App!</CardParagraph>
+            <CardButton onClick={onClick}>To the project</CardButton>
+          </CardContentContainer>
+        </CardsContainer>
+      </ScrollBoxContainer>
     </>
   );
 }

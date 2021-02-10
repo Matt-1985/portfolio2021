@@ -14,10 +14,20 @@ const StyledNavWrapper = styled.div.attrs((props) => ({
     top: 0;
     z-index: 999;
     transform: skewY(1.5deg);
-    /* background: rgba(240, 255, 31, 0.5); */
-
-    background-image: radial-gradient(#e879de 2px, rgba(0, 144, 255, 89) 1px);
-    background-size: 10px 10px;
+    background: -webkit-repeating-linear-gradient(
+      30deg,
+      rgba(240, 255, 31, 0),
+      rgba(240, 255, 31, 0) 3px,
+      rgba(232, 121, 222, 0.16) 3px,
+      rgba(232, 121, 222, 0.16) 9px
+    );
+    background: repeating-linear-gradient(
+      30deg,
+      rgba(240, 255, 31, 0),
+      rgba(240, 255, 31, 0) 3px,
+      rgba(232, 121, 222, 0.16) 3px,
+      rgba(232, 121, 222, 0.16) 9px
+    );
   }
 
   &.hide {
