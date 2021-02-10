@@ -141,12 +141,10 @@ const NavLink = styled(Link)`
 `;
 
 function Nav() {
-  let pathname =
-    typeof window !== "undefined" ? window.location.pathname : "Nav";
-
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
+    if (typeof window !== "undefined" ? window.location.pathname : "");
     if (window.scrollY >= 80) {
       setNavbar(true);
     } else {
