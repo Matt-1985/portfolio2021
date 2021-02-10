@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "gatsby";
@@ -13,106 +13,23 @@ const StyledNavWrapper = styled.div.attrs((props) => ({
     position: sticky;
     top: 0;
     z-index: 999;
-    &.navbar.active {
-      transform: skewY(1.5deg);
-      background: rgba(240, 255, 31, 0.5);
-      animation: flicker-in-1 2s linear both;
-      @keyframes flicker-in-1 {
-        0% {
-          opacity: 0;
-        }
-        10% {
-          opacity: 0;
-        }
-        10.1% {
-          opacity: 1;
-        }
-        10.2% {
-          opacity: 0;
-        }
-        20% {
-          opacity: 0;
-        }
-        20.1% {
-          opacity: 1;
-        }
-        20.6% {
-          opacity: 0;
-        }
-        30% {
-          opacity: 0;
-        }
-        30.1% {
-          opacity: 1;
-        }
-        30.5% {
-          opacity: 1;
-        }
-        30.6% {
-          opacity: 0;
-        }
-        45% {
-          opacity: 0;
-        }
-        45.1% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 1;
-        }
-        55% {
-          opacity: 1;
-        }
-        55.1% {
-          opacity: 0;
-        }
-        57% {
-          opacity: 0;
-        }
-        57.1% {
-          opacity: 1;
-        }
-        60% {
-          opacity: 1;
-        }
-        60.1% {
-          opacity: 0;
-        }
-        65% {
-          opacity: 0;
-        }
-        65.1% {
-          opacity: 1;
-        }
-        75% {
-          opacity: 1;
-        }
-        75.1% {
-          opacity: 0;
-        }
-        77% {
-          opacity: 0;
-        }
-        77.1% {
-          opacity: 1;
-        }
-        85% {
-          opacity: 1;
-        }
-        85.1% {
-          opacity: 0;
-        }
-        86% {
-          opacity: 0;
-        }
-        86.1% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-    }
+    transform: skewY(1.5deg);
+    /* background: rgba(240, 255, 31, 0.5); */
+
+    background-image: radial-gradient(#e879de 2px, rgba(0, 144, 255, 89) 1px);
+    background-size: 10px 10px;
+  }
+
+  &.hide {
+    transform: translateY(-80px);
+  }
+  &.nav {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0px 1.0875rem;
+    font-size: 16px;
+    font-weight: 600;
   }
 `;
 
@@ -141,25 +58,29 @@ const NavLink = styled(Link)`
 `;
 
 function Nav() {
-  const [navbar, setNavbar] = useState(false);
+  const [menu, showMenu] = useState(true);
 
-  const changeBackground = () => {
-    if (typeof window !== "undefined" ? window.location.pathname : "");
-    if (window.scrollY >= 80) {
-      setNavbar(true);
-    } else {
-      setNavbar(false);
-    }
+  const toggleMenu = () => {
+    let distanceFromTop = window.pageYOffset;
+
+    return function () {
+      let newDistanceFromTop = window.pageYOffset;
+      if (newDistanceFromTop < 50 || distanceFromTop >= newDistanceFromTop) {
+        showMenu(true);
+      } else {
+        showMenu(false);
+      }
+      distanceFromTop = newDistanceFromTop;
+    };
   };
-
-  window.addEventListener("scroll", changeBackground);
+  useEffect(() => {
+    window.addEventListener("scroll", toggleMenu());
+    return window.removeEventListener("scroll", toggleMenu());
+  }, []);
 
   return (
     <>
-      <StyledNavWrapper
-        key={navbar}
-        className={navbar ? "navbar active" : "navbar"}
-      >
+      <StyledNavWrapper className={menu ? "navbar " : "navbar hide"}>
         <NavLink to="#">Home</NavLink>
         <NavLink to="#projects">Projects</NavLink>
         <NavLink to="#vita">Vita</NavLink>
