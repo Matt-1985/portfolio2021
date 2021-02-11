@@ -35,7 +35,7 @@ const StyledNavWrapper = styled.div.attrs((props) => ({
   }
   &.nav {
     width: 100%;
-    max-width: 1400px;
+    /* max-width: 1400px; */
     margin: 0 auto;
     padding: 0px 1.0875rem;
     font-size: 16px;

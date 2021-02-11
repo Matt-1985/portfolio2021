@@ -16,7 +16,6 @@ const ProjectContainer = styled.div`
   justify-content: center;
   align-content: center;
   padding: 6rem;
-  width: 100%;
   border-radius: 12px;
   background: rgb(232, 121, 222);
   background: linear-gradient(
@@ -137,7 +136,7 @@ const Projects = () => {
   return (
     <>
       <HeadlineContainer>
-        <Parallax className="StyledHeadline" x={[-24, 10]} y={[28, 85]}>
+        <Parallax className="StyledHeadline" x={[-20, 10]} y={[28, 85]}>
           <StyledHeadline className="dashed-shadow" data-text="Projects">
             Projects
           </StyledHeadline>

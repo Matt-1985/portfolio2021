@@ -36,7 +36,7 @@ const IndexPage = () => {
           <Vita />
         </section>
         <section id="contact">
-          <Contact></Contact>
+          <Contact />
         </section>
       </main>
     </ParallaxProvider>

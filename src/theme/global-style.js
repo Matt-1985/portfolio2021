@@ -35,11 +35,13 @@ export const GlobalStyle = createGlobalStyle`
    }
 
 html {
+width: 100%;
 scroll-behavior: smooth;
   
 }
 html, body {
   vertical-align: baseline;
+  
 }
 
 body{
@@ -62,6 +64,7 @@ p {
 
 
 main {
+  /* overflow: hidden; */
 	height: 100%;
 }
 
@@ -92,6 +95,7 @@ color: var(--primary-color);
 }
 a {
   text-decoration: none;
+  color: var(--primary-color);
   
 }
 

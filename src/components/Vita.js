@@ -20,13 +20,12 @@ const VitaContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: hidden;
-  margin: 0;
+  margin: 0 0 250px 0;
   transform: skewY(10deg);
   display: flex;
   justify-content: center;
   align-content: center;
   padding: 6rem;
-  width: 100%;
   border-radius: 12px;
   background: rgb(232, 121, 222);
   background: linear-gradient(
