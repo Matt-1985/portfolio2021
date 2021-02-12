@@ -8,24 +8,30 @@ const ScrollBoxContainer = styled.div`
 `;
 
 const CardsContainer = styled.div`
-  display: grid;
+  min-width: 220px;
+  padding: 1.5rem;
+  box-shadow: -2rem 0 3rem -2rem #000;
+  background: linear-gradient(85deg, #434343, #262626);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+  margin: 0;
+  /* display: grid;
   overflow: hidden;
   width: 20em;
   height: 30em;
   margin: 0 auto;
-  position: relative;
+  position: relative; */
   /* grid-gap: 6rem;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); */
-  align-items: start;
+  /* align-items: start; */
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  transition: all 0.5s ease-in-out;
-  :hover {
-    transform: scale(1.1);
-  }
+
   z-index: 4;
 `;
 

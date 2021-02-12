@@ -11,9 +11,10 @@ const Footer = styled.div`
   margin: 0;
   /* transform: skewY(-10deg); */
   display: flex;
+
   justify-content: center;
   align-content: center;
-  padding: 6rem;
+  padding: 2rem;
   border-radius: 12px;
   background: rgb(232, 121, 222);
   background: linear-gradient(
@@ -25,67 +26,38 @@ const Footer = styled.div`
   z-index: 1;
 `;
 
-const StyledText = styled.div.attrs((props) => ({
-  className: props.className,
-}))`
-  &.sroll {
-    display: flex;
-    width: 100%;
-    box-shadow: 0 8px 16px rgba(#000000, 0.5);
-  }
-  &.div {
-    font-weight: 900;
-    font-size: 4em;
-    text-transform: uppercase;
-    white-space: nowrap;
-    color: var(--primary-color);
-    background-color: transparent;
-    animation: animate 50s -50s linear infinite;
-    will-change: transform;
-    :nth-child(2) {
-      animation: animate2 70s -60s linear infinite;
-    }
-    @keyframes animate {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
+const StyledText = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 
-    @keyframes animate2 {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-200%);
-      }
-    }
-  }
-`;
-
-const Span = styled.span`
-  font-weight: 500;
-  font-size: 2em;
-  text-transform: uppercase;
-  /* white-space: nowrap; */
-  -webkit-text-stroke: 1px transparent;
-  color: var(--primary-color);
-  line-height: 0.5;
+  margin: 0 auto;
+  /* padding: 0px 1.0875rem; */
+  font-size: 16px;
+  font-weight: 400;
 `;
 
 const A = styled.a`
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
   font-family: "NimbusRegular";
-`;
-
-const Date = styled.span`
-  border: 1px solid black;
-  margin: 0;
-  font-size: 2em;
-  font-weight: normal;
-  color: black;
-  z-index: 2;
+  font-size: 3em;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255) 0%,
+    rgba(255, 255, 255, 68) 100%
+  );
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 4px;
+  color: var(--primary-color);
+  transition: background-size 0.2s;
+  :hover {
+    background-size: 4px 50px;
+  }
 `;
 
 const StyledHeadline = styled.div.attrs((props) => ({
@@ -159,6 +131,18 @@ const StyledHeadline = styled.div.attrs((props) => ({
   }
 `;
 
+const Date = styled.h3`
+  flex-direction: flex-end;
+  left: 88px;
+  top: 17px;
+  font-size: 1em;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 79);
+  z-index: 2;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.4);
+`;
+
 export default function Contact() {
   const { date, time } = useDate();
 
@@ -170,27 +154,21 @@ export default function Contact() {
         </StyledHeadline>
       </Parallax>
       <Footer>
-        <StyledText className="scroll div">
-          <Span>
-            <A href="https://www.linkedin.com/in/matthias-rodrigues-de-frança">
-              linkedin -
-            </A>
-          </Span>
-          <Span>
-            <A href="mailto:matthias.rodriguesdefranca@gmail.com">email - </A>
-          </Span>
-          <Span>
-            <A href="https://github.com/Matt-1985">github - </A>
-          </Span>
-          <Span>
-            <A href="https://www.instagram.com/der_sonderman/">instagram -</A>
-          </Span>
+        <StyledText>
+          <A href="https://www.linkedin.com/in/matthias-rodrigues-de-frança">
+            linkedin
+          </A>
+
+          <A href="mailto:matthias.rodriguesdefranca@gmail.com">email</A>
+
+          <A href="https://github.com/Matt-1985">github</A>
+
+          <A href="https://www.instagram.com/der_sonderman/">instagram</A>
+          <Date>
+            {date}
+            {time}
+          </Date>
         </StyledText>
-        <Date>
-          {date}
-          <br />
-          {time}
-        </Date>
       </Footer>
     </>
   );

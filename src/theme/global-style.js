@@ -7,6 +7,32 @@ export const GlobalStyle = createGlobalStyle`
  * {
    box-sizing:border-box;
  }
+
+ * {
+  box-sizing: border-box;
+  scrollbar-color: transparent transparent; /* thumb and track color */
+  scrollbar-width: 0px;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
+}
+
+* {
+  -ms-overflow-style: none;
+}
+
+
+
  @font-face {
   font-family: "NimbusRegular";
   font-style: normal;
@@ -54,7 +80,8 @@ font-family: "SpaceMonoRegular";
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 color: var(--main-font-color);
-background-color: var(--primary-color)
+background-color: var(--primary-color);
+
 }
 
 p {
@@ -72,7 +99,7 @@ span {
 margin: 0;
 text-align: center;
 font-size: 14vw;
-letter-spacing: 4vw;
+/* letter-spacing: 2vw; */
 color: var(--primary-color);
 
 }

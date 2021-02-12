@@ -1,15 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Parallax } from "react-scroll-parallax";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import styled from "styled-components";
 import Cards from "../components/Card";
 import cursorPng from "../images/cursor.png";
 
-const ProjectContainer = styled.div`
+const ProjectWrapper = styled.div`
   height: 70vh;
   width: 100%;
   position: relative;
-  overflow: hidden;
   margin: 0;
   transform: skewY(-10deg);
   display: flex;
@@ -28,15 +29,21 @@ const ProjectContainer = styled.div`
   /* cursor: url(${cursorPng}), auto; */
 `;
 
-const SelectBoxWrapper = styled.div`
+const ProjectContainer = styled.div`
   width: 100%;
   height: 100%;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  margin: 0;
 `;
+
+// const SelectBoxWrapper = styled.div`
+//   width: 100%;
+//   height: 100%;
+//   overflow-y: hidden;
+//   overflow-x: scroll;
+//   ::-webkit-scrollbar {
+//     display: none;
+//   }
+// `;
 
 const HeadlineContainer = styled.div`
   margin-bottom: 20%;
@@ -118,6 +125,24 @@ const StyledHeadline = styled.div.attrs((props) => ({
   }
 `;
 
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    slidesToSlide: 3, // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2, // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1, // optional, default to 1.
+  },
+};
+
 // const Headline = styled.div`
 //   color: var(--secondary-font-color);
 //   margin: 0;
@@ -142,17 +167,18 @@ const Projects = () => {
           </StyledHeadline>
         </Parallax>
       </HeadlineContainer>
-
-      <ProjectContainer>
-        <SelectBoxWrapper>
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-        </SelectBoxWrapper>
-      </ProjectContainer>
+      <ProjectWrapper>
+        <ProjectContainer>
+          <Carousel responsive={responsive} centerMode={true} infinite={true}>
+            <Cards />
+            <Cards />
+            <Cards />
+            <Cards />
+            <Cards />
+            <Cards />
+          </Carousel>
+        </ProjectContainer>
+      </ProjectWrapper>
     </>
   );
 };
