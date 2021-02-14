@@ -43,6 +43,7 @@ const FullName = styled.p`
 const P = styled.p`
   margin: 0 0 0 10%;
   font-size: 4vw;
+  text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);
   animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   @keyframes text-focus-in {
     0% {

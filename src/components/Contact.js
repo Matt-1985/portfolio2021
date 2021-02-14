@@ -39,8 +39,9 @@ const StyledText = styled.div`
 `;
 
 const A = styled.a`
-  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
-    0px 18px 23px rgba(0, 0, 0, 0.4);
+  /* text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.4); */
+  text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   font-family: "NimbusRegular";
@@ -139,8 +140,9 @@ const Date = styled.h3`
   font-weight: normal;
   color: rgba(255, 255, 255, 79);
   z-index: 2;
-  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
-    0px 18px 23px rgba(0, 0, 0, 0.4);
+  /* text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.4); */
+  text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);
 `;
 
 export default function Contact() {

@@ -1,14 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Parallax } from "react-scroll-parallax";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import styled from "styled-components";
 import Cards from "../components/Card";
 import cursorPng from "../images/cursor.png";
+import cardImage from "../images/choicely.png";
+import kanye from "../images/Kanye_Quotes.png";
+import p2020 from "../images/Portfolio_2020.png";
+import mtc from "../images/mtc.png";
+import Link from "../commons/Link";
 
 const ProjectWrapper = styled.div`
-  height: 70vh;
+  height: auto;
   width: 100%;
   position: relative;
   margin: 0;
@@ -170,12 +174,46 @@ const Projects = () => {
       <ProjectWrapper>
         <ProjectContainer>
           <Carousel responsive={responsive} centerMode={true} infinite={true}>
-            <Cards />
-            <Cards />
-            <Cards />
-            <Cards />
-            <Cards />
-            <Cards />
+            <Cards
+              src={cardImage}
+              alt="app logo"
+              headline="choicely"
+              p="My first Web App"
+              href={
+                <Link to="https://choicely.herokuapp.com/">TO THE PROJECT</Link>
+              }
+            />
+            <Cards
+              src={p2020}
+              alt="app logo"
+              headline="Portfolio 2020"
+              p="The first attemp in creating a portfolio with Bootstrap in September 2020"
+              href={
+                <Link to="https://matt-1985.github.io/portfolio1//">
+                  TO THE PORTFOLIO
+                </Link>
+              }
+            />
+            <Cards
+              src={kanye}
+              alt="app logo"
+              headline="Kanye Quotes"
+              p="Back in October 2020 I created my first API connected Application"
+              href={
+                <Link to="https://kanye-quotes.vercel.app/">
+                  TO THE PROJECT
+                </Link>
+              }
+            />
+            <Cards
+              src={mtc}
+              alt="app logo"
+              headline="More to come"
+              p="Currently I am working on another Project...as soon as i have more details i'll upload it here "
+              href={
+                <Link to="https://choicely.herokuapp.com/">TO THE PROJECT</Link>
+              }
+            />
           </Carousel>
         </ProjectContainer>
       </ProjectWrapper>
@@ -184,7 +222,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-Projects.propTypes = {
-  className: PropTypes.string.isRequired,
-};

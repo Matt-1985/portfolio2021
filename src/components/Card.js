@@ -1,6 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
-import cardImage from "../images/choicely.png";
 
 const ScrollBoxContainer = styled.div`
   height: 100%;
@@ -37,16 +37,17 @@ const CardsContainer = styled.div`
 
 const CardImage = styled.img`
   border-radius: 10px;
-  display: block;
   width: 100%;
-  height: auto;
+  height: 150px;
   object-fit: cover;
 `;
 
 const CardContentContainer = styled.div`
   padding: 0.5rem 0.5rem;
 `;
+
 const CardHeadline = styled.h1`
+  text-align: center;
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--primary-color);
@@ -54,38 +55,53 @@ const CardHeadline = styled.h1`
 `;
 
 const CardParagraph = styled.p`
+  padding: 1rem;
+  text-align: block;
   font-size: 1.5rem;
-  letter-spacing: 0.1rem;
-  line-height: 1.7;
   color: var(--primary-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 `;
 
-const CardButton = styled.a`
-  display: block;
-  width: 50%;
+const CardButton = styled.button`
   padding: 1.5rem;
   font-size: 2rem;
   text-align: center;
-  color: transparent;
-  background-color: var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
   border: none;
   border-radius: 0.4rem;
 `;
 
-export default function Cards(onClick) {
+const Div = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+`;
+
+export default function Cards(props) {
   return (
     <>
       <ScrollBoxContainer>
         <CardsContainer>
           <CardContentContainer>
-            <CardImage src={cardImage} alt="choicely App" />
-            <CardHeadline>choicely - The App for the Undecided</CardHeadline>
-            <CardParagraph>My first Web App!</CardParagraph>
-            <CardButton onClick={onClick}>To the project</CardButton>
+            <CardImage src={props.src} />
+            <CardHeadline>{props.headline}</CardHeadline>
+            <CardParagraph>{props.p}</CardParagraph>
+            <Div>
+              <CardButton>{props.href}</CardButton>
+            </Div>
           </CardContentContainer>
         </CardsContainer>
       </ScrollBoxContainer>
     </>
   );
 }
+
+Cards.propTypes = {
+  href: PropTypes.string,
+
+  headline: PropTypes.string,
+  p: PropTypes.string,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+};

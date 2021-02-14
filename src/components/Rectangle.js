@@ -8,6 +8,7 @@ const Rectangle = styled.div`
   width: 60vw;
   background-color: var(--highlight-color);
   border: none;
+  border-radius: 10px;
   z-index: 2;
   backdrop-filter: blur(1px);
   animation: slide-in-left 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
