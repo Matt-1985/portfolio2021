@@ -97,10 +97,10 @@ main {
 
 span {
 margin: 0;
-text-align: center;
+/* text-align: center;
 font-size: 14vw;
-/* letter-spacing: 2vw; */
-color: var(--primary-color);
+letter-spacing: 2vw;
+color: var(--primary-color); */
 
 }
 

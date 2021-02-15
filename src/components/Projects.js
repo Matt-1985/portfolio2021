@@ -39,24 +39,14 @@ const ProjectContainer = styled.div`
   margin: 0;
 `;
 
-// const SelectBoxWrapper = styled.div`
-//   width: 100%;
+// const HeadlineContainer = styled.div`
+//   margin-bottom: 20%;
 //   height: 100%;
-//   overflow-y: hidden;
-//   overflow-x: scroll;
-//   ::-webkit-scrollbar {
-//     display: none;
-//   }
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-content: center;
 // `;
-
-const HeadlineContainer = styled.div`
-  margin-bottom: 20%;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-`;
 
 const StyledHeadline = styled.div.attrs((props) => ({
   className: props.className,
@@ -147,30 +137,16 @@ const responsive = {
   },
 };
 
-// const Headline = styled.div`
-//   color: var(--secondary-font-color);
-//   margin: 0;
-//   text-align: center;
-//   font-size: 14vw;
-//   letter-spacing: 4vw;
-//   position: relative;
-//   z-index: -1;
-//   /* width: 100%;
-//   height: 100%; */
-//   /* object-fit: cover; */
-//   /* text-shadow: 4px 5px 0px rgba(0, 144, 255, 0.88); */
-// `;
-
 const Projects = () => {
   return (
     <>
-      <HeadlineContainer>
-        <Parallax className="StyledHeadline" x={[-20, 10]} y={[28, 85]}>
-          <StyledHeadline className="dashed-shadow" data-text="Projects">
-            Projects
-          </StyledHeadline>
-        </Parallax>
-      </HeadlineContainer>
+      {/* <HeadlineContainer> */}
+      <Parallax className="StyledHeadline" x={[-20, 10]} y={[28, 85]}>
+        <StyledHeadline className="dashed-shadow" data-text="Projects">
+          Projects
+        </StyledHeadline>
+      </Parallax>
+      {/* </HeadlineContainer> */}
       <ProjectWrapper>
         <ProjectContainer>
           <Carousel responsive={responsive} centerMode={true} infinite={true}>

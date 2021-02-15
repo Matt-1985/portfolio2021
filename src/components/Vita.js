@@ -1,19 +1,20 @@
 import React from "react";
 import { Parallax } from "react-scroll-parallax";
-import { useSpring, animated } from "react-spring";
-import PropTypes from "prop-types";
 import styled from "styled-components";
+import { Chrono } from "react-chrono";
+import items from "../components/data";
+import QR from "../images/QRCode.png";
 
-const Bubble1 = styled(animated.div)`
-  height: 300px;
-  width: 300px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  z-index: 4;
-`;
+// const Bubble1 = styled(animated.div)`
+//   height: 300px;
+//   width: 300px;
+//   border-radius: 10px;
+//   background: rgba(255, 255, 255, 0.3);
+//   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+//   backdrop-filter: blur(5px);
+//   border: 1px solid rgba(255, 255, 255, 0.18);
+//   z-index: 4;
+// `;
 
 const VitaContainer = styled.div`
   height: 70vh;
@@ -120,24 +121,16 @@ const StyledHeadline = styled.div.attrs((props) => ({
 //   text-shadow: 4px 5px 0px rgba(232, 121, 222, 0.88);
 // `;
 
+const Img = styled.img`
+  width: 5rem;
+  height: 5rem;
+  :hover {
+    width: 19rem;
+    height: 19rem;
+  }
+`;
+
 const Vita = () => {
-  const calc = (x, y) => [
-    -(y - window.innerHeight / 2) / 20,
-    (x - window.innerWidth / 2) / 20,
-    1,
-  ];
-  const trans = (x, y, s) =>
-    `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
-
-  Vita.propTypes = {
-    interpolate: PropTypes.function,
-  };
-
-  const [props, set] = useSpring(() => ({
-    xys: [0, 0, 1],
-    config: { mass: 10, tension: 200, friction: 50 },
-  }));
-
   return (
     <>
       <Parallax y={[-40, 50]} x={[60, 50]} tagInner="figure">
@@ -147,14 +140,23 @@ const Vita = () => {
       </Parallax>
 
       <VitaContainer>
-        <Bubble1
-          onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
-          onMouseLeave={() => set({ xys: [0, 0, 1] })}
-          style={{
-            // eslint-disable-next-line react/prop-types
-            transform: props.xys.interpolate(trans),
-          }}
-        />
+        <div>
+          <Chrono
+            items={items}
+            hideControls="300"
+            mode="VERTICAL"
+            theme={{
+              primary: "var(--primary-color)",
+              secondary: "var(--main-font-color)",
+              cardForeColor: "var(--primary-color)",
+              cardBgColor: "rgba(255, 255, 255, 0.3)",
+            }}
+          >
+            <div>
+              <Img src={QR} alt="QR Code" />
+            </div>
+          </Chrono>
+        </div>
       </VitaContainer>
     </>
   );
