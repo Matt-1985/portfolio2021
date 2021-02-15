@@ -8,8 +8,6 @@ const ScrollBoxContainer = styled.div`
 `;
 
 const CardsContainer = styled.div`
-  min-width: 220px;
-  padding: 1.5rem;
   box-shadow: -2rem 0 3rem -2rem #000;
   background: linear-gradient(85deg, #434343, #262626);
   color: #fff;

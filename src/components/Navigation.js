@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { mediaQueries } from "../commons/MediaQueries";
 import { Link } from "gatsby";
 
 const StyledNavWrapper = styled.div.attrs((props) => ({
@@ -65,6 +66,11 @@ const NavLink = styled(Link)`
   :hover::after {
     width: 0;
   }
+  ${mediaQueries("sm")`
+  
+  font-size: 1rem;
+  
+  `};
 `;
 
 function Nav() {

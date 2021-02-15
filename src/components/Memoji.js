@@ -26,11 +26,11 @@ const Img = styled.img`
     }
   }
   ${mediaQueries("sm")`
-  width: auto;
-  height: 10em;
-  left: -25px;
-  top: -51px;
-  `};
+  width: 100vw;
+  height: auto;
+  left: -52px
+  top: -55px;
+`}
 `;
 
 export default function HeadGif() {

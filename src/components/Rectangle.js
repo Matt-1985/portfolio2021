@@ -23,9 +23,8 @@ const Rectangle = styled.div`
     }
   }
   ${mediaQueries("sm")`
-    margin: 5% 0 0 30%;
-  height: 13em;
-  width: 10em;
+  height: 60vh;
+  width: 70vw;
   `};
 `;
 

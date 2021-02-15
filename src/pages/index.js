@@ -12,8 +12,8 @@ import Contact from "../components/Contact";
 const LandingContainer = styled.div`
   margin: 0;
   ${mediaQueries("sm")`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   
   `};
 `;

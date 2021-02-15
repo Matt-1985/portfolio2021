@@ -35,7 +35,7 @@ const FullName = styled.p`
   }
   ${mediaQueries("sm")`
   line-height: 0.7;
-  font-size: 17vw;
+  font-size: 8rem;
   
   `};
 `;
@@ -55,6 +55,11 @@ const P = styled.p`
       opacity: 1;
     }
   }
+  ${mediaQueries("sm")`
+  
+  font-size: 3rem;
+  
+  `};
 `;
 
 export default function Name() {

@@ -124,7 +124,9 @@ const StyledHeadline = styled.div.attrs((props) => ({
 const Img = styled.img`
   width: 5rem;
   height: 5rem;
+  transition: ease-out 0.6s;
   :hover {
+    transition: ease-in 0.6s;
     width: 19rem;
     height: 19rem;
   }
@@ -133,7 +135,7 @@ const Img = styled.img`
 const Vita = () => {
   return (
     <>
-      <Parallax y={[-40, 50]} x={[60, 50]} tagInner="figure">
+      <Parallax y={[-40, 50]} tagInner="figure">
         <StyledHeadline className="dashed-shadow" data-text="Vita">
           Vita
         </StyledHeadline>

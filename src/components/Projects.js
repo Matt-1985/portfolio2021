@@ -3,12 +3,13 @@ import { Parallax } from "react-scroll-parallax";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import styled from "styled-components";
+import { mediaQueries } from "../commons/MediaQueries";
 import Cards from "../components/Card";
-import cursorPng from "../images/cursor.png";
 import cardImage from "../images/choicely.png";
 import kanye from "../images/Kanye_Quotes.png";
 import p2020 from "../images/Portfolio_2020.png";
 import mtc from "../images/mtc.png";
+import responsive from "../commons/Responsive";
 import Link from "../commons/Link";
 
 const ProjectWrapper = styled.div`
@@ -30,7 +31,9 @@ const ProjectWrapper = styled.div`
     rgba(240, 255, 31, 0.8603816526610644) 95%
   );
   z-index: 1;
-  /* cursor: url(${cursorPng}), auto; */
+  ${mediaQueries("sm")`
+  padding: 0;
+  border-radius: 10px;`};
 `;
 
 const ProjectContainer = styled.div`
@@ -39,14 +42,14 @@ const ProjectContainer = styled.div`
   margin: 0;
 `;
 
-// const HeadlineContainer = styled.div`
-//   margin-bottom: 20%;
-//   height: 100%;
-//   width: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-content: center;
-// `;
+const HeadlineContainer = styled.div`
+  margin-top: auto;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  /* justify-content: center;
+  align-content: center; */
+`;
 
 const StyledHeadline = styled.div.attrs((props) => ({
   className: props.className,
@@ -117,39 +120,47 @@ const StyledHeadline = styled.div.attrs((props) => ({
     color: var(--secondary-font-color);
     text-shadow: 3px 3px #ffffff;
   }
+  ${mediaQueries("sm")`
+  color: 3px 3px #ffffff;
+  text-shadow: var(--secondary-font-color);
+  font-size: 100vw important!;
+  `};
 `;
-
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-    slidesToSlide: 3, // optional, default to 1.
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-    slidesToSlide: 2, // optional, default to 1.
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-};
 
 const Projects = () => {
   return (
     <>
-      {/* <HeadlineContainer> */}
-      <Parallax className="StyledHeadline" x={[-20, 10]} y={[28, 85]}>
-        <StyledHeadline className="dashed-shadow" data-text="Projects">
-          Projects
-        </StyledHeadline>
-      </Parallax>
-      {/* </HeadlineContainer> */}
+      <HeadlineContainer>
+        <Parallax className="StyledHeadline" y={[28, 85]}>
+          <StyledHeadline className="dashed-shadow" data-text="Projects">
+            Projects
+          </StyledHeadline>
+        </Parallax>
+      </HeadlineContainer>
       <ProjectWrapper>
         <ProjectContainer>
-          <Carousel responsive={responsive} centerMode={true} infinite={true}>
+          <Carousel
+            responsive={responsive}
+            additionalTransfrom={0}
+            arrows
+            autoPlaySpeed={3000}
+            centerMode={false}
+            className=""
+            containerClass="container"
+            dotListClass=""
+            draggable
+            focusOnSelect={false}
+            infinite={true}
+            itemClass=""
+            keyBoardControl
+            minimumTouchDrag={80}
+            renderButtonGroupOutside={false}
+            renderDotsOutside={false}
+            showDots={false}
+            sliderClass=""
+            slidesToSlide={1}
+            swipeable
+          >
             <Cards
               src={cardImage}
               alt="app logo"

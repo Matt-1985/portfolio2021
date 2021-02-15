@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDate } from "../commons/useDate";
 import styled from "styled-components";
+import { mediaQueries } from "../commons/MediaQueries";
 import Rectangle from "./Rectangle";
 import Name from "./Name";
 import HeadGif from "./Memoji";
@@ -10,6 +11,12 @@ const AnimationContainer = styled.div`
   display: grid;
   grid-template-columns: 50% 1fr;
   grid-template-rows: 35% 1fr;
+  ${mediaQueries("sm")`
+  height: 100vh;
+  width: 100vw;
+  margin-top: 4rem;
+  
+  `};
 `;
 
 const IntroductionContainer = styled.div`

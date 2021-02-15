@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { useDate, date, time } from "../commons/useDate";
+import React from "react";
+import { useDate } from "../commons/useDate";
+import { mediaQueries } from "../commons/MediaQueries";
 import styled from "styled-components";
 import { Parallax } from "react-scroll-parallax";
 
@@ -36,6 +37,10 @@ const StyledText = styled.div`
   /* padding: 0px 1.0875rem; */
   font-size: 16px;
   font-weight: 400;
+  ${mediaQueries("sm")`
+  flex-direction: column;
+  
+  `};
 `;
 
 const A = styled.a`
@@ -59,6 +64,11 @@ const A = styled.a`
   :hover {
     background-size: 4px 50px;
   }
+  ${mediaQueries("sm")`
+  
+  font-size: 1.5rem;
+  
+  `};
 `;
 
 const StyledHeadline = styled.div.attrs((props) => ({
@@ -150,7 +160,7 @@ export default function Contact() {
 
   return (
     <>
-      <Parallax y={[75, 5]} tagInner="figure">
+      <Parallax y={[35, 15]} tagInner="figure">
         <StyledHeadline className="dashed-shadow" data-text="Contact">
           Contact
         </StyledHeadline>
