@@ -43,10 +43,11 @@ const ProjectContainer = styled.div`
 `;
 
 const HeadlineContainer = styled.div`
-  margin-top: auto;
   height: 100%;
   width: 100%;
   display: flex;
+  align-items: baseline;
+  align-content: flex-start;
   /* justify-content: center;
   align-content: center; */
 `;
@@ -131,7 +132,7 @@ const Projects = () => {
   return (
     <>
       <HeadlineContainer>
-        <Parallax className="StyledHeadline" y={[28, 85]}>
+        <Parallax className="StyledHeadline" y={[-100, 35]}>
           <StyledHeadline className="dashed-shadow" data-text="Projects">
             Projects
           </StyledHeadline>

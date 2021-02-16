@@ -135,7 +135,7 @@ const Img = styled.img`
 const Vita = () => {
   return (
     <>
-      <Parallax y={[-40, 50]} tagInner="figure">
+      <Parallax y={[-60, 50]} x={[-30, 50]}>
         <StyledHeadline className="dashed-shadow" data-text="Vita">
           Vita
         </StyledHeadline>
