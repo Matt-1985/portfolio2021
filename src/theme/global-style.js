@@ -7,6 +7,27 @@ export const GlobalStyle = createGlobalStyle`
  * {
    box-sizing:border-box;
  }
+
+
+ *::-webkit-scrollbar {
+  width: 0;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
+}
+
+* {
+  -ms-overflow-style: none;
+} 
+
+
+
  @font-face {
   font-family: "NimbusRegular";
   font-style: normal;
@@ -33,46 +54,74 @@ export const GlobalStyle = createGlobalStyle`
    --secondary-font-color: #0090ff;
    --highlight-color: rgba(240, 255, 31, 0.39);
    }
+
 html {
-  height: 100vh; 
+width: 100%;
+
+scroll-behavior: smooth;
+  
+}
+html, body {
+  vertical-align: baseline;
+  
 }
 
-
 body{
-min-height: 3000px;
+  
+min-height: 100vh;
+min-width: 100vw;
 margin:0;
-font-size: 18;
+padding:0;
+font-size: 100%;
 font-family: "SpaceMonoRegular";
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 color: var(--main-font-color);
-background-color: var(--primary-color)
+background-color: var(--primary-color);
+
 }
+
+p {
+ font-size: 2vw;
+ 
+}
+
+
 
 main {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: min-content 2fr 2fr 2fr 2fr;
-  gap: 0em 0px;
-  grid-template-areas:
-    "navigation"
-    "landing"
-    "projects"
-    "vita"
-    "contact";
+  overflow: hidden;
+	height: 100%;
 }
 
+span {
+margin: 0;
+/* text-align: center;
+font-size: 14vw;
+letter-spacing: 2vw;
+color: var(--primary-color); */
+
+}
+
+
+
+button {
+  font-family: "SpaceMonoRegular";
+  color: var(--primary-color);
+  font-size: 1vw;
+}
 
 
 h1 {
 font-family: "NimbusRegular";
-font-size: 180px;
+font-size: 9vw;
 color: var(--primary-color);
 -webkit-text-stroke-width: 0.2px;
 -webkit-text-stroke-color: var(--secondary-font-color);
 }
 a {
   text-decoration: none;
+  color: var(--primary-color);
+  
 }
 
  

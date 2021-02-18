@@ -1,77 +1,45 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
+import { ParallaxProvider } from "react-scroll-parallax";
 import { GlobalStyle } from "../theme/global-style";
 import styled from "styled-components";
-import Rectangle from "../components/Rectangle";
-import Name from "../components/Name";
-import { Nav } from "../components/Navigation";
-import meGif from "../images/Me1.gif";
+import { mediaQueries } from "../commons/MediaQueries";
+import Nav from "../components/Navigation";
+import Landing from "../components/Landing";
+import Vita from "../components/Vita";
+import Projects from "../components/Projects";
+import Contact from "../components/Contact";
 
-const ParallaxContainer = styled.div`
-  grid-area: "landing";
-  max-width: 600px;
-  margin: auto;
-  width: 90%;
-  padding: 200px 0px;
-  position: relative;
-`;
-
-const Img = styled.img`
-  background: transparent;
-  position: relative;
-  bottom: 55%;
-  left: 30%;
-  z-index: 2;
-  animation: slide-in-bottom 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  @keyframes slide-in-bottom {
-    0% {
-      transform: translateY(1000px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-`;
-
-const P = styled.p`
-  font-size: 3em;
-  position: absolute;
-  bottom: 37%;
-  left: -50%;
-  z-index: 1;
-  animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-  @keyframes text-focus-in {
-    0% {
-      filter: blur(12px);
-      opacity: 0;
-    }
-    100% {
-      filter: blur(0);
-      opacity: 1;
-    }
-  }
+const LandingContainer = styled.div`
+  margin: 0;
+  ${mediaQueries("sm")`
+  width: 100vw;
+  height: 100vh;
+  
+  `};
 `;
 
 const IndexPage = () => {
   return (
-    <>
+    <ParallaxProvider>
       <GlobalStyle />
       <main>
         <Nav />
         <section id="home">
-          <ParallaxContainer>
-            <Rectangle />
-            <Name />
-            <P>Portfolio</P>
-            <Img src={meGif} alt="Matt spinning his head" />
-          </ParallaxContainer>
+          <LandingContainer>
+            <Landing />
+          </LandingContainer>
         </section>
-        <section id="projects"></section>
-        <section id="vita"></section>
-        <section id="contact"></section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="vita">
+          <Vita />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
       </main>
-    </>
+    </ParallaxProvider>
   );
 };
 
