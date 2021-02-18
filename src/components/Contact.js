@@ -25,6 +25,8 @@ const Footer = styled.div`
     rgba(240, 255, 31, 0.8603816526610644) 95%
   );
   z-index: 1;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 `;
 
 const StyledText = styled.div`
@@ -84,6 +86,13 @@ const StyledHeadline = styled.div.attrs((props) => ({
     left: 8px;
     display: inline-block;
     color: var(--primary-color);
+    ${mediaQueries("sm")`
+    font-weight: bold;
+  font-size: 3.5rem;
+  color: transparent;
+  top: 30px;
+  left: -30px;
+  `};
   }
   :before {
     content: " ";
@@ -160,7 +169,7 @@ export default function Contact() {
 
   return (
     <>
-      <Parallax y={[35, 15]} tagInner="figure">
+      <Parallax y={[20, 15]} tagInner="figure">
         <StyledHeadline className="dashed-shadow" data-text="Contact">
           Contact
         </StyledHeadline>

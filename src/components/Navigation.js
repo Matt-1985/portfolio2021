@@ -29,6 +29,14 @@ const StyledNavWrapper = styled.div.attrs((props) => ({
       rgba(232, 121, 222, 0.16) 3px,
       rgba(232, 121, 222, 0.16) 9px
     );
+    ${mediaQueries("sm")`
+  
+  height: 20vh;
+  width: 100vw;
+  transform: skewY(2deg);
+  flex-direction: column;
+  
+  `};
   }
 
   &.hide {
@@ -45,7 +53,7 @@ const StyledNavWrapper = styled.div.attrs((props) => ({
 `;
 
 const NavLink = styled(Link)`
-  font-size: 1.5vw;
+  font-size: 2vw;
   color: var(--main-font-color);
   font-weight: bold;
   text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);
@@ -68,7 +76,10 @@ const NavLink = styled(Link)`
   }
   ${mediaQueries("sm")`
   
-  font-size: 1rem;
+  font-size: 1.5rem;
+  line-height: 0.5;
+  
+
   
   `};
 `;

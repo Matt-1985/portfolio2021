@@ -36,11 +36,15 @@ const FullName = styled.p`
   ${mediaQueries("sm")`
   line-height: 0.7;
   font-size: 8rem;
+  padding-right: 2rem;
+  -webkit-text-stroke-width: 0.5vw;
+  
   
   `};
 `;
 
 const P = styled.p`
+  color: var(--main-font-color);
   margin: 0 0 0 10%;
   font-size: 4vw;
   text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);

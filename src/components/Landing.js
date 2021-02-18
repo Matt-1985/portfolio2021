@@ -6,6 +6,19 @@ import Rectangle from "./Rectangle";
 import Name from "./Name";
 import HeadGif from "./Memoji";
 
+const LandingContainer = styled.div`
+  margin: 0;
+  ${mediaQueries("sm")`
+  
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 4rem;
+
+  
+  `};
+`;
+
 const AnimationContainer = styled.div`
   margin: 0;
   display: grid;
@@ -14,7 +27,7 @@ const AnimationContainer = styled.div`
   ${mediaQueries("sm")`
   height: 100vh;
   width: 100vw;
-  margin-top: 4rem;
+  
   
   `};
 `;
@@ -51,23 +64,26 @@ export default function Landing() {
   const { wish } = useDate();
 
   return (
-    <AnimationContainer>
-      <Rectangle
-        onMouseEnter={() => setShowIntro(true)}
-        onMouseLeave={() => setShowIntro(false)}
-      />
-      <Name />
-      <HeadGif />
-      {showIntro && (
-        <IntroductionContainer>
-          <Introduction>
-            {wish}
-            <br />i am Matthias, a Cologne based Webdeveloper & Designer. From
-            the first concept to the production, i create clean & user-friendly
-            solutions. Always in mind to keep my code maintainable & reusable.
-          </Introduction>
-        </IntroductionContainer>
-      )}
-    </AnimationContainer>
+    <LandingContainer>
+      <AnimationContainer>
+        <Rectangle
+          onMouseEnter={() => setShowIntro(true)}
+          onMouseLeave={() => setShowIntro(false)}
+        />
+        <Name />
+        <HeadGif />
+        {showIntro && (
+          <IntroductionContainer>
+            <Introduction>
+              {wish}
+              <br />i am Matthias, a Cologne based Webdeveloper & Designer. From
+              the first concept to the production, i create clean &
+              user-friendly solutions. Always in mind to keep my code
+              maintainable & reusable.
+            </Introduction>
+          </IntroductionContainer>
+        )}
+      </AnimationContainer>
+    </LandingContainer>
   );
 }

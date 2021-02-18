@@ -57,7 +57,6 @@ export const GlobalStyle = createGlobalStyle`
 
 html {
 width: 100%;
-
 scroll-behavior: smooth;
   
 }
@@ -81,28 +80,24 @@ background-color: var(--primary-color);
 
 }
 
-p {
- font-size: 2vw;
- 
-}
-
-
-
 main {
   overflow: hidden;
 	height: 100%;
 }
 
+p {
+ font-size: 2vw;
+ 
+}
+
 span {
 margin: 0;
-/* text-align: center;
-font-size: 14vw;
-letter-spacing: 2vw;
-color: var(--primary-color); */
 
 }
 
-
+div {
+  color: var(--primary-color)
+}
 
 button {
   font-family: "SpaceMonoRegular";

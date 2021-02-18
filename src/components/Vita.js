@@ -1,27 +1,16 @@
 import React from "react";
 import { Parallax } from "react-scroll-parallax";
 import styled from "styled-components";
+import { mediaQueries } from "../commons/MediaQueries";
 import { Chrono } from "react-chrono";
 import items from "../components/data";
 import QR from "../images/QRCode.png";
-
-// const Bubble1 = styled(animated.div)`
-//   height: 300px;
-//   width: 300px;
-//   border-radius: 10px;
-//   background: rgba(255, 255, 255, 0.3);
-//   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-//   backdrop-filter: blur(5px);
-//   border: 1px solid rgba(255, 255, 255, 0.18);
-//   z-index: 4;
-// `;
 
 const VitaContainer = styled.div`
   height: 70vh;
   width: 100%;
   position: relative;
   overflow: hidden;
-  margin: 0 0 250px 0;
   transform: skewY(10deg);
   display: flex;
   justify-content: center;
@@ -36,6 +25,15 @@ const VitaContainer = styled.div`
     rgba(240, 255, 31, 0.8603816526610644) 95%
   );
   z-index: 1;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  ${mediaQueries("sm")`
+  
+  height: 100vh;
+  width: 100vw;
+  
+  
+  `};
 `;
 
 const StyledHeadline = styled.div.attrs((props) => ({
@@ -51,6 +49,13 @@ const StyledHeadline = styled.div.attrs((props) => ({
     left: 8px;
     display: inline-block;
     color: var(--primary-color);
+    ${mediaQueries("sm")`
+    font-weight: bold;
+  font-size: 3.5rem;
+  color: transparent;
+  top: -20px;
+  
+  `};
   }
   :before {
     content: " ";
@@ -108,18 +113,6 @@ const StyledHeadline = styled.div.attrs((props) => ({
     text-shadow: 3px 3px #ffffff;
   }
 `;
-
-// const Headline = styled.span`
-//   position: relative;
-//   top: 0;
-//   bottom: 2;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   z-index: -1;
-//   text-shadow: 4px 5px 0px rgba(232, 121, 222, 0.88);
-// `;
 
 const Img = styled.img`
   width: 5rem;
