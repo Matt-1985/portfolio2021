@@ -65,6 +65,12 @@ const StyledHeadline = styled.div.attrs((props) => ({
     left: 8px;
     display: inline-block;
     color: var(--primary-color);
+    ${mediaQueries("sm")`
+    font-weight: bold;
+  font-size: 3.5rem;
+  color: transparent;
+  
+  `};
   }
   :before {
     content: " ";
@@ -121,11 +127,6 @@ const StyledHeadline = styled.div.attrs((props) => ({
     color: var(--secondary-font-color);
     text-shadow: 3px 3px #ffffff;
   }
-  ${mediaQueries("sm")`
-  color: 3px 3px #ffffff;
-  text-shadow: var(--secondary-font-color);
-  font-size: 100vw important!;
-  `};
 `;
 
 const Projects = () => {

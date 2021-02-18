@@ -47,6 +47,12 @@ const StyledHeadline = styled.div.attrs((props) => ({
     left: 8px;
     display: inline-block;
     color: var(--primary-color);
+    ${mediaQueries("sm")`
+    font-weight: bold;
+  font-size: 3.5rem;
+  color: transparent;
+  
+  `};
   }
   :before {
     content: " ";
