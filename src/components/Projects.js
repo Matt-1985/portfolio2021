@@ -69,6 +69,7 @@ const StyledHeadline = styled.div.attrs((props) => ({
     font-weight: bold;
   font-size: 3.5rem;
   color: transparent;
+  top: -30px;
   
   `};
   }

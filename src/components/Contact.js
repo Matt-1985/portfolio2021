@@ -88,7 +88,8 @@ const StyledHeadline = styled.div.attrs((props) => ({
     font-weight: bold;
   font-size: 3.5rem;
   color: transparent;
-  
+  top: 30px;
+  left: -30px;
   `};
   }
   :before {
@@ -166,7 +167,7 @@ export default function Contact() {
 
   return (
     <>
-      <Parallax y={[35, 15]} tagInner="figure">
+      <Parallax y={[20, 15]} tagInner="figure">
         <StyledHeadline className="dashed-shadow" data-text="Contact">
           Contact
         </StyledHeadline>
