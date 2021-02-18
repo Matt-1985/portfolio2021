@@ -25,6 +25,8 @@ const Footer = styled.div`
     rgba(240, 255, 31, 0.8603816526610644) 95%
   );
   z-index: 1;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 `;
 
 const StyledText = styled.div`

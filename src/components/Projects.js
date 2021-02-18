@@ -31,6 +31,7 @@ const ProjectWrapper = styled.div`
     rgba(240, 255, 31, 0.8603816526610644) 95%
   );
   z-index: 1;
+  border-bottom-left-radius: 0;
   ${mediaQueries("sm")`
   padding: 0;
   border-radius: 10px;`};
@@ -134,7 +135,7 @@ const Projects = () => {
   return (
     <>
       <HeadlineContainer>
-        <Parallax className="StyledHeadline" y={[-100, 35]}>
+        <Parallax className="StyledHeadline" y={[-90, 35]}>
           <StyledHeadline className="dashed-shadow" data-text="Projects">
             Projects
           </StyledHeadline>
@@ -168,7 +169,7 @@ const Projects = () => {
               src={cardImage}
               alt="app logo"
               headline="choicely"
-              p="My first Web App"
+              p="This is my gradiuation project, a helper for the undecided."
               href={
                 <Link to="https://choicely.herokuapp.com/">TO THE PROJECT</Link>
               }

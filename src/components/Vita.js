@@ -25,6 +25,8 @@ const VitaContainer = styled.div`
     rgba(240, 255, 31, 0.8603816526610644) 95%
   );
   z-index: 1;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
   ${mediaQueries("sm")`
   
   height: 100vh;
@@ -111,18 +113,6 @@ const StyledHeadline = styled.div.attrs((props) => ({
     text-shadow: 3px 3px #ffffff;
   }
 `;
-
-// const Headline = styled.span`
-//   position: relative;
-//   top: 0;
-//   bottom: 2;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   z-index: -1;
-//   text-shadow: 4px 5px 0px rgba(232, 121, 222, 0.88);
-// `;
 
 const Img = styled.img`
   width: 5rem;

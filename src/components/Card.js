@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { mediaQueries } from "../commons/MediaQueries";
 
 const ScrollBoxContainer = styled.div`
   height: 100%;
@@ -58,6 +59,9 @@ const CardParagraph = styled.p`
   font-size: 1.5rem;
   color: var(--primary-color);
   margin-bottom: 3rem;
+  ${mediaQueries("sm")`
+  font-size: 1rem;
+  margin-bottom: 3.5rem;`};
 `;
 
 const CardButton = styled.button`
