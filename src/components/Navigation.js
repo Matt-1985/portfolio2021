@@ -29,6 +29,14 @@ const StyledNavWrapper = styled.div.attrs((props) => ({
       rgba(232, 121, 222, 0.16) 3px,
       rgba(232, 121, 222, 0.16) 9px
     );
+    ${mediaQueries("sm")`
+  
+  height: 20vh;
+  width: 100vw;
+  transform: skewY(2deg);
+  flex-direction: column;
+  
+  `};
   }
 
   &.hide {
@@ -68,7 +76,10 @@ const NavLink = styled(Link)`
   }
   ${mediaQueries("sm")`
   
-  font-size: 1rem;
+  font-size: 1.5rem;
+  line-height: 0.5;
+  
+
   
   `};
 `;

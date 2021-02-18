@@ -1,27 +1,16 @@
 import React from "react";
 import { Parallax } from "react-scroll-parallax";
 import styled from "styled-components";
+import { mediaQueries } from "../commons/MediaQueries";
 import { Chrono } from "react-chrono";
 import items from "../components/data";
 import QR from "../images/QRCode.png";
-
-// const Bubble1 = styled(animated.div)`
-//   height: 300px;
-//   width: 300px;
-//   border-radius: 10px;
-//   background: rgba(255, 255, 255, 0.3);
-//   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-//   backdrop-filter: blur(5px);
-//   border: 1px solid rgba(255, 255, 255, 0.18);
-//   z-index: 4;
-// `;
 
 const VitaContainer = styled.div`
   height: 70vh;
   width: 100%;
   position: relative;
   overflow: hidden;
-  margin: 0 0 250px 0;
   transform: skewY(10deg);
   display: flex;
   justify-content: center;
@@ -36,6 +25,13 @@ const VitaContainer = styled.div`
     rgba(240, 255, 31, 0.8603816526610644) 95%
   );
   z-index: 1;
+  ${mediaQueries("sm")`
+  
+  height: 100vh;
+  width: 100vw;
+  
+  
+  `};
 `;
 
 const StyledHeadline = styled.div.attrs((props) => ({

@@ -9,15 +9,6 @@ import Vita from "../components/Vita";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 
-const LandingContainer = styled.div`
-  margin: 0;
-  ${mediaQueries("sm")`
-  width: 100vw;
-  height: 100vh;
-  
-  `};
-`;
-
 const IndexPage = () => {
   return (
     <ParallaxProvider>
@@ -25,9 +16,7 @@ const IndexPage = () => {
       <main>
         <Nav />
         <section id="home">
-          <LandingContainer>
-            <Landing />
-          </LandingContainer>
+          <Landing />
         </section>
         <section id="projects">
           <Projects />
