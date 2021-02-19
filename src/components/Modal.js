@@ -23,7 +23,7 @@ const Background = styled.div`
 
 const ModalWrapper = styled.div`
   width: 60vw;
-  height: 50vh;
+  height: 60vh;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
   color: #000;
@@ -43,18 +43,22 @@ const ModalWrapper = styled.div`
 `;
 
 const ModalContent = styled.div`
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   line-height: 1.8;
+  padding: 2rem;
+  width: fit-content;
+  block-size: fit-content;
+  ${mediaQueries("sm")`
+  width: fit-content;
+  block-size: fit-content;`};
 
   p {
-    padding: 1rem;
     font-size: 2rem;
     margin-bottom: 1rem;
     color: var(--main-font-color);
-    text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);
     text-align: center;
     ${mediaQueries("sm")`
     padding: 0.5rem;
@@ -70,9 +74,19 @@ const ModalContent = styled.div`
 
   h2 {
     color: var(--main-font-color);
+    display: inline;
+    position: relative;
+    letter-spacing: -5px;
     font-size: 3rem;
-    text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);
+    :after {
+      content: "Good";
+      position: absolute;
+      left: 1px;
+      top: 1px;
+      color: rgba(0, 144, 255, 0.62);
+    }
     ${mediaQueries("sm")`
+    content: "";
     margin-top: 0.5rem;
     font-size: 1.5rem;
     
