@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { useOnClickOutside } from "../commons/useOnClickOutside.js";
 import styled from "styled-components";
-import RightNav from "../components/RightNav";
+import { RightNav } from "../components/RightNav";
 import { mediaQueries } from "../commons/MediaQueries";
 
 const StyledBurger = styled.div`
@@ -40,19 +41,25 @@ const StyledBurger = styled.div`
   }
 `;
 
-const Burger = () => {
+export const Burger = () => {
   const [open, setOpen] = useState(false);
+
+  const ref = useRef();
+  useOnClickOutside(ref, () => setOpen(false));
+
+  const handleClickBtn = () => {
+    setOpen(true);
+  };
 
   return (
     <>
-      <StyledBurger open={open} onClick={() => setOpen(!open)}>
+      <StyledBurger open={open} onClick={handleClickBtn}>
         <div />
         <div />
         <div />
       </StyledBurger>
       <RightNav open={open} />
+      {open && <div ref={ref} />}
     </>
   );
 };
-
-export default Burger;

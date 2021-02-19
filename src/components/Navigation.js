@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Burger from "../components/Burger";
+import { Burger } from "../components/Burger";
 
 const Nav = styled.nav`
   width: 100%;
-  display: flex;
   justify-content: space-around;
 
   background: -webkit-repeating-linear-gradient(
