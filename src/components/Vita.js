@@ -15,7 +15,7 @@ const VitaContainer = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 6rem;
+  padding: 1rem 6rem;
   border-radius: 12px;
   background: rgb(232, 121, 222);
   background: linear-gradient(
@@ -28,7 +28,7 @@ const VitaContainer = styled.div`
   border-top-left-radius: 0;
   border-bottom-right-radius: 0;
   ${mediaQueries("sm")`
-  
+  padding-right:3rem;
   height: 100vh;
   width: 100vw;
   

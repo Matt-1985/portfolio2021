@@ -1,7 +1,7 @@
 const items = [
   { title: "Scan for CV" },
   {
-    title: "September 2020 - December 2020",
+    title: "Sep 2020 - Dec 2020",
     cardTitle: "Trainee Web Development",
     cardSubtitle: "neue fische GmbH - School & Pool for digital Talents",
     cardDetailedText: [
@@ -15,7 +15,7 @@ const items = [
     ],
   },
   {
-    title: "September 2018 – August 2020",
+    title: "Sep 2018 – Aug 2020",
     cardTitle: "Visual Merchandise Coordinator & Trainer",
     cardSubtitle: `beeline GmbH`,
     cardDetailedText: [
@@ -31,7 +31,7 @@ const items = [
     ],
   },
   {
-    title: "Januar 2015 – August 2018",
+    title: "Jan 2015 – Aug 2018",
     cardTitle: "Senior Assistant Store Manager",
     cardSubtitle: `OFFICE London LDT`,
     cardDetailedText: [
@@ -47,7 +47,7 @@ const items = [
     ],
   },
   {
-    title: "Januar 2012 – Dezember 2014",
+    title: "Jan 2012 – Dez 2014",
     cardTitle: "Assistant Store Manager / Store Manager",
     cardSubtitle: `adidas AG`,
     cardDetailedText: [
@@ -63,7 +63,7 @@ const items = [
     ],
   },
   {
-    title: "Juni 2010 - Dezember 2011",
+    title: "Jun 2010 - Dez 2011",
     cardTitle: "Sales Assistant / Assistant Store Manager",
     cardSubtitle: `Sixty Deutschland GmbH`,
     cardDetailedText: [
@@ -79,7 +79,7 @@ const items = [
     ],
   },
   {
-    title: "April 2006 – Mai 2010",
+    title: "Apr 2006 – May 2010",
     cardTitle: "Servicestaff",
     cardSubtitle: `Constantin Kinobetriebe GmbH`,
     cardDetailedText: [
