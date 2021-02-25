@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { GlobalStyle } from "../theme/global-style";
-import styled from "styled-components";
-import { mediaQueries } from "../commons/MediaQueries";
-import Nav from "../components/Navigation";
+import Navbar from "../components/Navigation";
 import Landing from "../components/Landing";
 import Vita from "../components/Vita";
 import Projects from "../components/Projects";
@@ -14,7 +12,7 @@ const IndexPage = () => {
     <ParallaxProvider>
       <GlobalStyle />
       <main>
-        <Nav />
+        <Navbar />
         <section id="home">
           <Landing />
         </section>

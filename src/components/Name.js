@@ -8,6 +8,11 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  ${mediaQueries("xs")`
+  margin-bottom: 5vw;
+  
+  
+  `};
 `;
 
 const FullName = styled.p`

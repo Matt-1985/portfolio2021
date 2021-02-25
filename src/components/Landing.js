@@ -1,13 +1,54 @@
 import React, { useState } from "react";
-import { useDate } from "../commons/useDate";
 import styled from "styled-components";
 import { mediaQueries } from "../commons/MediaQueries";
+import { Modal } from "../components/Modal";
 import Rectangle from "./Rectangle";
 import Name from "./Name";
 import HeadGif from "./Memoji";
 
+const Button = styled.button`
+  grid-area: 2 / 3 / 1 / 2;
+  justify-self: end;
+  align-self: end;
+  height: 20vh;
+  width: 15vw;
+  margin: 5vw 0 0 10vw;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  min-width: 100px;
+  padding: 16px 32px;
+  border-radius: 10%;
+  border: none;
+  color: RGBA(0, 144, 255, 0.62);
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  :focus {
+    outline: 0px;
+  }
+
+  ${mediaQueries("sm")`
+  height: 10vh;
+  width: 10vw;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px;
+  grid-area: 2 / 1 / 2 / 2;
+  justify-self: center;
+  align-self: center;
+  
+  `};
+  z-index: 900;
+`;
+
 const LandingContainer = styled.div`
   margin: 0;
+
   ${mediaQueries("sm")`
   
   display: flex;
@@ -32,58 +73,24 @@ const AnimationContainer = styled.div`
   `};
 `;
 
-const IntroductionContainer = styled.div`
-  position: relative;
-  grid-area: 2 / 3 / 1 / 2;
-  justify-self: end;
-  margin: 3em 4em 0 0;
-  min-height: 50%;
-  padding: 3rem;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  z-index: 4;
-  width: fit-content;
-  block-size: fit-content;
-`;
-
-const Introduction = styled.p`
-  display: inline-block;
-  text-transform: uppercase;
-  color: var(--main-font-color);
-  font-weight: 600;
-  text-align: center;
-  overflow: hidden;
-  text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);
-`;
-
 export default function Landing() {
-  const [showIntro, setShowIntro] = useState(false);
-  const { wish } = useDate();
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
 
   return (
-    <LandingContainer>
-      <AnimationContainer>
-        <Rectangle
-          onMouseEnter={() => setShowIntro(true)}
-          onMouseLeave={() => setShowIntro(false)}
-        />
-        <Name />
-        <HeadGif />
-        {showIntro && (
-          <IntroductionContainer>
-            <Introduction>
-              {wish}
-              <br />i am Matthias, a Cologne based Webdeveloper & Designer. From
-              the first concept to the production, i create clean &
-              user-friendly solutions. Always in mind to keep my code
-              maintainable & reusable.
-            </Introduction>
-          </IntroductionContainer>
-        )}
-      </AnimationContainer>
-    </LandingContainer>
+    <>
+      <LandingContainer>
+        <AnimationContainer>
+          <Button onClick={openModal}>Push me</Button>
+          <Modal showModal={showModal} setShowModal={setShowModal} />
+          <Rectangle />
+          <Name />
+          <HeadGif />
+        </AnimationContainer>
+      </LandingContainer>
+    </>
   );
 }

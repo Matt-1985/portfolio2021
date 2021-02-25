@@ -149,6 +149,7 @@ const Vita = () => {
           >
             <div>
               <Img src={QR} alt="QR Code" />
+              <div style={{ textAlign: "center" }}>hover</div>
             </div>
           </Chrono>
         </div>
