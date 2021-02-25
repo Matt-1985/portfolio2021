@@ -145,7 +145,7 @@ const Projects = () => {
         <ProjectContainer>
           <Carousel
             responsive={responsive}
-            additionalTransfrom={0}
+            additionalTransform={0}
             arrows
             autoPlaySpeed={3000}
             centerMode={false}
@@ -155,7 +155,7 @@ const Projects = () => {
             draggable
             focusOnSelect={false}
             infinite={true}
-            itemClass=""
+            itemClass="carousel-item"
             keyBoardControl
             minimumTouchDrag={80}
             renderButtonGroupOutside={false}

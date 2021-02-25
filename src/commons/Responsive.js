@@ -9,11 +9,11 @@ const responsive = {
   },
   mobile: {
     breakpoint: {
-      max: 375,
+      max: 464,
       min: 0,
     },
     items: 1,
-    partialVisibilityGutter: 30,
+    partialVisibilityGutter: 40,
   },
   tablet: {
     breakpoint: {
