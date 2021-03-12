@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import { Parallax } from "react-scroll-parallax";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -10,7 +11,7 @@ import kanye from "../images/Kanye_Quotes.png";
 import p2020 from "../images/Portfolio_2020.png";
 import mtc from "../images/mtc.png";
 import responsive from "../commons/Responsive";
-import Link from "../commons/Link";
+// import Link from "../commons/Link";
 
 const ProjectWrapper = styled.div`
   height: auto;
@@ -170,9 +171,7 @@ const Projects = () => {
               alt="app logo"
               headline="choicely"
               p="This is my gradiuation project, a helper for the undecided."
-              href={
-                <Link to="https://choicely.herokuapp.com/">TO THE PROJECT</Link>
-              }
+              href={<Link to="/choicely/">TO THE PROJECT</Link>}
             />
             <Cards
               src={p2020}
