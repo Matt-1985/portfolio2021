@@ -113,6 +113,8 @@ color: var(--primary-color);
 -webkit-text-stroke-width: 0.2px;
 -webkit-text-stroke-color: var(--secondary-font-color);
 }
+
+
 a {
   text-decoration: none;
   color: var(--primary-color);

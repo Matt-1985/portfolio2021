@@ -7,102 +7,114 @@ import { GlobalStyle } from "../theme/global-style";
 import Navbar from "../components/Navigation";
 import Contact from "../components/Contact";
 import mockUp from "../images/mockUpChoicely.png";
+import issueS from "../images/issueS.png";
+import processS from "../images/processS.png";
 
-const Img = styled.img`
+const CaseStudyContainer = styled.div`
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   ${mediaQueries("sm")`
-  padding: 0;
-  height: 100%;
-  width: 100%`};
+  margin: 0;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+  `};
 `;
 
-const Wrapper = styled.div.attrs((props) => ({
-  className: props.className,
-}))`
-  &.wrapper {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 1fr 2fr;
-    grid-auto-rows: minmax(100px, auto);
-    margin: 24px;
-    max-width: 1000px;
-    position: relative;
-  }
-  &.wrapper > * {
-    grid-column: 1 / span 2;
-  }
-  &.article {
-    text-align: right;
-  }
+const IssueContainer = styled.div`
+  grid-area: 2 / 4 / 1 / 2;
+  display: flex;
+  flex-direction: column;
+`;
 
-  .featured-image-1 {
-    grid-row: 2 / 3;
-  }
+const ImgLeft = styled.img`
+  grid-area: 1 / 1 / 2 / 2;
+  ${mediaQueries("sm")`
+  width: 40vw;
+  height: 60vh;
+  object-fit: contain;
+`};
+`;
 
-  .number-1 {
-    grid-row: 2 / 4;
-  }
+const ProcessContainer = styled.div`
+  grid-column: 1/2;
+  grid-row: 2/3;
+  margin-left: 3vw;
+  display: flex;
+  flex-direction: column;
+`;
 
-  .featured-image-2,
-  .number-2 {
-    grid-row: 4 / 5;
-  }
+const ImgRight = styled.img`
+  grid-area: 2 / 2 / 2 / 2;
+  ${mediaQueries("sm")`
+  grid-area: 2 / 2 / 2 / 2;
+    padding: 0;
+    max-width: 250%;
+  max-height: 250%;`};
+`;
 
-  .number-1,
-  .number-4 {
-    align-self: end;
-    color: rgba(104, 23, 186, 0.5);
-    font-family: "Fjalla One", sans-serif;
-    font-size: 480px;
-    line-height: 480px;
-    grid-column: 1 / 2;
-  }
+const ProductContainer = styled.div`
+  grid-column: 2/3;
+  grid-row: 3/4;
+  display: flex;
+  flex-direction: column;
+`;
 
-  .article-1,
-  .article-4 {
-    grid-column: 2 / 3;
-  }
+const ImgLeftBottom = styled.img`
+  max-width: 250%;
+  max-height: 250%;
+  grid-column: 1/2;
+  grid-row: 3/4;
+  ${mediaQueries("sm")`
+    padding: 0;
+    max-width: 250%;
+  max-height: 250%;`};
+`;
 
-  .featured-image-2,
-  .number-2 {
-    align-self: end;
-  }
+const H1 = styled.h1`
+  font-size: 8vw;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-style: italic;
+  text-decoration: underline #f0ff1f;
+  ${mediaQueries("sm")`
+  margin-right: 20px; 
+  letter-spacing: 5px;
+    font-size: 3rem;
+    color: var(--secondary-font-color)
+    `};
+`;
 
-  .number-2 {
-    color: #eee;
-    font-size: 200px;
-    justify-self: end;
-    line-height: 160px;
-  }
+const H2 = styled.h2`
+  font-family: "NimbusRegular";
+  color: var(--secondary-font-color);
+  font-size: 1.5vw;
+  letter-spacing: 1.5px;
+  margin: 0;
+  text-transform: uppercase;
+  ${mediaQueries("sm")`
+   font-size: 1rem;
+    `};
+`;
 
-  .number-3 {
-    background: black;
-    border-radius: 130px;
-    color: white;
-    font-family: "Fjalla One", sans-serif;
-    font-size: 100px;
-    height: 130px;
-    line-height: 130px;
-    position: absolute;
-    grid-row: 6 / 7;
-    right: -20px;
-    text-align: center;
-    top: -20px;
-    width: 130px;
+const P = styled.p`
+  color: var(--main-font-color);
+  margin-left: 40px;
+  :first-line {
+    line-height: 100%;
   }
-
-  .featured-image-3 img {
-    height: 100%;
-  }
-
-  .number-4 {
-    font-size: 320px;
-    left: -20px;
-    line-height: 320px;
-    position: absolute;
+  :first-letter {
+    font-size: 260%;
+    font-weight: bold;
+    margin-right: 0.1em;
+    float: left;
+    line-height: 0.9em;
+    text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);
   }
   ${mediaQueries("sm")`
-  grid-template-columns: repeat(2, 1fr 2fr);
-  margin: 24px auto;`};
+    font-size: 1rem;
+    margin-left: 0;
+    `};
 `;
 
 const Project1 = () => {
@@ -111,61 +123,58 @@ const Project1 = () => {
       <GlobalStyle />
       <main>
         <Navbar />
-        <div className="wrapper">
-          <figure>
-            <Img src={mockUp} alt="choicely mockup"></Img>
-          </figure>
-          <div className="number-1">1</div>
-          <article className="article article-1">
-            <h2>Technical information</h2>
-            <p>
-              In 1985 Aldus Corporation launched its first desktop publishing
-              program Aldus PageMaker for Apple Macintosh computers.
-            </p>
-          </article>
-          <figure className="featured-image-2">
-            <img
-              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/579121/jc-dela-cuesta-311203-sm.jpg"
-              alt="Photo by JC Dela Cuesta on Unsplash"
-            />
-          </figure>
-          <div className="number-2">2</div>
-          <article className="article article-2">
-            <h2>Variants</h2>
-            <p>Released in 1987 for PCs running Windows 1.0.</p>
-          </article>
-          <figure className="featured-image-3">
-            <img
-              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/579121/seth-doyle-151915-sm.jpg"
-              alt="Photo by Seth Doyle on Unsplash"
-            />
-          </figure>
-          <div className="number-3">3</div>
-          <article className="article article-3">
-            <h2>When not to use it</h2>
-            <p>
-              The toppings you may chose for that TV dinner pizza slice when you
-              forgot to shop for foods, the paint you may slap on your face to
-              impress the new boss is your business. But what about your daily
-              bread?
-            </p>
-          </article>
-          <figure className="featured-image-4">
-            <img
-              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/579121/tim-marshall-189232-sm.jpg"
-              alt="Photo by Tim Marshall on Unsplash"
-            />
-          </figure>
-          <div className="number-4">4</div>
-          <article className="article article-4">
-            <h2>So Lorem Ipsum is bad</h2>
-            <p>
-              One of the villagers, Kristina Halvorson from Adaptive Path, holds
-              steadfastly to the notion that design can’t be tested without real
-              content.
-            </p>
-          </article>
-        </div>
+        <CaseStudyContainer>
+          <ImgLeft src={issueS} alt="Hungry woman" />
+          <IssueContainer>
+            <H1>choicely </H1>
+            <H2>
+              helps the user to make decisions for eating by showing different
+              restaurants
+            </H2>
+            <P>
+              Hungry? Undecided? Lots of time wasted?
+              <br /> Sounds familiar, doesn't it? Finding something satisfying
+              to eat if you hungry can end up in a <i>
+                no-you-decide-game
+              </i>{" "}
+              with your loved ones or Lorem ipsum dolor sit amet consectetur,
+              adipisicing elit. Qui fugiat ad error saepe excepturi magnam eius
+              amet, possimus, culpa, vitae obcaecati rem consequuntur ullam at
+              quibusdam doloremque assumenda explicabo temporibus?
+            </P>
+          </IssueContainer>
+
+          <ImgRight src={processS} alt="Woman is working" />
+          <ProcessContainer>
+            <H1>The Process</H1>
+            <H2>...or "learn, try, fail, repeat"</H2>
+            <P>
+              Hungry? Undecided? Lots of time wasted?
+              <br /> Sounds familiar, doesn't it? Finding something satisfying
+              to eat if you hungry can end up in a <i>
+                no-you-decide-game
+              </i>{" "}
+              with your loved ones or Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Iste, eveniet. Fugit sed maxime rem eligendi
+              autem! Tempore exercitationem at delectus alias. Dicta error
+              temporibus exercitationem culpa dignissimos iste aliquam ab.
+            </P>
+          </ProcessContainer>
+
+          <ImgLeftBottom src={mockUp} alt="choicely mock up on iphones" />
+          <ProductContainer>
+            <H1>The final Product</H1>
+            <H2>Bon Appetit!</H2>
+            <P>
+              Hungry? Undecided? Lots of time wasted?
+              <br /> Sounds familiar, doesn't it? Finding something satisfying
+              to eat if you hungry can end up in a <i>
+                no-you-decide-game
+              </i>{" "}
+              with your loved ones or
+            </P>
+          </ProductContainer>
+        </CaseStudyContainer>
         <section id="contact">
           <Contact />
         </section>
@@ -176,6 +185,6 @@ const Project1 = () => {
 
 export default Project1;
 
-Wrapper.propTypes = {
-  className: PropTypes.string,
-};
+// Wrapper.propTypes = {
+//   className: PropTypes.string,
+// };

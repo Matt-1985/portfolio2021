@@ -170,8 +170,8 @@ const Projects = () => {
               src={cardImage}
               alt="app logo"
               headline="choicely"
-              p="This is my gradiuation project, a helper for the undecided."
-              href={<Link to="/choicely/">TO THE PROJECT</Link>}
+              p="What do we eat today?"
+              href={<Link to="/choicely/">View the case Study</Link>}
             />
             <Cards
               src={p2020}

@@ -65,6 +65,7 @@ const CardParagraph = styled.p`
 `;
 
 const CardButton = styled.button`
+  text-transform: uppercase;
   padding: 1.5rem;
   font-size: 2rem;
   text-align: center;
