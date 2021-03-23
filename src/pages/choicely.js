@@ -25,11 +25,16 @@ const IssueContainer = styled.div`
   grid-area: 2 / 4 / 1 / 2;
   display: flex;
   flex-direction: column;
+  ${mediaQueries("sm")`
+  margin-top: 10px;
+  
+`};
 `;
 
 const ImgLeft = styled.img`
   grid-area: 1 / 1 / 2 / 2;
   ${mediaQueries("sm")`
+  vertical-align: middle;
   width: 40vw;
   height: 60vh;
   object-fit: contain;
@@ -47,10 +52,9 @@ const ProcessContainer = styled.div`
 const ImgRight = styled.img`
   grid-area: 2 / 2 / 2 / 2;
   ${mediaQueries("sm")`
-  grid-area: 2 / 2 / 2 / 2;
-    padding: 0;
-    max-width: 250%;
-  max-height: 250%;`};
+  width: 60vw;
+  height: 80vh;
+  object-fit: contain;`};
 `;
 
 const ProductContainer = styled.div`
@@ -66,9 +70,9 @@ const ImgLeftBottom = styled.img`
   grid-column: 1/2;
   grid-row: 3/4;
   ${mediaQueries("sm")`
-    padding: 0;
-    max-width: 250%;
-  max-height: 250%;`};
+    
+    max-width: 200%;
+  max-height: 200%;`};
 `;
 
 const H1 = styled.h1`
@@ -134,13 +138,8 @@ const Project1 = () => {
             <P>
               Hungry? Undecided? Lots of time wasted?
               <br /> Sounds familiar, doesn't it? Finding something satisfying
-              to eat if you hungry can end up in a <i>
-                no-you-decide-game
-              </i>{" "}
-              with your loved ones or Lorem ipsum dolor sit amet consectetur,
-              adipisicing elit. Qui fugiat ad error saepe excepturi magnam eius
-              amet, possimus, culpa, vitae obcaecati rem consequuntur ullam at
-              quibusdam doloremque assumenda explicabo temporibus?
+              to eat if you hungry can end up in a neverending{" "}
+              <i>no-you-decide-game</i> with your loved ones or
             </P>
           </IssueContainer>
 
@@ -171,7 +170,10 @@ const Project1 = () => {
               to eat if you hungry can end up in a <i>
                 no-you-decide-game
               </i>{" "}
-              with your loved ones or
+              with your loved ones or Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Accusantium rerum laborum dolores iste fugiat
+              dicta aut asperiores, doloribus reprehenderit. Neque velit modi
+              sunt vitae temporibus quae, ut quasi cum ullam.
             </P>
           </ProductContainer>
         </CaseStudyContainer>
