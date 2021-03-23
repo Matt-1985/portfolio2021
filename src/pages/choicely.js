@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 import { mediaQueries } from "../commons/MediaQueries";
 import { ParallaxProvider } from "react-scroll-parallax";
@@ -142,7 +141,6 @@ const Project1 = () => {
               <i>no-you-decide-game</i> with your loved ones or
             </P>
           </IssueContainer>
-
           <ImgRight src={processS} alt="Woman is working" />
           <ProcessContainer>
             <H1>The Process</H1>
