@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { ScreenClassProvider, Container, Row, Col } from "react-grid-system";
+
 import { mediaQueries } from "../commons/MediaQueries";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { GlobalStyle } from "../theme/global-style";
@@ -9,19 +11,41 @@ import mockUp from "../images/mockUpChoicely.png";
 import issueS from "../images/issueS.png";
 import processS from "../images/processS.png";
 
-const CaseStudyContainer = styled.div`
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+const theme = {
+  blue: {
+    default: "#0090ff",
+    hover: "#71c2ff",
+  },
+};
+
+const Button = styled.button`
+  background-color: ${(props) => theme[props.theme].default};
+  color: #fffffa;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: none;
+  outline: 0;
+  text-transform: uppercase;
+  margin: 10px 0px;
+  cursor: pointer;
+  box-shadow: 0px 2px 2px #d3d3d3;
+  transition: ease background-color 250ms;
+  &:hover {
+    background-color: ${(props) => theme[props.theme].hover};
+  }
   ${mediaQueries("sm")`
-  margin: 0;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
-  `};
+  width: 40vw;
+  height: 10vh;
+  font-size: 1rem;
+  
+`};
 `;
 
+Button.defaultProps = {
+  theme: "blue",
+};
+
 const IssueContainer = styled.div`
-  grid-area: 2 / 4 / 1 / 2;
   display: flex;
   flex-direction: column;
   ${mediaQueries("sm")`
@@ -31,34 +55,27 @@ const IssueContainer = styled.div`
 `;
 
 const ImgLeft = styled.img`
-  grid-area: 1 / 1 / 2 / 2;
   ${mediaQueries("sm")`
-  vertical-align: middle;
-  width: 40vw;
-  height: 60vh;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 `};
 `;
 
 const ProcessContainer = styled.div`
-  grid-column: 1/2;
-  grid-row: 2/3;
   margin-left: 3vw;
   display: flex;
   flex-direction: column;
 `;
 
 const ImgRight = styled.img`
-  grid-area: 2 / 2 / 2 / 2;
   ${mediaQueries("sm")`
-  width: 60vw;
-  height: 80vh;
+  width: 100%;
+  height: 150%;
   object-fit: contain;`};
 `;
 
 const ProductContainer = styled.div`
-  grid-column: 2/3;
-  grid-row: 3/4;
   display: flex;
   flex-direction: column;
 `;
@@ -66,12 +83,20 @@ const ProductContainer = styled.div`
 const ImgLeftBottom = styled.img`
   max-width: 250%;
   max-height: 250%;
-  grid-column: 1/2;
-  grid-row: 3/4;
+
   ${mediaQueries("sm")`
     
-    max-width: 200%;
+  max-width: 200%;
   max-height: 200%;`};
+`;
+
+const Details = styled.div`
+  margin: 2rem;
+  padding: 2rem;
+  background-color: rgba(240, 255, 31, 0.295);
+  ${mediaQueries("sm")`
+    padding: 0.5rem;
+    `};
 `;
 
 const H1 = styled.h1`
@@ -120,66 +145,164 @@ const P = styled.p`
     `};
 `;
 
+const Figure = styled.figure`
+  font-family: "NimbusRegular";
+  font-size: 6rem;
+  color: #242424;
+  &:hover {
+    font-family: "Times New Roman", serif;
+    font-size: 5rem;
+    font-style: italic;
+    color: var(--main-font-color);
+    animation: scale-down-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    @keyframes scale-down-center {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0.5);
+      }
+    }
+`;
+
+const Blockquote = styled.blockquote`
+  text-align: center;
+  text-indent: -0.45em;
+  quotes: "“" "”" "‘" "’";
+  :before {
+    content: open-quote;
+  }
+  :after {
+    content: close-quote;
+  }
+  @supports (hanging-punctuation: first) {
+    blockquote {
+      text-indent: 0;
+      hanging-punctuation: first;
+    }
+  }
+
+  ${mediaQueries("sm")`
+    font-size: 2rem;
+    `};
+`;
+
+const Figcaption = styled.figcaption`
+  text-align: right;
+  ${mediaQueries("sm")`
+    font-size: 1rem;
+    `};
+`;
+
 const Project1 = () => {
   return (
-    <ParallaxProvider>
-      <GlobalStyle />
-      <main>
-        <Navbar />
-        <CaseStudyContainer>
-          <ImgLeft src={issueS} alt="Hungry woman" />
-          <IssueContainer>
-            <H1>choicely </H1>
-            <H2>
-              helps the user to make decisions for eating by showing different
-              restaurants
-            </H2>
-            <P>
-              Hungry? Undecided? Lots of time wasted?
-              <br /> Sounds familiar, doesn't it? Finding something satisfying
-              to eat if you hungry can end up in a neverending{" "}
-              <i>no-you-decide-game</i> with your loved ones or
-            </P>
-          </IssueContainer>
-          <ImgRight src={processS} alt="Woman is working" />
-          <ProcessContainer>
-            <H1>The Process</H1>
-            <H2>...or "learn, try, fail, repeat"</H2>
-            <P>
-              Hungry? Undecided? Lots of time wasted?
-              <br /> Sounds familiar, doesn't it? Finding something satisfying
-              to eat if you hungry can end up in a <i>
-                no-you-decide-game
-              </i>{" "}
-              with your loved ones or Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Iste, eveniet. Fugit sed maxime rem eligendi
-              autem! Tempore exercitationem at delectus alias. Dicta error
-              temporibus exercitationem culpa dignissimos iste aliquam ab.
-            </P>
-          </ProcessContainer>
-
-          <ImgLeftBottom src={mockUp} alt="choicely mock up on iphones" />
-          <ProductContainer>
-            <H1>The final Product</H1>
-            <H2>Bon Appetit!</H2>
-            <P>
-              Hungry? Undecided? Lots of time wasted?
-              <br /> Sounds familiar, doesn't it? Finding something satisfying
-              to eat if you hungry can end up in a <i>
-                no-you-decide-game
-              </i>{" "}
-              with your loved ones or Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Accusantium rerum laborum dolores iste fugiat
-              dicta aut asperiores, doloribus reprehenderit. Neque velit modi
-              sunt vitae temporibus quae, ut quasi cum ullam.
-            </P>
-          </ProductContainer>
-        </CaseStudyContainer>
-        <section id="contact">
-          <Contact />
-        </section>
-      </main>
-    </ParallaxProvider>
+    <ScreenClassProvider>
+      <ParallaxProvider>
+        <GlobalStyle />
+        <main>
+          <Navbar />
+          <Container fluid>
+            <Row>
+              <Col sm={2} md={6}>
+                <ImgLeft src={issueS} alt="Hungry woman" />
+              </Col>
+              <Col sm={2} md={6}>
+                <IssueContainer>
+                  <H1>choicely </H1>
+                  <H2>
+                    helps the user to make decisions for eating by showing
+                    different restaurants
+                  </H2>
+                  <P>
+                    Hungry? Undecided? Lots of time wasted?
+                    <br /> Sounds familiar, doesn&apos;t it? Finding something
+                    satisfying to eat if you hungry can end up in a neverending{" "}
+                    <i>no-you-decide-game</i> with your loved ones or you
+                    grabing some oats to fill your gap. <br /> With me relying
+                    to this behavior I created my first App: choicely!
+                  </P>
+                  <a
+                    href="https://choicely.herokuapp.com/"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <Button> Hungry? Check out the App </Button>
+                  </a>
+                </IssueContainer>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Details>
+                  <Figure>
+                    <Blockquote>You are not you when you are hungry</Blockquote>
+                    <Figcaption>&mdash; Snickers</Figcaption>
+                  </Figure>
+                </Details>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={2} xl={4} push={{ xl: 7 }}>
+                <ImgRight src={processS} alt="Woman is working" />
+              </Col>
+              <Col sm={2} xl={8} pull={{ xl: 4 }}>
+                <ProcessContainer>
+                  <H1>The Process</H1>
+                  <H2>...or &quot;learn, try, fail, repeat&quot;</H2>
+                  <P>
+                    Hungry? Undecided? Lots of time wasted?
+                    <br /> Sounds familiar, doesn&apos;t it? Finding something
+                    satisfying to eat if you hungry can end up in a{" "}
+                    <i>no-you-decide-game</i> with your loved ones or Lorem,
+                    ipsum dolor sit amet consectetur adipisicing elit. Iste,
+                    eveniet. Fugit sed maxime rem eligendi autem! Tempore
+                    exercitationem at delectus alias. Dicta error temporibus
+                    exercitationem culpa dignissimos iste aliquam ab.
+                  </P>
+                </ProcessContainer>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Details>
+                  <P>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Reiciendis iusto praesentium voluptatibus temporibus
+                    delectus velit? Ea enim suscipit eos praesentium molestias.
+                    Odio eligendi dolor cupiditate ullam at quasi veritatis
+                    pariatur?
+                  </P>
+                </Details>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={2} xl={4}>
+                <ImgLeftBottom src={mockUp} alt="choicely mock up on iphones" />
+              </Col>
+              <Col sm={2} xl={8}>
+                <ProductContainer>
+                  <H1>The final Product</H1>
+                  <H2>Bon Appetit!</H2>
+                  <P>
+                    Hungry? Undecided? Lots of time wasted?
+                    <br /> Sounds familiar, doesnt it? Finding something
+                    satisfying to eat if you hungry can end up in a{" "}
+                    <i>no-you-decide-game</i> with your loved ones or Lorem,
+                    ipsum dolor sit amet consectetur adipisicing elit.
+                    Accusantium rerum laborum dolores iste fugiat dicta aut
+                    asperiores, doloribus reprehenderit. Neque velit modi sunt
+                    vitae temporibus quae, ut quasi cum ullam.
+                  </P>
+                </ProductContainer>
+              </Col>
+            </Row>
+          </Container>
+          <section id="contact">
+            <Contact />
+          </section>
+        </main>
+      </ParallaxProvider>
+    </ScreenClassProvider>
   );
 };
 
