@@ -66,10 +66,10 @@ const ProcessContainer = styled.div`
   flex-direction: column;
   ul,
   li {
-    font-size: inherit;
+    font-size: 1.5rem;
     font-family: "SpaceMonoRegular";
     color: var(--main-font-color);
-    line-height: 30px;
+    line-height: 1.5em;
     text-indent: 1em;
     padding-bottom: 1em;
   }
