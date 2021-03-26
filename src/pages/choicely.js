@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { ScreenClassProvider, Container, Row, Col } from "react-grid-system";
-
 import { mediaQueries } from "../commons/MediaQueries";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { GlobalStyle } from "../theme/global-style";
-import Navbar from "../components/Navigation";
 import Contact from "../components/Contact";
 import mockUp from "../images/mockUpChoicely.png";
 import issueS from "../images/issueS.png";
@@ -66,6 +64,15 @@ const ProcessContainer = styled.div`
   margin-left: 3vw;
   display: flex;
   flex-direction: column;
+  ul,
+  li {
+    font-size: inherit;
+    font-family: "SpaceMonoRegular";
+    color: var(--main-font-color);
+    line-height: 30px;
+    text-indent: 1em;
+    padding-bottom: 1em;
+  }
 `;
 
 const ImgRight = styled.img`
@@ -91,12 +98,39 @@ const ImgLeftBottom = styled.img`
 `;
 
 const Details = styled.div`
+  font-family: "NimbusRegular";
+  color: var(--secondary-font-color);
   margin: 2rem;
   padding: 2rem;
   background-color: rgba(240, 255, 31, 0.295);
   ${mediaQueries("sm")`
     padding: 0.5rem;
     `};
+  & ul,
+  li,
+  p {
+    font-family: "Montserrat", sans-serif;
+    color: var(--secondary-font-color);
+    font-size: 1rem;
+  }
+  ul,
+  li {
+    line-height: 40px;
+    text-indent: 1em;
+  }
+  h1 {
+    font-family: "SpaceMonoBold";
+    color: var(--secondary-font-color);
+    text-transform: uppercase;
+    font-size: 3rem;
+  }
+  h2 {
+    margin: 0;
+    font-family: "SpaceMonoRegular";
+    color: var(--secondary-font-color);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
 `;
 
 const H1 = styled.h1`
@@ -146,9 +180,10 @@ const P = styled.p`
 `;
 
 const Figure = styled.figure`
-  font-family: "NimbusRegular";
-  font-size: 6rem;
-  color: #242424;
+  font-family: "SpaceMonoBold";
+  font-size: 5rem;
+  color: var(--secondary-font-color);
+  text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);
   &:hover {
     font-family: "Times New Roman", serif;
     font-size: 5rem;
@@ -163,6 +198,7 @@ const Figure = styled.figure`
         transform: scale(0.5);
       }
     }
+  }
 `;
 
 const Blockquote = styled.blockquote`
@@ -200,7 +236,6 @@ const Project1 = () => {
       <ParallaxProvider>
         <GlobalStyle />
         <main>
-          <Navbar />
           <Container fluid>
             <Row>
               <Col sm={2} md={6}>
@@ -216,10 +251,11 @@ const Project1 = () => {
                   <P>
                     Hungry? Undecided? Lots of time wasted?
                     <br /> Sounds familiar, doesn&apos;t it? Finding something
-                    satisfying to eat if you hungry can end up in a neverending{" "}
-                    <i>no-you-decide-game</i> with your loved ones or you
-                    grabing some oats to fill your gap. <br /> With me relying
-                    to this behavior I created my first App: choicely!
+                    satisfying to eat when you are hungry can end up in a
+                    neverending <i>no-you-decide-game</i> with your loved ones.
+                    Or even ending with you grabing some snacks to fill your
+                    gap. <br /> As I rely to this behavior a way too much, I
+                    created my first App: choicely!
                   </P>
                   <a
                     href="https://choicely.herokuapp.com/"
@@ -250,28 +286,72 @@ const Project1 = () => {
                   <H1>The Process</H1>
                   <H2>...or &quot;learn, try, fail, repeat&quot;</H2>
                   <P>
-                    Hungry? Undecided? Lots of time wasted?
-                    <br /> Sounds familiar, doesn&apos;t it? Finding something
-                    satisfying to eat if you hungry can end up in a{" "}
-                    <i>no-you-decide-game</i> with your loved ones or Lorem,
-                    ipsum dolor sit amet consectetur adipisicing elit. Iste,
-                    eveniet. Fugit sed maxime rem eligendi autem! Tempore
-                    exercitationem at delectus alias. Dicta error temporibus
-                    exercitationem culpa dignissimos iste aliquam ab.
+                    From product design to UX/UI experience to development I was
+                    responsible for all steps in the process chain. Since this
+                    was my final project of a Coding Bootcamp, I had to deepen
+                    my programming skills and fastly enhance my experience in 4
+                    weeks. Here are some key achievements:
                   </P>
+                  <ul>
+                    <li>
+                      <b>Break the project into 4 workable sprints.</b> I was
+                      able to effectively plan & apply sprints to my project to
+                      make it clear and easy to have a complete overview of it.
+                    </li>
+                    <li>
+                      <b>Execute end to end.</b> I was able to code the final
+                      design in a short period of time showing my ability to
+                      execute and ship features as a Web Developer effectively.
+                    </li>
+                    <li>
+                      <b>Working in a Team.</b> Even if everybody was working on
+                      their own project, during the final phase we met daily
+                      through Zoom to exchange knowledge, support each other and
+                      keep up on our team spirit.
+                    </li>
+                    <li>
+                      <b>Present my final App in front of an audiance.</b> Full
+                      of joy and sense of accomplishment, I pitched my App on
+                      the closing event of the Bootcamp in front of potential
+                      employers, my collegues and the other participants of the
+                      event.
+                    </li>
+                  </ul>
                 </ProcessContainer>
               </Col>
             </Row>
             <Row>
               <Col>
                 <Details>
-                  <P>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Reiciendis iusto praesentium voluptatibus temporibus
-                    delectus velit? Ea enim suscipit eos praesentium molestias.
-                    Odio eligendi dolor cupiditate ullam at quasi veritatis
-                    pariatur?
-                  </P>
+                  <h1>
+                    Understanding the Problem
+                    <h2>
+                      <i>...and finding solutions</i>
+                    </h2>
+                  </h1>
+                  <p>
+                    I worked at my first sprint using the persona approach to
+                    identify the users needs. Therefore i broke down the problem
+                    into 3 parts, presenting for each part a solution:
+                  </p>
+                  <ul>
+                    <li>
+                      The user using the app is <b>undecided</b> in finding
+                      something to eat. The user then needs a support in making
+                      that decision.
+                    </li>
+                    <li>
+                      The user recognizes that <b>it spends too much time</b>{" "}
+                      searching for fitting restaurants. The user needs to be
+                      quicker making the decision.
+                    </li>
+                    <li>
+                      There are <b>two different kinds of users</b>: One that
+                      needs the App to make the whole decision. The other has an
+                      idea of the direction but needs finetuning. The user needs
+                      two different usability profiles.
+                    </li>
+                  </ul>
                 </Details>
               </Col>
             </Row>
