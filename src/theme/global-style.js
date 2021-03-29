@@ -122,6 +122,10 @@ a {
   
 }
 
+hr {
+  border: 1px solid var(--secondary-color);
+}
+
  
 `;
 

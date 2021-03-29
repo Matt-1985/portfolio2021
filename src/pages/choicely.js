@@ -8,6 +8,12 @@ import Contact from "../components/Contact";
 import mockUp from "../images/mockUpChoicely.png";
 import issueS from "../images/issueS.png";
 import processS from "../images/processS.png";
+import diagram from "../images/diagram.png";
+import first from "../images/first-decision.png";
+import choose from "../images/choose1.png";
+import option1 from "../images/option1.png";
+import option2 from "../images/option2.png";
+import outcome from "../images/outcome-detail.png";
 
 const theme = {
   blue: {
@@ -17,10 +23,13 @@ const theme = {
 };
 
 const Button = styled.button`
+  width: 30vw;
+  height: 7vh;
+  font-size: 1.5rem;
   background-color: ${(props) => theme[props.theme].default};
   color: #fffffa;
   padding: 5px 15px;
-  border-radius: 5px;
+  border-radius: 20px;
   border: none;
   outline: 0;
   text-transform: uppercase;
@@ -28,6 +37,24 @@ const Button = styled.button`
   cursor: pointer;
   box-shadow: 0px 2px 2px #d3d3d3;
   transition: ease background-color 250ms;
+  transform: scale(1);
+  animation: pulse 2s infinite;
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 #e879df;
+    }
+
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+  }
   &:hover {
     background-color: ${(props) => theme[props.theme].hover};
   }
@@ -66,7 +93,7 @@ const ProcessContainer = styled.div`
   flex-direction: column;
   ul,
   li {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-family: "SpaceMonoRegular";
     color: var(--main-font-color);
     line-height: 1.5em;
@@ -98,10 +125,14 @@ const ImgLeftBottom = styled.img`
 `;
 
 const Details = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-family: "NimbusRegular";
   color: var(--secondary-font-color);
   margin: 2rem;
-  padding: 2rem;
+  padding: 3rem;
   background-color: rgba(240, 255, 31, 0.295);
   ${mediaQueries("sm")`
     padding: 0.5rem;
@@ -119,10 +150,14 @@ const Details = styled.div`
     text-indent: 1em;
   }
   h1 {
+    text-align: center;
     font-family: "SpaceMonoBold";
     color: var(--secondary-font-color);
     text-transform: uppercase;
     font-size: 3rem;
+    ${mediaQueries("sm")`
+    font-size: 2rem;
+    `};
   }
   h2 {
     margin: 0;
@@ -130,6 +165,21 @@ const Details = styled.div`
     color: var(--secondary-font-color);
     text-transform: uppercase;
     font-size: 1.5rem;
+  }
+  img {
+    width: 60%;
+    height: 60%;
+    box-shadow: 1px 1px 10px 0 rgb(0 0 0 / 20%);
+    ${mediaQueries("sm")`
+    :active {
+      width: 100vw;
+      height: 100%;
+    }
+    `};
+  }
+  a {
+    color: var(--main-font-color);
+    text-decoration: none;
   }
 `;
 
@@ -160,6 +210,7 @@ const H2 = styled.h2`
 `;
 
 const P = styled.p`
+  font-size: 1.5rem;
   color: var(--main-font-color);
   margin-left: 40px;
   :first-line {
@@ -230,6 +281,60 @@ const Figcaption = styled.figcaption`
     `};
 `;
 
+const DetailReversed = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+  padding: 2rem;
+  ${mediaQueries("sm")`
+    padding: 0.5rem;
+    `};
+  & ul,
+  li,
+  p {
+    font-family: "Montserrat", sans-serif;
+    color: var(--secondary-font-color);
+    font-size: 1rem;
+  }
+  p {
+    line-height: 1.5em;
+  }
+  ul,
+  li {
+    line-height: 40px;
+    text-indent: 1em;
+  }
+  h1 {
+    text-align: center;
+    font-family: "SpaceMonoBold";
+    color: var(--secondary-font-color);
+    text-transform: uppercase;
+    font-size: 3rem;
+    ${mediaQueries("sm")`
+    font-size: 2rem;
+    `};
+  }
+  h2 {
+    margin: 0;
+    font-family: "SpaceMonoRegular";
+    color: var(--secondary-font-color);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+  a {
+    color: var(--main-font-color);
+    text-decoration: none;
+  }
+`;
+
+const ScreenHeadline = styled.p`
+  margin: 0;
+  text-align: center;
+  font-weight: bold;
+`;
+
 const Project1 = () => {
   return (
     <ScreenClassProvider>
@@ -268,7 +373,7 @@ const Project1 = () => {
               </Col>
             </Row>
             <Row>
-              <Col>
+              <Col sm={2} md={6} xl={12} xxl={12}>
                 <Details>
                   <Figure>
                     <Blockquote>You are not you when you are hungry</Blockquote>
@@ -277,10 +382,12 @@ const Project1 = () => {
                 </Details>
               </Col>
             </Row>
+            <hr />
             <Row>
               <Col sm={2} xl={4} push={{ xl: 7 }}>
                 <ImgRight src={processS} alt="Woman is working" />
               </Col>
+
               <Col sm={2} xl={8} pull={{ xl: 4 }}>
                 <ProcessContainer>
                   <H1>The Process</H1>
@@ -320,13 +427,14 @@ const Project1 = () => {
                 </ProcessContainer>
               </Col>
             </Row>
+
             <Row>
-              <Col>
+              <Col sm={2} md={6} xl={12}>
                 <Details>
                   <h1>
                     Understanding the Problem
                     <h2>
-                      <i>...and finding solutions</i>
+                      <i>...and coming to conclusions</i>
                     </h2>
                   </h1>
                   <p>
@@ -355,6 +463,131 @@ const Project1 = () => {
                 </Details>
               </Col>
             </Row>
+            <Row>
+              <Col sm={2} md={6} xl={12} xxl={12}>
+                <DetailReversed>
+                  <h1>Product vision and solution</h1>
+                  <p>From these findings, I decided to identify key goals:</p>
+                  <ul>
+                    <li>
+                      <b>
+                        I want users to get quick support. Minimalistic and
+                        goal-oriented design that let the user focus on what
+                        matters.
+                      </b>
+                    </li>
+                    <li>
+                      <b>
+                        I want users to have a choice. Two different modes to
+                        allow them to have flexibility but still reach their
+                        goal without time waste.
+                      </b>
+                    </li>
+                  </ul>
+                  <p>
+                    As a starting point, I did some market research to check if
+                    there are similar products out there.
+                    <br />
+                    Not able to find any product specificly, I took inspiration
+                    from particular features that I found in apps that helps in
+                    decision making combining with apps that offer restaurant
+                    listing.
+                  </p>
+                </DetailReversed>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={2} md={6} xl={12}>
+                <Details>
+                  <h1>Defining the diagram</h1>
+                  <p>
+                    With all this information in my hands I started with a
+                    diagram to visualize the architecture and worked out the
+                    following key user story:
+                  </p>
+                  <img src={diagram} alt="" />
+                  <ul>
+                    <li>
+                      <b>Choose a path.</b> Users can decide if they want quick
+                      support or they can choose between mutliple filters
+                    </li>
+                  </ul>
+                  <p>
+                    In order for me to begin with the development, I created a
+                    mock up of the App based off the diagram and came up with
+                    the following:
+                  </p>
+                  <ul>
+                    <li>First decision screen</li>
+                    <li>Choose your support option</li>
+                    <li>Option 1: random restaurants</li>
+                    <li>
+                      Option 2: Filter your options to get specific restaurants
+                    </li>
+                    <li>Outcome</li>
+                  </ul>
+                </Details>
+              </Col>
+            </Row>
+            <Row sm={2} md={6} xl={12}>
+              <Col>
+                <DetailReversed>
+                  <h1>Designs</h1>
+                  <p>
+                    With the clock ticking, I went over to the desired styling.
+                    I opted for a minimal & clean look and the simplicity of the
+                    UI. I then created a{" "}
+                    <a href="https://xd.adobe.com/view/44d48e9e-5149-4cc0-b778-ac510462461e-1187/">
+                      clickable prototype in Adobe XD.
+                    </a>
+                  </p>
+                  <br />
+                  <p>
+                    <ScreenHeadline>First decision screen</ScreenHeadline>
+                    <br />
+                    This screen was created to deal with future features like
+                    offering support to find movies or short trips in mind and
+                    encourage users to click on the button to get started.
+                  </p>
+                  <img src={first} alt="red button" />
+                  <p>
+                    <ScreenHeadline>Choose your path</ScreenHeadline>
+                    <br />
+                    Users have to choose between a quick support and the filter
+                    option. The buttons are big enough and give a color
+                    guidance.
+                  </p>
+                  <img src={choose} alt="one yellow button one green button" />
+                  <p>
+                    <ScreenHeadline>Random restaurants</ScreenHeadline>
+                    <br />
+                    Users getting now random results on what to choose of. Via
+                    the refresh button on the down right side the useres have
+                    the possibility to reaload new random restaurants.
+                  </p>
+                  <img src={option1} alt="card with restaurant" />
+                  <p>
+                    <ScreenHeadline>Filtering</ScreenHeadline>
+                    <br />
+                    Users can now choose between max. 3 filter options. They
+                    will be displayed the same way like the random results but
+                    the guidance color is different.
+                  </p>
+                  <img src={option2} alt="filter options" />
+                  <p>
+                    <ScreenHeadline>Details</ScreenHeadline>
+                    <br />
+                    Users can now push/click on the card and it will turn and
+                    reveal the details on the back. With a click on the name of
+                    the restaurant the users will be redirected to the exact
+                    address on google maps, or they click directly on the number
+                    to call in for a reservation.
+                  </p>
+                  <img src={outcome} alt="card with resataurant details" />
+                </DetailReversed>
+              </Col>
+            </Row>
+            <hr />
             <Row>
               <Col sm={2} xl={4}>
                 <ImgLeftBottom src={mockUp} alt="choicely mock up on iphones" />
