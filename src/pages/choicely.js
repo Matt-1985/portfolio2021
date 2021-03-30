@@ -1,5 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import { ReactLogo } from "@styled-icons/simple-icons/ReactLogo";
+import { StyledComponents } from "@styled-icons/simple-icons/StyledComponents";
+import { Mongodb } from "@styled-icons/simple-icons/Mongodb";
+import { NodeDotJs } from "@styled-icons/simple-icons/NodeDotJs";
+import { Storybook } from "@styled-icons/simple-icons/Storybook";
+import { Adobexd } from "@styled-icons/simple-icons/Adobexd";
+import { Express } from "@styled-icons/simple-icons/Express";
+import { Reactrouter } from "@styled-icons/simple-icons/Reactrouter";
+import { Github } from "@styled-icons/simple-icons/Github";
+import { Html5 } from "@styled-icons/simple-icons/Html5";
+import { Css3 } from "@styled-icons/simple-icons/Css3";
+import { Javascript } from "@styled-icons/simple-icons/Javascript";
+import { StyledIconBase } from "@styled-icons/styled-icon";
 import { ScreenClassProvider, Container, Row, Col } from "react-grid-system";
 import { mediaQueries } from "../commons/MediaQueries";
 import { ParallaxProvider } from "react-scroll-parallax";
@@ -14,7 +27,46 @@ import option1 from "../images/option1.png";
 import option2 from "../images/option2.png";
 import outcome from "../images/outcome-detail.png";
 import choicelyGif from "../images/choicelyGif1.gif";
-import help from "../images/help.png";
+
+export const IconStyleWrapper = styled.div`
+  ${StyledIconBase} {
+    color: var(--main-font-color);
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    margin: 2rem;
+    padding: 0.5rem;
+    width: 4em;
+    height: 4em;
+  }
+`;
+
+const TechStack = styled.div`
+  h1 {
+    text-align: center;
+    font-family: "SpaceMonoBold";
+    color: var(--secondary-font-color);
+    text-transform: uppercase;
+    font-size: 3rem;
+    ${mediaQueries("sm")`
+    font-size: 2rem;
+    `};
+  }
+  h2 {
+    margin: 0;
+    font-family: "SpaceMonoRegular";
+    color: var(--secondary-font-color);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+  p {
+    font-family: "Montserrat", sans-serif;
+    color: var(--secondary-font-color);
+    font-size: 1rem;
+  }
+  img {
+  }
+`;
 
 const theme = {
   blue: {
@@ -338,18 +390,12 @@ const MockUp = styled.img`
     `};
 `;
 
-const Png = styled.img`
-  shape-outside: url(${help});
-  shape-margin: 1em;
-  margin: 1em;
-  float: left;
-  width: 30vw;
-  ${mediaQueries("sm")`
-  width: 100vw;
-  height: 100%;
-  margin: 0.5em
-    float: top;
-    `};
+const Box = styled.div`
+  margin: 0.5em;
+  svg {
+    width: 50%;
+    height: 50%;
+  }
 `;
 
 const Project1 = () => {
@@ -359,11 +405,11 @@ const Project1 = () => {
         <GlobalStyle />
         <main>
           <Container fluid>
-            <Row>
-              <Col sm={2} md={6}>
+            <Row sm={2} md={6}>
+              <Col>
                 <ImgLeft src={issueS} alt="Hungry woman" />
               </Col>
-              <Col sm={2} md={6}>
+              <Col>
                 <IssueContainer>
                   <H1>choicely </H1>
                   <H2>
@@ -389,8 +435,8 @@ const Project1 = () => {
                 </IssueContainer>
               </Col>
             </Row>
-            <Row>
-              <Col sm={2} md={6} xl={12} xxl={12}>
+            <Row sm={2} md={6} xl={12} xxl={12}>
+              <Col>
                 <Details>
                   <Figure>
                     <Blockquote>You are not you when you are hungry</Blockquote>
@@ -401,11 +447,7 @@ const Project1 = () => {
             </Row>
             <hr />
             <Row>
-              <Col sm={2} xl={4} push={{ xl: 7 }}>
-                <ImgRight src={processS} alt="Woman is working" />
-              </Col>
-
-              <Col sm={2} xl={8} pull={{ xl: 4 }}>
+              <Col sm={2} md={6} xl={10} xxl={12}>
                 <ProcessContainer>
                   <H1>The Process</H1>
                   <H2>...or &quot;learn, try, fail, repeat&quot;</H2>
@@ -441,12 +483,15 @@ const Project1 = () => {
                       event.
                     </li>
                   </ul>
+                  <Col sm={2} md={6} push={{ xl: 6 }} xxl={12}>
+                    <ImgRight src={processS} alt="Woman is working" />
+                  </Col>
                 </ProcessContainer>
               </Col>
             </Row>
 
-            <Row>
-              <Col sm={2} md={6} xl={12}>
+            <Row sm={2} md={6} xl={12}>
+              <Col>
                 <Details>
                   <h1>
                     Understanding the Problem
@@ -480,8 +525,8 @@ const Project1 = () => {
                 </Details>
               </Col>
             </Row>
-            <Row>
-              <Col sm={2} md={6} xl={12} xxl={12}>
+            <Row sm={2} md={6} xl={12} xxl={12}>
+              <Col>
                 <DetailReversed>
                   <h1>Product vision and solution</h1>
                   <p>From these findings, I decided to identify key goals:</p>
@@ -513,8 +558,8 @@ const Project1 = () => {
                 </DetailReversed>
               </Col>
             </Row>
-            <Row>
-              <Col sm={2} md={6} xl={12}>
+            <Row sm={2} md={6} l={12} xl={12} xxl={12}>
+              <Col>
                 <Details>
                   <h1>Defining the diagram</h1>
                   <p>
@@ -649,8 +694,36 @@ const Project1 = () => {
                 </Details>
               </Col>
             </Row>
-            <Row>
-              <Col sm={2} xl={8}>
+            <Row sm={2} md={6} xl={6}>
+              <Col>
+                <DetailReversed>
+                  <h1>Tech Stack</h1>
+                  <p>For the development of my App I used following tools:</p>
+                  <TechStack>
+                    <IconStyleWrapper>
+                      <Html5>
+                        <p>html</p>
+                      </Html5>
+                      <Css3>
+                        <p>css</p>
+                      </Css3>
+                      <Javascript />
+                      <ReactLogo />
+                      <StyledComponents />
+                      <Storybook />
+                      <Adobexd />
+                      <Mongodb />
+                      <NodeDotJs />
+                      <Express />
+                      <Reactrouter />
+                      <Github />
+                    </IconStyleWrapper>
+                  </TechStack>
+                </DetailReversed>
+              </Col>
+            </Row>
+            <Row sm={2} xl={8}>
+              <Col>
                 <ProductContainer>
                   <H1>The final Product</H1>
                   <H2>Bon Appetit!</H2>
