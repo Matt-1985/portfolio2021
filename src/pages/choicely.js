@@ -5,7 +5,6 @@ import { mediaQueries } from "../commons/MediaQueries";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { GlobalStyle } from "../theme/global-style";
 import Contact from "../components/Contact";
-import mockUp from "../images/mockUpChoicely.png";
 import issueS from "../images/issueS.png";
 import processS from "../images/processS.png";
 import diagram from "../images/diagram.png";
@@ -14,6 +13,8 @@ import choose from "../images/choose1.png";
 import option1 from "../images/option1.png";
 import option2 from "../images/option2.png";
 import outcome from "../images/outcome-detail.png";
+import choicelyGif from "../images/choicelyGif1.gif";
+import help from "../images/help.png";
 
 const theme = {
   blue: {
@@ -97,7 +98,6 @@ const ProcessContainer = styled.div`
     font-family: "SpaceMonoRegular";
     color: var(--main-font-color);
     line-height: 1.5em;
-    text-indent: 1em;
     padding-bottom: 1em;
   }
 `;
@@ -114,16 +114,6 @@ const ProductContainer = styled.div`
   flex-direction: column;
 `;
 
-const ImgLeftBottom = styled.img`
-  max-width: 250%;
-  max-height: 250%;
-
-  ${mediaQueries("sm")`
-    
-  max-width: 200%;
-  max-height: 200%;`};
-`;
-
 const Details = styled.div`
   display: flex;
   flex-direction: column;
@@ -132,7 +122,7 @@ const Details = styled.div`
   font-family: "NimbusRegular";
   color: var(--secondary-font-color);
   margin: 2rem;
-  padding: 3rem;
+  padding: 4rem;
   background-color: rgba(240, 255, 31, 0.295);
   ${mediaQueries("sm")`
     padding: 0.5rem;
@@ -146,8 +136,8 @@ const Details = styled.div`
   }
   ul,
   li {
-    line-height: 40px;
-    text-indent: 1em;
+    line-height: 1.5em;
+    padding-bottom: 1em;
   }
   h1 {
     text-align: center;
@@ -287,7 +277,7 @@ const DetailReversed = styled.div`
   align-items: center;
   justify-content: center;
   margin: 2rem;
-  padding: 2rem;
+  padding: 4rem;
   ${mediaQueries("sm")`
     padding: 0.5rem;
     `};
@@ -304,7 +294,6 @@ const DetailReversed = styled.div`
   ul,
   li {
     line-height: 40px;
-    text-indent: 1em;
   }
   h1 {
     text-align: center;
@@ -333,6 +322,34 @@ const ScreenHeadline = styled.p`
   margin: 0;
   text-align: center;
   font-weight: bold;
+`;
+
+const MockUp = styled.img`
+  shape-outside: url(${choicelyGif});
+  shape-margin: 1em;
+  margin: 1em;
+  float: left;
+  width: 30vw;
+  ${mediaQueries("sm")`
+  width: 100vw;
+  height: 100%;
+  margin: 0.5em
+    float: top;
+    `};
+`;
+
+const Png = styled.img`
+  shape-outside: url(${help});
+  shape-margin: 1em;
+  margin: 1em;
+  float: left;
+  width: 30vw;
+  ${mediaQueries("sm")`
+  width: 100vw;
+  height: 100%;
+  margin: 0.5em
+    float: top;
+    `};
 `;
 
 const Project1 = () => {
@@ -539,7 +556,12 @@ const Project1 = () => {
                     UI. I then created a{" "}
                     <a href="https://xd.adobe.com/view/44d48e9e-5149-4cc0-b778-ac510462461e-1187/">
                       clickable prototype in Adobe XD.
-                    </a>
+                    </a>{" "}
+                    Since four eyes see more than two I sent the prototype to
+                    check to our coaches and my collegues to get their feedback
+                    on what and how to improve on the design.
+                    <br /> I really appreciate the time that they took and tried
+                    to consider the most of the feedback in the developnment.
                   </p>
                   <br />
                   <p>
@@ -588,24 +610,54 @@ const Project1 = () => {
               </Col>
             </Row>
             <hr />
-            <Row>
-              <Col sm={2} xl={4}>
-                <ImgLeftBottom src={mockUp} alt="choicely mock up on iphones" />
+            <Row sm={2} md={6} xl={12}>
+              <Col>
+                <Details>
+                  <h1>Development</h1>
+                  <p>
+                    After I finished the desing I started with the development
+                    process. Spoiler Alert! I not only developed an app but also
+                    had a growth professionaly and personaly during the time in
+                    the Bootcamp. <br />
+                    Here are some key takeaways from it:
+                  </p>
+                  <ul>
+                    <li>
+                      <b>Components:</b> Keep your project digistable and build
+                      small. Reuse components. That made my life so much easier!
+                    </li>
+                    <li>
+                      <b>Articles, Docs and a lot of YouTube:</b> Reading is
+                      fundamental, so is understanding and learning how to use
+                      libraries, frameworks or npm packages. Docs are not always
+                      easy to understand, I had to learn to take my own time
+                      while reading and use all tools available to get to the
+                      goal.
+                    </li>
+                    <li>
+                      <b>Ask for help:</b> One of my biggest learning was to ask
+                      for help. Since this was my very first project I tried to
+                      find out and implement as much as possible on my own.
+                      Which led to some challenges, especially when it came to
+                      the translation of the backend to the frontend. <br /> I
+                      overcame my own resistance by refocusing from individual
+                      problems to the bigger picture. I then reached out to some
+                      of my collegues and coaches to get support and keep up
+                      with my time shedule.
+                    </li>
+                  </ul>
+                </Details>
               </Col>
+            </Row>
+            <Row>
               <Col sm={2} xl={8}>
                 <ProductContainer>
                   <H1>The final Product</H1>
                   <H2>Bon Appetit!</H2>
-                  <P>
-                    Hungry? Undecided? Lots of time wasted?
-                    <br /> Sounds familiar, doesnt it? Finding something
-                    satisfying to eat if you hungry can end up in a{" "}
-                    <i>no-you-decide-game</i> with your loved ones or Lorem,
-                    ipsum dolor sit amet consectetur adipisicing elit.
-                    Accusantium rerum laborum dolores iste fugiat dicta aut
-                    asperiores, doloribus reprehenderit. Neque velit modi sunt
-                    vitae temporibus quae, ut quasi cum ullam.
-                  </P>
+                  <p>
+                    <MockUp src={choicelyGif} alt="choicely app" />
+                    <h2>Development</h2>
+                  </p>
                 </ProductContainer>
               </Col>
             </Row>
