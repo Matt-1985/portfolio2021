@@ -3,6 +3,7 @@ export const breakpoints = {
   sm: 43,
   md: 62,
   lg: 82,
+  xl: 97,
 };
 
 export const mediaQueries = (key) => {

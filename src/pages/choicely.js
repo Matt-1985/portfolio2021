@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import styled from "styled-components";
 import { ReactLogo } from "@styled-icons/simple-icons/ReactLogo";
 import { StyledComponents } from "@styled-icons/simple-icons/StyledComponents";
@@ -12,11 +13,13 @@ import { Github } from "@styled-icons/simple-icons/Github";
 import { Html5 } from "@styled-icons/simple-icons/Html5";
 import { Css3 } from "@styled-icons/simple-icons/Css3";
 import { Javascript } from "@styled-icons/simple-icons/Javascript";
-import { StyledIconBase } from "@styled-icons/styled-icon";
+import home from "../images/home.png";
 import { ScreenClassProvider, Container, Row, Col } from "react-grid-system";
 import { mediaQueries } from "../commons/MediaQueries";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { GlobalStyle } from "../theme/global-style";
+import { Fab, Action } from "react-tiny-fab";
+import "react-tiny-fab/dist/styles.css";
 import Contact from "../components/Contact";
 import issueS from "../images/issueS.png";
 import processS from "../images/processS.png";
@@ -28,20 +31,13 @@ import option2 from "../images/option2.png";
 import outcome from "../images/outcome-detail.png";
 import choicelyGif from "../images/choicelyGif1.gif";
 
-export const IconStyleWrapper = styled.div`
-  ${StyledIconBase} {
-    color: var(--main-font-color);
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-around;
-    margin: 2rem;
-    padding: 0.5rem;
-    width: 4em;
-    height: 4em;
-  }
-`;
-
 const TechStack = styled.div`
+  margin-left: 5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
   h1 {
     text-align: center;
     font-family: "SpaceMonoBold";
@@ -66,6 +62,10 @@ const TechStack = styled.div`
   }
   img {
   }
+  ${mediaQueries("sm")`
+  margin: 0;
+  
+`};
 `;
 
 const theme = {
@@ -151,6 +151,8 @@ const ProcessContainer = styled.div`
     color: var(--main-font-color);
     line-height: 1.5em;
     padding-bottom: 1em;
+    ${mediaQueries("sm")`
+  font-size: 0.9rem;`};
   }
 `;
 
@@ -328,7 +330,7 @@ const DetailReversed = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2rem;
+  margin: 2rem 0 2em;
   padding: 4rem;
   ${mediaQueries("sm")`
     padding: 0.5rem;
@@ -390,11 +392,57 @@ const MockUp = styled.img`
     `};
 `;
 
-const Box = styled.div`
-  margin: 0.5em;
-  svg {
-    width: 50%;
-    height: 50%;
+const TooltipSVG = styled.div`
+  color: var(--main-font-color);
+  width: 5em;
+  height: 5em;
+  cursor: pointer;
+  z-index: -10;
+`;
+
+const TooltipBox = styled.div`
+  position: absolute;
+  left: 30px;
+  visibility: hidden;
+  color: transparent;
+  background-color: transparent;
+  width: 100%;
+  /* padding: 5px 5px; */
+  border-radius: 20px;
+  transition: visibility 0.2s, color 0.2s, background-color 0.2s, width 0.2s,
+    padding 0.2s ease-in-out;
+  z-index: 2;
+  &:before {
+    content: "";
+    width: 0;
+    height: 0;
+    left: 40px;
+    top: -10px;
+    position: absolute;
+    border: 10px solid transparent;
+    transform: rotate(135deg);
+    transition: border 0.2s ease-in-out;
+  }
+  p {
+    font-family: "SpaceMonoBold";
+    font-size: 2rem;
+    color: var(--secondary-font-color);
+  }
+`;
+const TooltipCard = styled.div`
+  width: 23%;
+  margin: 2em;
+  position: relative;
+  & ${TooltipSVG}:hover + ${TooltipBox} {
+    visibility: visible;
+    color: #fff;
+    background-color: rgba(240, 255, 31, 0.39);
+    width: 230px;
+
+    &:before {
+      border-color: transparent transparent rgb(240, 255, 31)
+        rgba(240, 255, 31, 0.39);
+    }
   }
 `;
 
@@ -424,6 +472,9 @@ const Project1 = () => {
                     Or even ending with you grabing some snacks to fill your
                     gap. <br /> As I rely to this behavior a way too much, I
                     created my first App: choicely!
+                    <div>
+                      <Link to="/index/">INDEX</Link>
+                    </div>
                   </P>
                   <a
                     href="https://choicely.herokuapp.com/"
@@ -446,8 +497,8 @@ const Project1 = () => {
               </Col>
             </Row>
             <hr />
-            <Row>
-              <Col sm={2} md={6} xl={10} xxl={12}>
+            <Row sm={2} md={12} xl={10} xxl={12}>
+              <Col>
                 <ProcessContainer>
                   <H1>The Process</H1>
                   <H2>...or &quot;learn, try, fail, repeat&quot;</H2>
@@ -483,7 +534,7 @@ const Project1 = () => {
                       event.
                     </li>
                   </ul>
-                  <Col sm={2} md={6} push={{ xl: 6 }} xxl={12}>
+                  <Col sm={2} md={12} push={{ xl: 6 }} xxl={12}>
                     <ImgRight src={processS} alt="Woman is working" />
                   </Col>
                 </ProcessContainer>
@@ -694,30 +745,111 @@ const Project1 = () => {
                 </Details>
               </Col>
             </Row>
-            <Row sm={2} md={6} xl={6}>
+            <Row sm={2} md={6} xl={12}>
               <Col>
                 <DetailReversed>
                   <h1>Tech Stack</h1>
-                  <p>For the development of my App I used following tools:</p>
+                  <p>
+                    For the development of my App I used the following tools and
+                    languages:
+                  </p>
                   <TechStack>
-                    <IconStyleWrapper>
-                      <Html5>
+                    <TooltipCard>
+                      <TooltipSVG>
+                        <Html5 />
+                      </TooltipSVG>
+                      <TooltipBox>
                         <p>html</p>
-                      </Html5>
-                      <Css3>
+                      </TooltipBox>
+                    </TooltipCard>
+                    <TooltipCard>
+                      <TooltipSVG>
+                        <Css3 />
+                      </TooltipSVG>
+                      <TooltipBox>
                         <p>css</p>
-                      </Css3>
-                      <Javascript />
-                      <ReactLogo />
-                      <StyledComponents />
-                      <Storybook />
-                      <Adobexd />
-                      <Mongodb />
-                      <NodeDotJs />
-                      <Express />
-                      <Reactrouter />
-                      <Github />
-                    </IconStyleWrapper>
+                      </TooltipBox>
+                    </TooltipCard>
+                    <TooltipCard>
+                      <TooltipSVG>
+                        <Javascript />
+                      </TooltipSVG>
+                      <TooltipBox>
+                        <p>javascript</p>
+                      </TooltipBox>
+                    </TooltipCard>
+                    <TooltipCard>
+                      <TooltipSVG>
+                        <ReactLogo />
+                      </TooltipSVG>
+                      <TooltipBox>
+                        <p>react.js</p>
+                      </TooltipBox>
+                    </TooltipCard>
+                    <TooltipCard>
+                      <TooltipSVG>
+                        <StyledComponents />
+                      </TooltipSVG>
+                      <TooltipBox>
+                        <p>styled-components</p>
+                      </TooltipBox>
+                    </TooltipCard>
+                    <TooltipCard>
+                      <TooltipSVG>
+                        <Storybook />
+                      </TooltipSVG>
+                      <TooltipBox>
+                        <p>storybook</p>
+                      </TooltipBox>
+                    </TooltipCard>
+                    <TooltipCard>
+                      <TooltipSVG>
+                        <Adobexd />
+                      </TooltipSVG>
+                      <TooltipBox>
+                        <p>adobe XD</p>
+                      </TooltipBox>
+                    </TooltipCard>
+                    <TooltipCard>
+                      <TooltipSVG>
+                        <Mongodb />
+                      </TooltipSVG>
+                      <TooltipBox>
+                        <p>mongoDB</p>
+                      </TooltipBox>
+                    </TooltipCard>
+                    <TooltipCard>
+                      <TooltipSVG>
+                        <NodeDotJs />
+                      </TooltipSVG>
+                      <TooltipBox>
+                        <p>node.js</p>
+                      </TooltipBox>
+                    </TooltipCard>
+                    <TooltipCard>
+                      <TooltipSVG>
+                        <Express />
+                      </TooltipSVG>
+                      <TooltipBox>
+                        <p>express</p>
+                      </TooltipBox>
+                    </TooltipCard>
+                    <TooltipCard>
+                      <TooltipSVG>
+                        <Reactrouter />
+                      </TooltipSVG>
+                      <TooltipBox>
+                        <p>react router</p>
+                      </TooltipBox>
+                    </TooltipCard>
+                    <TooltipCard>
+                      <TooltipSVG>
+                        <Github />
+                      </TooltipSVG>
+                      <TooltipBox>
+                        <p>GitHub</p>
+                      </TooltipBox>
+                    </TooltipCard>
                   </TechStack>
                 </DetailReversed>
               </Col>
@@ -737,6 +869,15 @@ const Project1 = () => {
           </Container>
           <section id="contact">
             <Contact />
+            <Fab
+              mainButtonStyles={{ backgroundColor: "#e879de" }}
+              style={{ bottom: 24, left: 24 }}
+              icon={
+                <Link to="/">
+                  <img src={home} alt="home" />
+                </Link>
+              }
+            ></Fab>
           </section>
         </main>
       </ParallaxProvider>

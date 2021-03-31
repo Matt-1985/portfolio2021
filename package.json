@@ -40,6 +40,7 @@
     "react-multi-carousel": "^2.6.1",
     "react-scroll-parallax": "^2.3.5",
     "react-spring": "^8.0.27",
+    "react-tiny-fab": "^4.0.2",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
