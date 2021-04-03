@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { mediaQueries } from "../commons/MediaQueries";
 import { Chrono } from "react-chrono";
 import items from "../components/data";
-import QR from "../images/qrcode.png";
+import qrc from "../images/qrcode.png";
 
 const VitaContainer = styled.div`
   height: 70vh;
@@ -148,7 +148,7 @@ const Vita = () => {
             }}
           >
             <div>
-              <Img src={QR} alt="QR Code" />
+              <Img src={qrc} alt="QR Code" />
               <div style={{ textAlign: "center" }}>hover</div>
             </div>
           </Chrono>
