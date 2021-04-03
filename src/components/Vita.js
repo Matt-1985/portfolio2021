@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { mediaQueries } from "../commons/MediaQueries";
 import { Chrono } from "react-chrono";
 import items from "../components/data";
-import QR from "../images/QRCode.png";
+import QR from "../images/qrcode.png";
 
 const VitaContainer = styled.div`
   height: 70vh;
