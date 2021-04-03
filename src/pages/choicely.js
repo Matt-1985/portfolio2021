@@ -14,12 +14,11 @@ import { Html5 } from "@styled-icons/simple-icons/Html5";
 import { Css3 } from "@styled-icons/simple-icons/Css3";
 import { Javascript } from "@styled-icons/simple-icons/Javascript";
 import home from "../images/home.png";
-import plus from "../images/plus.png";
 import { ScreenClassProvider, Container, Row, Col } from "react-grid-system";
 import { mediaQueries } from "../commons/MediaQueries";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { GlobalStyle } from "../theme/global-style";
-import { Fab, Action } from "react-tiny-fab";
+import { Fab } from "react-tiny-fab";
 import "react-tiny-fab/dist/styles.css";
 import Contact from "../components/Contact";
 import issueS from "../images/issueS.png";
@@ -167,6 +166,8 @@ const ImgRight = styled.img`
 const ProductContainer = styled.div`
   display: flex;
   flex-direction: column;
+  font-family: "SpaceMonoRegular";
+  color: var(--main-font-color);
 `;
 
 const Details = styled.div`
@@ -228,7 +229,10 @@ const Details = styled.div`
   }
 `;
 
-const Headline = styled.div``;
+const Headline = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const H1 = styled.p`
   margin: 10% 0 0 10%;
@@ -241,7 +245,6 @@ const H1 = styled.p`
   -webkit-text-stroke-width: 0.3vw;
   -webkit-text-stroke-color: var(--secondary-font-color);
   font-size: 11vw;
-
   text-transform: uppercase;
   font-style: italic;
   text-decoration: underline #f0ff1f;
@@ -258,7 +261,7 @@ const H2 = styled.h2`
   color: var(--secondary-font-color);
   font-size: 1.5vw;
   letter-spacing: 1.5px;
-  margin-top: 1rem;
+  margin-left: 10%;
   text-transform: uppercase;
   ${mediaQueries("sm")`
    font-size: 1rem;
@@ -746,6 +749,17 @@ const Project1 = () => {
                       goal.
                     </li>
                     <li>
+                      <b>Obstacles are our friends:</b> Throughout the journey
+                      of developing the app I had to face a couple of challenges
+                      like functions that did not work in the beginning or
+                      trouble to connect the database properly. What I learned
+                      from all this is that those challenges take you also to
+                      the finish line. Rather than a straight line kinda journey
+                      the whole process had its peaks and valleys. I took myself
+                      out of my comfort zone and focused on problem solving
+                      instead of the problem itself.
+                    </li>
+                    <li>
                       <b>Ask for help:</b> One of my biggest learning was to ask
                       for help. Since this was my very first project I tried to
                       find out and implement as much as possible on my own.
@@ -771,7 +785,13 @@ const Project1 = () => {
                   <TechStack>
                     <TooltipCard>
                       <TooltipSVG>
-                        <Html5 />
+                        <a
+                          href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <Html5 />
+                        </a>
                       </TooltipSVG>
                       <TooltipBox>
                         <p>html</p>
@@ -779,7 +799,13 @@ const Project1 = () => {
                     </TooltipCard>
                     <TooltipCard>
                       <TooltipSVG>
-                        <Css3 />
+                        <a
+                          href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <Css3 />
+                        </a>
                       </TooltipSVG>
                       <TooltipBox>
                         <p>css</p>
@@ -787,7 +813,13 @@ const Project1 = () => {
                     </TooltipCard>
                     <TooltipCard>
                       <TooltipSVG>
-                        <Javascript />
+                        <a
+                          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <Javascript />
+                        </a>
                       </TooltipSVG>
                       <TooltipBox>
                         <p>javascript</p>
@@ -795,7 +827,13 @@ const Project1 = () => {
                     </TooltipCard>
                     <TooltipCard>
                       <TooltipSVG>
-                        <ReactLogo />
+                        <a
+                          href="https://reactjs.org/"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <ReactLogo />
+                        </a>
                       </TooltipSVG>
                       <TooltipBox>
                         <p>react.js</p>
@@ -803,7 +841,13 @@ const Project1 = () => {
                     </TooltipCard>
                     <TooltipCard>
                       <TooltipSVG>
-                        <StyledComponents />
+                        <a
+                          href="https://styled-components.com/"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <StyledComponents />
+                        </a>
                       </TooltipSVG>
                       <TooltipBox>
                         <p>styled-components</p>
@@ -811,7 +855,13 @@ const Project1 = () => {
                     </TooltipCard>
                     <TooltipCard>
                       <TooltipSVG>
-                        <Storybook />
+                        <a
+                          href="https://storybook.js.org/"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <Storybook />
+                        </a>
                       </TooltipSVG>
                       <TooltipBox>
                         <p>storybook</p>
@@ -819,7 +869,13 @@ const Project1 = () => {
                     </TooltipCard>
                     <TooltipCard>
                       <TooltipSVG>
-                        <Adobexd />
+                        <a
+                          href="https://www.adobe.com/de/products/xd.html?promoid=3NQZBBTZ&mv=other"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <Adobexd />
+                        </a>
                       </TooltipSVG>
                       <TooltipBox>
                         <p>adobe XD</p>
@@ -827,7 +883,13 @@ const Project1 = () => {
                     </TooltipCard>
                     <TooltipCard>
                       <TooltipSVG>
-                        <Mongodb />
+                        <a
+                          href="https://www.mongodb.com/"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <Mongodb />
+                        </a>
                       </TooltipSVG>
                       <TooltipBox>
                         <p>mongoDB</p>
@@ -835,7 +897,13 @@ const Project1 = () => {
                     </TooltipCard>
                     <TooltipCard>
                       <TooltipSVG>
-                        <NodeDotJs />
+                        <a
+                          href="https://nodejs.org/en/about/"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <NodeDotJs />
+                        </a>
                       </TooltipSVG>
                       <TooltipBox>
                         <p>node.js</p>
@@ -843,7 +911,13 @@ const Project1 = () => {
                     </TooltipCard>
                     <TooltipCard>
                       <TooltipSVG>
-                        <Express />
+                        <a
+                          href="https://expressjs.com/de/"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <Express />
+                        </a>
                       </TooltipSVG>
                       <TooltipBox>
                         <p>express</p>
@@ -851,7 +925,13 @@ const Project1 = () => {
                     </TooltipCard>
                     <TooltipCard>
                       <TooltipSVG>
-                        <Reactrouter />
+                        <a
+                          href="https://reactrouter.com/"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <Reactrouter />
+                        </a>
                       </TooltipSVG>
                       <TooltipBox>
                         <p>react router</p>
@@ -859,7 +939,13 @@ const Project1 = () => {
                     </TooltipCard>
                     <TooltipCard>
                       <TooltipSVG>
-                        <Github />
+                        <a
+                          href="https://github.com/Matt-1985"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <Github />
+                        </a>
                       </TooltipSVG>
                       <TooltipBox>
                         <p>GitHub</p>
@@ -877,10 +963,23 @@ const Project1 = () => {
                     <br />
                     <H2>Bon Appetit!</H2>
                   </Headline>
-                  <p>
-                    <MockUp src={choicelyGif} alt="choicely app" />
-                    <h2>Development</h2>
-                  </p>
+                  <P>
+                    <a
+                      href="https://choicely.herokuapp.com/"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <MockUp src={choicelyGif} alt="choicely app" />
+                    </a>
+                    After 4 months of planning, designing and developing{" "}
+                    <b>choicely</b> I can finally present, fully proud, a
+                    ready-to-use app that I developed from scratch. <br /> The
+                    actual version of the app includes the possibility to find
+                    restaurants at the moment. For the future, <em>however</em>,
+                    I plan to support the user finding fitting entertainment,
+                    like movies or series, or even short trips for vacation.{" "}
+                    <br />
+                  </P>
                 </ProductContainer>
               </Col>
             </Row>
