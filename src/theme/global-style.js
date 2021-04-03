@@ -106,6 +106,7 @@ button {
 }
 
 
+
 h1 {
 font-family: "NimbusRegular";
 font-size: 9vw;
@@ -113,10 +114,16 @@ color: var(--primary-color);
 -webkit-text-stroke-width: 0.2px;
 -webkit-text-stroke-color: var(--secondary-font-color);
 }
+
+
 a {
   text-decoration: none;
   color: var(--primary-color);
   
+}
+
+hr {
+  border: 1px solid var(--secondary-color);
 }
 
  
