@@ -170,14 +170,14 @@ const Projects = () => {
               src={cardImage}
               alt="app logo"
               headline="choicely"
-              p="What do we eat today?"
+              p="What do we eat today? The app that helps you decide!"
               href={<Link to="/choicely/">View the case Study</Link>}
             />
             <Cards
               src={p2020}
               alt="app logo"
               headline="Portfolio 2020"
-              p="The first attemp in creating a portfolio with Bootstrap in September 2020"
+              p="My portfolio with Bootstrap / September 2020"
               href={
                 <Link to="https://matt-1985.github.io/portfolio1//">
                   TO THE PORTFOLIO
@@ -188,7 +188,7 @@ const Projects = () => {
               src={kanye}
               alt="app logo"
               headline="Kanye Quotes"
-              p="Back in October 2020 I created my first API connected Application"
+              p="First API connected Application / October 2020 "
               href={
                 <Link to="https://kanye-quotes.vercel.app/">
                   TO THE PROJECT
@@ -199,9 +199,9 @@ const Projects = () => {
               src={mtc}
               alt="app logo"
               headline="More to come"
-              p="Currently I am working on another Project...as soon as i have more details i'll upload it here "
+              p="Currently I am working on another Project...😉 "
               href={
-                <Link to="https://choicely.herokuapp.com/">TO THE PROJECT</Link>
+                <Link to="https://choicely.herokuapp.com/">COMING SOON</Link>
               }
             />
           </Carousel>

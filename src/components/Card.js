@@ -36,6 +36,7 @@ const CardContentContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 3rem;
   padding: 0.5rem 0.5rem;
 `;
 
