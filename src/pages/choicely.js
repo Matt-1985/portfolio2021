@@ -14,6 +14,7 @@ import { Html5 } from "@styled-icons/simple-icons/Html5";
 import { Css3 } from "@styled-icons/simple-icons/Css3";
 import { Javascript } from "@styled-icons/simple-icons/Javascript";
 import home from "../images/home.png";
+import plus from "../images/plus.png";
 import { ScreenClassProvider, Container, Row, Col } from "react-grid-system";
 import { mediaQueries } from "../commons/MediaQueries";
 import { ParallaxProvider } from "react-scroll-parallax";
@@ -227,9 +228,20 @@ const Details = styled.div`
   }
 `;
 
-const H1 = styled.h1`
-  font-size: 8vw;
-  margin-bottom: 0;
+const Headline = styled.div``;
+
+const H1 = styled.p`
+  margin: 10% 0 0 10%;
+  width: 100%;
+  height: auto;
+  line-height: 0.7;
+  font-family: "NimbusRegular";
+  font-size: 17vw;
+  color: var(--primary-color);
+  -webkit-text-stroke-width: 0.3vw;
+  -webkit-text-stroke-color: var(--secondary-font-color);
+  font-size: 11vw;
+
   text-transform: uppercase;
   font-style: italic;
   text-decoration: underline #f0ff1f;
@@ -246,7 +258,7 @@ const H2 = styled.h2`
   color: var(--secondary-font-color);
   font-size: 1.5vw;
   letter-spacing: 1.5px;
-  margin: 0;
+  margin-top: 1rem;
   text-transform: uppercase;
   ${mediaQueries("sm")`
    font-size: 1rem;
@@ -459,11 +471,14 @@ const Project1 = () => {
               </Col>
               <Col>
                 <IssueContainer>
-                  <H1>choicely </H1>
-                  <H2>
-                    helps the user to make decisions for eating by showing
-                    different restaurants
-                  </H2>
+                  <Headline>
+                    <H1>choicely </H1>
+                    <br />
+                    <H2>
+                      helps the user to make decisions for eating by showing
+                      different restaurants
+                    </H2>
+                  </Headline>
                   <P>
                     Hungry? Undecided? Lots of time wasted?
                     <br /> Sounds familiar, doesn&apos;t it? Finding something
@@ -472,9 +487,6 @@ const Project1 = () => {
                     Or even ending with you grabing some snacks to fill your
                     gap. <br /> As I rely to this behavior a way too much, I
                     created my first App: choicely!
-                    <div>
-                      <Link to="/index/">INDEX</Link>
-                    </div>
                   </P>
                   <a
                     href="https://choicely.herokuapp.com/"
@@ -500,8 +512,11 @@ const Project1 = () => {
             <Row sm={2} md={12} xl={10} xxl={12}>
               <Col>
                 <ProcessContainer>
-                  <H1>The Process</H1>
-                  <H2>...or &quot;learn, try, fail, repeat&quot;</H2>
+                  <Headline>
+                    <H1>The Process</H1>
+                    <br />
+                    <H2>...or &quot;learn, try, fail, repeat&quot;</H2>
+                  </Headline>
                   <P>
                     From product design to UX/UI experience to development I was
                     responsible for all steps in the process chain. Since this
@@ -857,8 +872,11 @@ const Project1 = () => {
             <Row sm={2} xl={8}>
               <Col>
                 <ProductContainer>
-                  <H1>The final Product</H1>
-                  <H2>Bon Appetit!</H2>
+                  <Headline>
+                    <H1>The final Product</H1>
+                    <br />
+                    <H2>Bon Appetit!</H2>
+                  </Headline>
                   <p>
                     <MockUp src={choicelyGif} alt="choicely app" />
                     <h2>Development</h2>
@@ -886,7 +904,3 @@ const Project1 = () => {
 };
 
 export default Project1;
-
-// Wrapper.propTypes = {
-//   className: PropTypes.string,
-// };
