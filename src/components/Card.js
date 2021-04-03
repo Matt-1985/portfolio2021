@@ -16,21 +16,11 @@ const CardsContainer = styled.div`
   flex-direction: column;
   transition: 0.2s;
   margin: 0;
-  /* display: grid;
-  overflow: hidden;
-  width: 20em;
-  height: 30em;
-  margin: 0 auto;
-  position: relative; */
-  /* grid-gap: 6rem;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); */
-  /* align-items: start; */
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-
   z-index: 4;
 `;
 
@@ -42,6 +32,10 @@ const CardImage = styled.img`
 `;
 
 const CardContentContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   padding: 0.5rem 0.5rem;
 `;
 
@@ -66,19 +60,36 @@ const CardParagraph = styled.p`
 
 const CardButton = styled.button`
   text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 1rem;
   padding: 1.5rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
-  background-color: transparent;
+  background-color: var(--highlight-color);
   color: var(--primary-color);
   border: none;
   border-radius: 0.4rem;
-`;
+    transition: ease background-color 250ms;
+    transform: scale(1);
+    animation: pulse 2s infinite;
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(240, 255, 31, 0.39);
+      }
 
-const Div = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+      }
+
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      }
+    }
+  }
 `;
 
 export default function Cards(props) {
@@ -90,9 +101,7 @@ export default function Cards(props) {
             <CardImage src={props.src} />
             <CardHeadline>{props.headline}</CardHeadline>
             <CardParagraph>{props.p}</CardParagraph>
-            <Div>
-              <CardButton>{props.href}</CardButton>
-            </Div>
+            <CardButton>{props.href}</CardButton>
           </CardContentContainer>
         </CardsContainer>
       </ScrollBoxContainer>
@@ -102,7 +111,6 @@ export default function Cards(props) {
 
 Cards.propTypes = {
   href: PropTypes.string,
-
   headline: PropTypes.string,
   p: PropTypes.string,
   src: PropTypes.string.isRequired,

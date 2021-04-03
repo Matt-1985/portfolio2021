@@ -168,6 +168,9 @@ const ProductContainer = styled.div`
   flex-direction: column;
   font-family: "SpaceMonoRegular";
   color: var(--main-font-color);
+  ${mediaQueries("sm")`
+  margin:0;
+  padding: 1em`};
 `;
 
 const Details = styled.div`
@@ -402,7 +405,7 @@ const MockUp = styled.img`
   ${mediaQueries("sm")`
   width: 100vw;
   height: 100%;
-  margin: 0.5em
+  margin: 0.5em;
     float: top;
     `};
 `;
@@ -971,7 +974,7 @@ const Project1 = () => {
                     >
                       <MockUp src={choicelyGif} alt="choicely app" />
                     </a>
-                    After 4 months of planning, designing and developing{" "}
+                    After four months of planning, designing & developing{" "}
                     <b>choicely</b> I can finally present, fully proud, a
                     ready-to-use app that I developed from scratch. <br /> The
                     actual version of the app includes the possibility to find
