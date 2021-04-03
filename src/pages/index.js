@@ -3,6 +3,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import { GlobalStyle } from "../theme/global-style";
 import Navbar from "../components/Navigation";
 import Landing from "../components/Landing";
+import About from "../components/About";
 import Vita from "../components/Vita";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
@@ -15,6 +16,9 @@ const IndexPage = () => {
         <Navbar />
         <section id="home">
           <Landing />
+        </section>
+        <section id="about">
+          <About />
         </section>
         <section id="projects">
           <Projects />
