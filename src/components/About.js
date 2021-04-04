@@ -2,30 +2,41 @@ import React from "react";
 import { Parallax } from "react-scroll-parallax";
 import styled from "styled-components";
 import { mediaQueries } from "../commons/MediaQueries";
+import me from "../images/matthias.png";
 
 const AboutContainer = styled.div`
   height: 70vh;
   width: 100%;
   position: relative;
   overflow: hidden;
-  transform: skewY(10deg);
   display: flex;
   justify-content: center;
   align-content: center;
   padding: 1rem 6rem;
-  border-radius: 12px;
-  background: rgb(232, 121, 222);
-  background: linear-gradient(
-    125deg,
-    rgba(232, 121, 222, 0.9023984593837535) 0%,
-    rgba(0, 144, 255, 1) 59%,
-    rgba(240, 255, 31, 0.8603816526610644) 95%
-  );
   z-index: 1;
-  border-top-left-radius: 0;
-  border-bottom-right-radius: 0;
+
+  img {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+    object-position: 10%;
+    border: 5px solid #6fc2a7;
+    ${mediaQueries("sm")`
+  width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    object-position: 10%;
+  `};
+  }
+
+  p {
+    font-family: "SpaceMonoRegular";
+    color: var(--secondary-font-color);
+    font-size: 1.5rem;
+  }
   ${mediaQueries("sm")`
-  padding-right:3rem;
+  
   height: 100vh;
   width: 100vw;
   
@@ -120,7 +131,33 @@ const About = () => {
         </StyledHeadline>
       </Parallax>
 
-      <AboutContainer></AboutContainer>
+      <AboutContainer>
+        <img src={me} alt="fa fa-info" />
+        <p>
+          From Print Media Designer to Web Developer? The future is going to be
+          digital. We need progress instead of stagnation - Without the leap
+          into the digital realm, we will stand still. For me, things no longer
+          just have to look good, but also have to function flawlessly. zickzack
+          During last couple of years I often asked myself: Is my job right for
+          me? Last year decided that time moves on and I have to change
+          something. I couldn‘t go on being a Graphic Designer. There had to be
+          a chance for a new beginning. Starting in Summer 2020 I attended a
+          4-week long workshop at shecodes.io where I learned the basics of
+          HTML, CSS and basic Javascript. Afterwards, I wanted to challenge
+          myself further: I decided to self-teach myself coding. In autumn I
+          attended the Web Developer Bootcamp at neue Fische, which I completed
+          in December/January. During this time I found myself enjoying coding a
+          lot - it just felt right. I didn‘t only have to produce content which
+          looked good, I am now able to produce functional components which do
+          the things I tell them to do. pusher tony Mural at Cologne
+          EhrenfeldRooftopterrace at Museum Ludwig Apart from working a lot on
+          my computer, one of my main interests is music. I enjoy going to
+          concerts (hopefully again after corona) and looking for new artists,
+          tracks, and genres. A long time ago i even had a blog to write about
+          new discoverys. Apart from music I also enjoy other aspects of arts
+          and cultur such as visual and performing arts.
+        </p>
+      </AboutContainer>
     </>
   );
 };
