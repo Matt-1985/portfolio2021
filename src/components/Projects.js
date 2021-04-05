@@ -11,7 +11,7 @@ import kanye from "../images/Kanye_Quotes.png";
 import p2020 from "../images/Portfolio_2020.png";
 import mtc from "../images/mtc.png";
 import responsive from "../commons/Responsive";
-// import Link from "../commons/Link";
+// import GatsbyLink from "../commons/Link";
 
 const ProjectWrapper = styled.div`
   height: auto;
@@ -179,9 +179,9 @@ const Projects = () => {
               headline="Portfolio 2020"
               p="My portfolio with Bootstrap / September 2020"
               href={
-                <Link to="https://matt-1985.github.io/portfolio1//">
+                <a href="https://matt-1985.github.io/portfolio1//">
                   TO THE PORTFOLIO
-                </Link>
+                </a>
               }
             />
             <Cards
@@ -190,9 +190,7 @@ const Projects = () => {
               headline="Kanye Quotes"
               p="First API connected Application / October 2020 "
               href={
-                <Link to="https://kanye-quotes.vercel.app/">
-                  TO THE PROJECT
-                </Link>
+                <a href="https://kanye-quotes.vercel.app/">TO THE PROJECT</a>
               }
             />
             <Cards
@@ -200,9 +198,7 @@ const Projects = () => {
               alt="app logo"
               headline="More to come"
               p="Currently I am working on another Project...😉 "
-              href={
-                <Link to="https://choicely.herokuapp.com/">COMING SOON</Link>
-              }
+              href={<a href="https://choicely.herokuapp.com/">COMING SOON</a>}
             />
           </Carousel>
         </ProjectContainer>

@@ -13,7 +13,6 @@ import { Github } from "@styled-icons/simple-icons/Github";
 import { Html5 } from "@styled-icons/simple-icons/Html5";
 import { Css3 } from "@styled-icons/simple-icons/Css3";
 import { Javascript } from "@styled-icons/simple-icons/Javascript";
-import home from "../images/home.png";
 import { ScreenClassProvider, Container, Row, Col } from "react-grid-system";
 import { mediaQueries } from "../commons/MediaQueries";
 import { ParallaxProvider } from "react-scroll-parallax";
@@ -21,6 +20,7 @@ import { GlobalStyle } from "../theme/global-style";
 import { Fab } from "react-tiny-fab";
 import "react-tiny-fab/dist/styles.css";
 import Contact from "../components/Contact";
+import home from "../images/home.png";
 import issueS from "../images/issueS.png";
 import processS from "../images/processS.png";
 import diagram from "../images/diagram.png";
@@ -565,12 +565,10 @@ const Project1 = () => {
             <Row sm={2} md={6} xl={12}>
               <Col>
                 <Details>
-                  <h1>
-                    Understanding the Problem
-                    <h2>
-                      <i>...and coming to conclusions</i>
-                    </h2>
-                  </h1>
+                  <h1>Understanding the Problem</h1>
+                  <h2>
+                    <i>...and coming to conclusions</i>
+                  </h2>
                   <p>
                     I worked at my first sprint using the persona approach to
                     identify the users needs. Therefore i broke down the problem
@@ -681,40 +679,40 @@ const Project1 = () => {
                     to consider the most of the feedback in the developnment.
                   </p>
                   <br />
+                  <ScreenHeadline>First decision screen</ScreenHeadline>
                   <p>
-                    <ScreenHeadline>First decision screen</ScreenHeadline>
                     <br />
                     This screen was created to deal with future features like
                     offering support to find movies or short trips in mind and
                     encourage users to click on the button to get started.
                   </p>
                   <img src={first} alt="red button" />
+                  <ScreenHeadline>Choose your path</ScreenHeadline>
                   <p>
-                    <ScreenHeadline>Choose your path</ScreenHeadline>
                     <br />
                     Users have to choose between a quick support and the filter
                     option. The buttons are big enough and give a color
                     guidance.
                   </p>
                   <img src={choose} alt="one yellow button one green button" />
+                  <ScreenHeadline>Random restaurants</ScreenHeadline>
                   <p>
-                    <ScreenHeadline>Random restaurants</ScreenHeadline>
                     <br />
                     Users getting now random results on what to choose of. Via
                     the refresh button on the down right side the useres have
                     the possibility to reaload new random restaurants.
                   </p>
                   <img src={option1} alt="card with restaurant" />
+                  <ScreenHeadline>Filtering</ScreenHeadline>
                   <p>
-                    <ScreenHeadline>Filtering</ScreenHeadline>
                     <br />
                     Users can now choose between max. 3 filter options. They
                     will be displayed the same way like the random results but
                     the guidance color is different.
                   </p>
                   <img src={option2} alt="filter options" />
+                  <ScreenHeadline>Details</ScreenHeadline>
                   <p>
-                    <ScreenHeadline>Details</ScreenHeadline>
                     <br />
                     Users can now push/click on the card and it will turn and
                     reveal the details on the back. With a click on the name of
@@ -991,7 +989,7 @@ const Project1 = () => {
             <Contact />
             <Fab
               mainButtonStyles={{ backgroundColor: "#e879de" }}
-              style={{ bottom: 24, left: 24 }}
+              style={{ bottom: 24, right: 24 }}
               icon={
                 <Link to="/">
                   <img src={home} alt="home" />

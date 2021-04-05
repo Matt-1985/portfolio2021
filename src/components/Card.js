@@ -59,7 +59,7 @@ const CardParagraph = styled.p`
   margin-bottom: 3.5rem;`};
 `;
 
-const CardButton = styled.button`
+const CardButton = styled.div`
   text-transform: uppercase;
   position: absolute;
   bottom: 0;
@@ -71,24 +71,23 @@ const CardButton = styled.button`
   color: var(--primary-color);
   border: none;
   border-radius: 0.4rem;
-    transition: ease background-color 250ms;
-    transform: scale(1);
-    animation: pulse 2s infinite;
-    @keyframes pulse {
-      0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(240, 255, 31, 0.39);
-      }
+  transition: ease background-color 250ms;
+  transform: scale(1);
+  animation: pulse 2s infinite;
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(240, 255, 31, 0.39);
+    }
 
-      70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-      }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
 
-      100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-      }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
   }
 `;
@@ -111,9 +110,9 @@ export default function Cards(props) {
 }
 
 Cards.propTypes = {
-  href: PropTypes.string,
-  headline: PropTypes.string,
-  p: PropTypes.string,
+  href: PropTypes.object.isRequired,
+  headline: PropTypes.string.isRequired,
+  p: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
 };
