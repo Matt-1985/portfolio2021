@@ -9,7 +9,7 @@ const AboutContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: hidden;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-content: center;
   padding: 1rem 6rem;
@@ -23,7 +23,7 @@ const AboutContainer = styled.div`
     object-position: 10%;
     border: 5px solid #6fc2a7;
     ${mediaQueries("sm")`
-  width: 15rem;
+    width: 15rem;
     height: 15rem;
     object-fit: cover;
     object-position: 10%;
@@ -42,6 +42,33 @@ const AboutContainer = styled.div`
   
   
   `};
+`;
+
+const AboutText = styled.div`
+  display: flex;
+  flex-direction: column;
+  h1 {
+    margin-bottom: 0;
+    font-family: "SpaceMonoBold";
+    font-size: 4rem;
+    text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.4);
+  }
+  span,
+  p {
+    margin-top: 1.5rem;
+    font-family: "SpaceMonoRegular";
+    font-size: 1rem;
+  }
+  h1,
+  span,
+  p {
+    color: #6fc2a7;
+  }
+  hr {
+    margin-left: 0;
+    width: 4rem;
+    border: 2px solid var(--main-font-color);
+  }
 `;
 
 const StyledHeadline = styled.div.attrs((props) => ({
@@ -133,30 +160,32 @@ const About = () => {
 
       <AboutContainer>
         <img src={me} alt="fa fa-info" />
-        <p>
-          From Print Media Designer to Web Developer? The future is going to be
-          digital. We need progress instead of stagnation - Without the leap
-          into the digital realm, we will stand still. For me, things no longer
-          just have to look good, but also have to function flawlessly. zickzack
-          During last couple of years I often asked myself: Is my job right for
-          me? Last year decided that time moves on and I have to change
-          something. I couldn‘t go on being a Graphic Designer. There had to be
-          a chance for a new beginning. Starting in Summer 2020 I attended a
-          4-week long workshop at shecodes.io where I learned the basics of
-          HTML, CSS and basic Javascript. Afterwards, I wanted to challenge
-          myself further: I decided to self-teach myself coding. In autumn I
-          attended the Web Developer Bootcamp at neue Fische, which I completed
-          in December/January. During this time I found myself enjoying coding a
-          lot - it just felt right. I didn‘t only have to produce content which
-          looked good, I am now able to produce functional components which do
-          the things I tell them to do. pusher tony Mural at Cologne
-          EhrenfeldRooftopterrace at Museum Ludwig Apart from working a lot on
-          my computer, one of my main interests is music. I enjoy going to
-          concerts (hopefully again after corona) and looking for new artists,
-          tracks, and genres. A long time ago i even had a blog to write about
-          new discoverys. Apart from music I also enjoy other aspects of arts
-          and cultur such as visual and performing arts.
-        </p>
+        <AboutText>
+          <h1>Designer & problem solver</h1>
+          <hr />
+          <span>Hi, I&apos;m Matthias 👋🏻</span>
+          <p>
+            The last couple of years I asked myself: &quot;Does the job I have
+            satisfies me? Do I have growth perspective?&quot; What I realized is
+            that the career I was in was not fulfilling those questions.
+          </p>
+          <p>
+            The fact: I had at that time over a decade of experience in retail,
+            customer service and management. <br />
+            Last year, however, I decided to change careers and started looking
+            for possibilities. At the same time I found myself having a passion
+            towards web development. And it seems that it also found me. How
+            romantic!
+          </p>
+
+          <p>
+            So, in September 2020 I applied to the Webdeveloper Bootcamp at{" "}
+            <i>neue fische School & Pool for digital Talent</i>. Eventhough i
+            had my concerns at the beginning (changeing careers plays with your
+            self doubts) I felt this is the place where i belong doing what I
+            was supposed to do. At the end of 2020 I successfully gratuaded.
+          </p>
+        </AboutText>
       </AboutContainer>
     </>
   );
