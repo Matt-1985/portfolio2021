@@ -989,7 +989,7 @@ const Project1 = () => {
             <Contact />
             <Fab
               mainButtonStyles={{ backgroundColor: "#e879de" }}
-              style={{ bottom: 24, left: 24 }}
+              style={{ bottom: 24, right: 24 }}
               icon={
                 <Link to="/">
                   <img src={home} alt="home" />

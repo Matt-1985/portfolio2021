@@ -5,14 +5,14 @@ import { mediaQueries } from "../commons/MediaQueries";
 import me from "../images/matthias.png";
 
 const AboutContainer = styled.div`
-  height: 70vh;
+  height: 100vh;
   width: 100%;
   position: relative;
   overflow: hidden;
-  display: grid;
+  display: flex;
   justify-content: center;
   align-content: center;
-  padding: 1rem 6rem;
+  padding: 6rem;
   z-index: 1;
 
   img {
@@ -36,9 +36,12 @@ const AboutContainer = styled.div`
     font-size: 1.5rem;
   }
   ${mediaQueries("sm")`
-  
-  height: 100vh;
-  width: 100vw;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 3rem;
   
   
   `};
@@ -69,19 +72,23 @@ const AboutText = styled.div`
     width: 4rem;
     border: 2px solid var(--main-font-color);
   }
+  a {
+    text-decoration: none;
+    color: var(--main-font-color);
+  }
 `;
 
 const StyledHeadline = styled.div.attrs((props) => ({
   className: props.className,
 }))`
   &.dashed-shadow {
-    margin: 0;
+    margin: 3rem 0 0 0;
     text-align: center;
     font-size: 14vw;
     letter-spacing: 4vw;
     position: relative;
-    top: 8px;
-    left: 8px;
+    top: 18px;
+    left: 18px;
     display: inline-block;
     color: var(--primary-color);
     ${mediaQueries("sm")`
@@ -96,8 +103,8 @@ const StyledHeadline = styled.div.attrs((props) => ({
     content: " ";
     display: block;
     position: absolute;
-    top: -8px;
-    left: -8px;
+    top: -18px;
+    left: -18px;
     bottom: -2px;
     right: -2px;
     z-index: -1;
@@ -152,7 +159,7 @@ const StyledHeadline = styled.div.attrs((props) => ({
 const About = () => {
   return (
     <>
-      <Parallax y={[-60, 50]} x={[-30, 50]}>
+      <Parallax y={[-10, 30]} x={[-30, 30]}>
         <StyledHeadline className="dashed-shadow" data-text="About">
           About
         </StyledHeadline>
@@ -160,6 +167,7 @@ const About = () => {
 
       <AboutContainer>
         <img src={me} alt="fa fa-info" />
+
         <AboutText>
           <h1>Designer & problem solver</h1>
           <hr />
@@ -170,20 +178,34 @@ const About = () => {
             that the career I was in was not fulfilling those questions.
           </p>
           <p>
-            The fact: I had at that time over a decade of experience in retail,
+            The facts: At that time I had over a decade of experience in retail,
             customer service and management. <br />
             Last year, however, I decided to change careers and started looking
             for possibilities. At the same time I found myself having a passion
-            towards web development. And it seems that it also found me. How
-            romantic!
+            towards Frontend development. And it seems that it also found me.
+            How romantic!
           </p>
 
           <p>
             So, in September 2020 I applied to the Webdeveloper Bootcamp at{" "}
-            <i>neue fische School & Pool for digital Talent</i>. Eventhough i
-            had my concerns at the beginning (changeing careers plays with your
-            self doubts) I felt this is the place where i belong doing what I
-            was supposed to do. At the end of 2020 I successfully gratuaded.
+            <a href="https://www.neuefische.de/">
+              <i>neue fische School & Pool for Digital Talent</i>
+            </a>
+            . Even though i had my concerns at the beginning (changing careers
+            plays with your self doubts) I felt this is the place where i belong
+            doing what I was supposed to do.
+          </p>
+          <p>
+            {" "}
+            This was also the first time I got in contact with UX/UI design and
+            I was hooked immediatly. Not only opened it the door for me to
+            direct my creativity in this field but also I could channel the set
+            of skills that enable me to predict what a customer might feel
+            attracted to.
+          </p>
+          <p>
+            At the end of 2020 I successfully graduated, developed my own App
+            and learned what i want...and what I don&apos;t.
           </p>
         </AboutText>
       </AboutContainer>
