@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import { useDate } from "../commons/useDate";
 import { mediaQueries } from "../commons/MediaQueries";
 import styled from "styled-components";
@@ -46,8 +47,32 @@ const StyledText = styled.div`
 `;
 
 const A = styled.a`
-  /* text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
-    0px 18px 23px rgba(0, 0, 0, 0.4); */
+  text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: "NimbusRegular";
+  font-size: 3em;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255) 0%,
+    rgba(255, 255, 255, 68) 100%
+  );
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 4px;
+  color: var(--primary-color);
+  transition: background-size 0.2s;
+  :hover {
+    background-size: 4px 50px;
+  }
+  ${mediaQueries("sm")`
+  
+  font-size: 1.5rem;
+  
+  `};
+`;
+
+const StyledLink = styled(Link)`
   text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -184,7 +209,7 @@ export default function Contact() {
 
           <A href="https://github.com/Matt-1985">github</A>
 
-          <A href="https://www.instagram.com/der_sonderman/">instagram</A>
+          <StyledLink to="/legal/">legals</StyledLink>
           <Date>
             {date}
             {time}
