@@ -9,7 +9,7 @@ import Cards from "../components/Card";
 import cardImage from "../images/choicely.png";
 import kanye from "../images/Kanye_Quotes.png";
 import p2020 from "../images/Portfolio_2020.png";
-import mtc from "../images/mtc.png";
+import local from "../images/logo_local.png";
 import responsive from "../commons/Responsive";
 // import GatsbyLink from "../commons/Link";
 
@@ -174,6 +174,13 @@ const Projects = () => {
               href={<Link to="/choicely/">View the case Study</Link>}
             />
             <Cards
+              src={local}
+              alt="app logo"
+              headline="local local"
+              p="Support your local businesses with your fingertips / April 2021 "
+              href={<Link to="/local/">View the case Study</Link>}
+            />
+            <Cards
               src={p2020}
               alt="app logo"
               headline="Portfolio 2020"
@@ -183,22 +190,6 @@ const Projects = () => {
                   TO THE PORTFOLIO
                 </a>
               }
-            />
-            <Cards
-              src={kanye}
-              alt="app logo"
-              headline="Kanye Quotes"
-              p="First API connected Application / October 2020 "
-              href={
-                <a href="https://kanye-quotes.vercel.app/">TO THE PROJECT</a>
-              }
-            />
-            <Cards
-              src={mtc}
-              alt="app logo"
-              headline="More to come"
-              p="Currently I am working on another Project...😉 "
-              href={<a href="https://choicely.herokuapp.com/">COMING SOON</a>}
             />
           </Carousel>
         </ProjectContainer>
