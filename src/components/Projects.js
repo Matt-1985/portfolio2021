@@ -177,7 +177,7 @@ const Projects = () => {
               src={local}
               alt="app logo"
               headline="local local"
-              p="Support your local businesses with your fingertips / April 2021 "
+              p="Support local businesses with your fingertips / April 2021 "
               href={<Link to="/local/">View the case Study</Link>}
             />
             <Cards

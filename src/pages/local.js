@@ -21,7 +21,9 @@ import { Fab } from "react-tiny-fab";
 import "react-tiny-fab/dist/styles.css";
 import Contact from "../components/Contact";
 import home from "../images/home.png";
-import issueS from "../images/issueS.png";
+import local1 from "../images/local_1.png";
+import local2 from "../images/local_2.png";
+import local3 from "../images/local_3.png";
 import processS from "../images/processS.png";
 import diagram from "../images/diagram.png";
 import first from "../images/first-decision.png";
@@ -132,11 +134,20 @@ const IssueContainer = styled.div`
 `};
 `;
 
-const ImgLeft = styled.img`
-  ${mediaQueries("sm")`
+const ImgContainer = styled.div`
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 0 0 3rem;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 80%;
+  }
+  ${mediaQueries("sm")`
+  display: column;
+   width: 100%;
 `};
 `;
 
@@ -292,57 +303,6 @@ const P = styled.p`
     `};
 `;
 
-const Figure = styled.figure`
-  font-family: "SpaceMonoBold";
-  font-size: 5rem;
-  color: var(--secondary-font-color);
-  text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);
-  &:hover {
-    font-family: "Times New Roman", serif;
-    font-size: 5rem;
-    font-style: italic;
-    color: var(--main-font-color);
-    animation: scale-down-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    @keyframes scale-down-center {
-      0% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(0.5);
-      }
-    }
-  }
-`;
-
-const Blockquote = styled.blockquote`
-  text-align: center;
-  text-indent: -0.45em;
-  quotes: "“" "”" "‘" "’";
-  :before {
-    content: open-quote;
-  }
-  :after {
-    content: close-quote;
-  }
-  @supports (hanging-punctuation: first) {
-    blockquote {
-      text-indent: 0;
-      hanging-punctuation: first;
-    }
-  }
-
-  ${mediaQueries("sm")`
-    font-size: 2rem;
-    `};
-`;
-
-const Figcaption = styled.figcaption`
-  text-align: right;
-  ${mediaQueries("sm")`
-    font-size: 1rem;
-    `};
-`;
-
 const DetailReversed = styled.div`
   display: flex;
   flex-direction: column;
@@ -473,7 +433,10 @@ const Project1 = () => {
           <Container fluid>
             <Row sm={2} md={6}>
               <Col>
-                <ImgLeft src={issueS} alt="Hungry woman" />
+                <ImgContainer>
+                  <img src={local2} alt="phone app left" />
+                  <img src={local3} alt="phone app right" />
+                </ImgContainer>
               </Col>
               <Col>
                 <IssueContainer>
@@ -486,32 +449,31 @@ const Project1 = () => {
                     </H2>
                   </Headline>
                   <P>
-                    Hungry? Undecided? Lots of time wasted?
-                    <br /> Sounds familiar, doesn&apos;t it? Finding something
-                    satisfying to eat when you are hungry can end up in a
-                    neverending <i>no-you-decide-game</i> with your loved ones.
-                    Or even ending with you grabing some snacks to fill your
-                    gap. <br /> As I rely to this behavior a way too much, I
-                    created my first App: choicely!
+                    The covid pandemic did hit every business hard. The small
+                    local businesses were the most impacted, as most of them
+                    lacks a proper website or access to professional, digital
+                    selling tools.
+                    <br /> During my time in the Coding bootcamp one of the
+                    ideas for a project was to develop a delivery service. This
+                    delivery service would be specialized in, and
+                    professionalized for, local businesess like Boutiques,
+                    jewlery retailer, or plant shops. As this idea was to
+                    complex to develop I decided to give my heartfelt project
+                    another shot.
+                    <br />
+                    <b>&quot;local local&quot;</b> was born. An app, that
+                    supports local businesses, saves and creates new job
+                    possibilities and on top of that is total enviroinment
+                    friendly &#40;compared to regular online shopping&#41;
                   </P>
                   <a
-                    href="https://choicely.herokuapp.com/"
+                    href="https://www.figma.com/proto/XlBSbNBZ1i1Bb4xa79mXj1/UX-Essentials-delivery-service?node-id=29%3A0&scaling=scale-down&page-id=0%3A1"
                     rel="noreferrer"
                     target="_blank"
                   >
-                    <Button> Hungry? Check out the App </Button>
+                    <Button> Check out the prototype </Button>
                   </a>
                 </IssueContainer>
-              </Col>
-            </Row>
-            <Row sm={2} md={6} xl={12} xxl={12}>
-              <Col>
-                <Details>
-                  <Figure>
-                    <Blockquote>You are not you when you are hungry</Blockquote>
-                    <Figcaption>&mdash; Snickers</Figcaption>
-                  </Figure>
-                </Details>
               </Col>
             </Row>
             <hr />
@@ -521,14 +483,14 @@ const Project1 = () => {
                   <Headline>
                     <H1>The Process</H1>
                     <br />
-                    <H2>...or &quot;learn, try, fail, repeat&quot;</H2>
+                    <H2>
+                      ...or &quot;Simple is hard. Easy is harder. Invisible is
+                      hardest&quot; — Jean-Louis Gassée
+                    </H2>
                   </Headline>
                   <P>
-                    From product design to UX/UI experience to development I was
-                    responsible for all steps in the process chain. Since this
-                    was my final project of a Coding Bootcamp, I had to deepen
-                    my programming skills and fastly enhance my experience in 4
-                    weeks. Here are some key achievements:
+                    For my latest project I decided to messure the time I need
+                    for certain tasks to see in which field I can improve:
                   </P>
                   <ul>
                     <li>
