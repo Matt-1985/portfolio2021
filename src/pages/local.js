@@ -1,18 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { ReactLogo } from "@styled-icons/simple-icons/ReactLogo";
-import { StyledComponents } from "@styled-icons/simple-icons/StyledComponents";
-import { Mongodb } from "@styled-icons/simple-icons/Mongodb";
-import { NodeDotJs } from "@styled-icons/simple-icons/NodeDotJs";
-import { Storybook } from "@styled-icons/simple-icons/Storybook";
-import { Adobexd } from "@styled-icons/simple-icons/Adobexd";
-import { Express } from "@styled-icons/simple-icons/Express";
-import { Reactrouter } from "@styled-icons/simple-icons/Reactrouter";
-import { Github } from "@styled-icons/simple-icons/Github";
-import { Html5 } from "@styled-icons/simple-icons/Html5";
-import { Css3 } from "@styled-icons/simple-icons/Css3";
-import { Javascript } from "@styled-icons/simple-icons/Javascript";
 import { ScreenClassProvider, Container, Row, Col } from "react-grid-system";
 import { mediaQueries } from "../commons/MediaQueries";
 import { ParallaxProvider } from "react-scroll-parallax";
@@ -21,54 +9,12 @@ import { Fab } from "react-tiny-fab";
 import "react-tiny-fab/dist/styles.css";
 import Contact from "../components/Contact";
 import home from "../images/home.png";
-import local1 from "../images/local_1.png";
 import local2 from "../images/local_2.png";
 import local3 from "../images/local_3.png";
-import processS from "../images/processS.png";
-import diagram from "../images/diagram.png";
-import first from "../images/first-decision.png";
-import choose from "../images/choose1.png";
-import option1 from "../images/option1.png";
-import option2 from "../images/option2.png";
-import outcome from "../images/outcome-detail.png";
-import choicelyGif from "../images/choicelyGif1.gif";
-
-const TechStack = styled.div`
-  margin-left: 5em;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 50%;
-  height: 100%;
-  h1 {
-    text-align: center;
-    font-family: "SpaceMonoBold";
-    color: var(--secondary-font-color);
-    text-transform: uppercase;
-    font-size: 3rem;
-    ${mediaQueries("sm")`
-    font-size: 2rem;
-    `};
-  }
-  h2 {
-    margin: 0;
-    font-family: "SpaceMonoRegular";
-    color: var(--secondary-font-color);
-    text-transform: uppercase;
-    font-size: 1.5rem;
-  }
-  p {
-    font-family: "Montserrat", sans-serif;
-    color: var(--secondary-font-color);
-    font-size: 1rem;
-  }
-  img {
-  }
-  ${mediaQueries("sm")`
-  margin: 0;
-  
-`};
-`;
+import research1 from "../images/research1.png";
+import research2 from "../images/research2.png";
+import { Chrono } from "react-chrono";
+import items from "../components/timeline.js";
 
 const theme = {
   blue: {
@@ -165,13 +111,11 @@ const ProcessContainer = styled.div`
     ${mediaQueries("sm")`
   font-size: 0.9rem;`};
   }
-`;
-
-const ImgRight = styled.img`
-  ${mediaQueries("sm")`
-  width: 100%;
-  height: 150%;
-  object-fit: contain;`};
+  span {
+    font-size: 1.3rem;
+    font-family: "SpaceMonoRegular";
+    color: var(--main-font-color);
+  }
 `;
 
 const ProductContainer = styled.div`
@@ -227,6 +171,7 @@ const Details = styled.div`
     font-size: 1.5rem;
   }
   img {
+    margin-top: 1rem;
     width: 60%;
     height: 60%;
     box-shadow: 1px 1px 10px 0 rgb(0 0 0 / 20%);
@@ -356,73 +301,168 @@ const ScreenHeadline = styled.p`
   font-weight: bold;
 `;
 
-const MockUp = styled.img`
-  shape-outside: url(${choicelyGif});
-  shape-margin: 1em;
-  margin: 1em;
-  float: left;
-  width: 30vw;
+const CircleContainer = styled.div`
+  margin: 1rem 0 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   ${mediaQueries("sm")`
-  width: 100vw;
-  height: 100%;
-  margin: 0.5em;
-    float: top;
+    flex-direction: column;
     `};
 `;
 
-const TooltipSVG = styled.div`
-  color: var(--main-font-color);
-  width: 5em;
-  height: 5em;
-  cursor: pointer;
-  z-index: -10;
-`;
-
-const TooltipBox = styled.div`
-  position: absolute;
-  left: 30px;
-  visibility: hidden;
-  color: transparent;
-  background-color: transparent;
-  width: 100%;
-  /* padding: 5px 5px; */
-  border-radius: 20px;
-  transition: visibility 0.2s, color 0.2s, background-color 0.2s, width 0.2s,
-    padding 0.2s ease-in-out;
-  z-index: 2;
-  &:before {
-    content: "";
-    width: 0;
-    height: 0;
-    left: 40px;
-    top: -10px;
-    position: absolute;
-    border: 10px solid transparent;
-    transform: rotate(135deg);
-    transition: border 0.2s ease-in-out;
+const Circle = styled.div`
+  margin-left: 20px;
+  height: 11rem;
+  width: 11rem;
+  background-color: #6fc2a7;
+  border-radius: 50%;
+  box-shadow: 13px 17px 10px -6px rgba(225, 223, 223, 0.63);
+  div {
+    height: 11rem;
+    width: 11rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1em;
+    ${mediaQueries("sm")`
+    height: 9rem;
+    width: 9rem;
+    font-size: 1em;
+    `};
   }
-  p {
-    font-family: "SpaceMonoBold";
-    font-size: 2rem;
-    color: var(--secondary-font-color);
-  }
-`;
-const TooltipCard = styled.div`
-  width: 23%;
-  margin: 2em;
-  position: relative;
-  & ${TooltipSVG}:hover + ${TooltipBox} {
-    visibility: visible;
-    color: #fff;
-    background-color: rgba(240, 255, 31, 0.39);
-    width: 230px;
-
-    &:before {
-      border-color: transparent transparent rgb(240, 255, 31)
-        rgba(240, 255, 31, 0.39);
+  ${mediaQueries("sm")`
+    height: 9rem;
+    width: 9rem;
+    `};
+  :hover {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    @-webkit-keyframes heartbeat {
+      from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+      }
+      10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+      }
+      17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+      }
+      33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+      }
+      45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+      }
+    }
+    @keyframes heartbeat {
+      from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+      }
+      10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+      }
+      17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+      }
+      33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+      }
+      45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+      }
     }
   }
 `;
+
+// const TooltipSVG = styled.div`
+//   color: var(--main-font-color);
+//   width: 5em;
+//   height: 5em;
+//   cursor: pointer;
+//   z-index: -10;
+// `;
+
+// const TooltipBox = styled.div`
+//   position: absolute;
+//   left: 30px;
+//   visibility: hidden;
+//   color: transparent;
+//   background-color: transparent;
+//   width: 100%;
+//   /* padding: 5px 5px; */
+//   border-radius: 20px;
+//   transition: visibility 0.2s, color 0.2s, background-color 0.2s, width 0.2s,
+//     padding 0.2s ease-in-out;
+//   z-index: 2;
+//   &:before {
+//     content: "";
+//     width: 0;
+//     height: 0;
+//     left: 40px;
+//     top: -10px;
+//     position: absolute;
+//     border: 10px solid transparent;
+//     transform: rotate(135deg);
+//     transition: border 0.2s ease-in-out;
+//   }
+//   p {
+//     font-family: "SpaceMonoBold";
+//     font-size: 2rem;
+//     color: var(--secondary-font-color);
+//   }
+// `;
+// const TooltipCard = styled.div`
+//   width: 23%;
+//   margin: 2em;
+//   position: relative;
+//   & ${TooltipSVG}:hover + ${TooltipBox} {
+//     visibility: visible;
+//     color: #fff;
+//     background-color: rgba(240, 255, 31, 0.39);
+//     width: 230px;
+
+//     &:before {
+//       border-color: transparent transparent rgb(240, 255, 31)
+//         rgba(240, 255, 31, 0.39);
+//     }
+//   }
+// `;
 
 const Project1 = () => {
   return (
@@ -492,34 +532,68 @@ const Project1 = () => {
                     For my latest project I decided to messure the time I need
                     for certain tasks to see in which field I can improve:
                   </P>
+                  <CircleContainer>
+                    <Circle>
+                      <div style={{ color: "var(--secondary-font-color)" }}>
+                        <b>
+                          Full Project
+                          <br />9 days
+                        </b>
+                      </div>
+                    </Circle>
+                    <Circle>
+                      <div>
+                        Base level research <br />
+                        <b>1 day</b>
+                      </div>
+                    </Circle>
+                    <Circle>
+                      <div>
+                        Create problem statement
+                        <br />
+                        <b>1 day</b>
+                      </div>
+                    </Circle>
+                    <Circle>
+                      <div>
+                        Conduct surveys <br />
+                        <b>1 day</b>
+                      </div>
+                    </Circle>
+                    <Circle>
+                      <div>
+                        Create user flows & information architecture
+                        <br />
+                        <b>2 days</b>
+                      </div>
+                    </Circle>
+                    <Circle>
+                      <div>
+                        Design wireframe <br />
+                        <b>2 day</b>
+                      </div>
+                    </Circle>
+                    <Circle>
+                      <div>
+                        Design prototype <br />
+                        <b>2 days</b>
+                      </div>
+                    </Circle>
+                  </CircleContainer>
+                  <span>My key take aways are:</span>
                   <ul>
                     <li>
-                      <b>Break the project into 4 workable sprints.</b> I was
-                      able to effectively plan & apply sprints to my project to
-                      make it clear and easy to have a complete overview of it.
+                      <b>I needed more time...</b> <br /> ...for the survey and
+                      the analasis of it. Data is precious and need more time to
+                      taking care of.
                     </li>
                     <li>
-                      <b>Execute end to end.</b> I was able to code the final
-                      design in a short period of time showing my ability to
-                      execute and ship features as a Web Developer effectively.
-                    </li>
-                    <li>
-                      <b>Working in a Team.</b> Even if everybody was working on
-                      their own project, during the final phase we met daily
-                      through Zoom to exchange knowledge, support each other and
-                      keep up on our team spirit.
-                    </li>
-                    <li>
-                      <b>Present my final App in front of an audiance.</b> Full
-                      of joy and sense of accomplishment, I pitched my App on
-                      the closing event of the Bootcamp in front of potential
-                      employers, my collegues and the other participants of the
-                      event.
+                      <b>I was very quick...</b> <br />
+                      ...with drawing the wireframes. The estimated time for the
+                      sketches was two days, I did it in 1.
                     </li>
                   </ul>
-                  <Col sm={2} md={12} push={{ xl: 6 }} xxl={12}>
-                    <ImgRight src={processS} alt="Woman is working" />
-                  </Col>
+                  <Col sm={2} md={12} push={{ xl: 6 }} xxl={12}></Col>
                 </ProcessContainer>
               </Col>
             </Row>
@@ -527,33 +601,23 @@ const Project1 = () => {
             <Row sm={2} md={6} xl={12}>
               <Col>
                 <Details>
-                  <h1>Understanding the Problem</h1>
+                  <h1>base level research</h1>
                   <h2>
-                    <i>...and coming to conclusions</i>
+                    <i>the big questionmark</i>
                   </h2>
                   <p>
-                    I worked at my first sprint using the persona approach to
-                    identify the users needs. Therefore i broke down the problem
-                    into 3 parts, presenting for each part a solution:
+                    The first thing I did was to identify competitors, the
+                    market and their users. Since this project is quite unique
+                    &#40;the app is a mashup of a classical food delivery
+                    service and local retail-delivery&#41; it was challening to
+                    find somethin fitting. Nevertheless I managed:
                   </p>
-                  <ul>
-                    <li>
-                      The user using the app is <b>undecided</b> in finding
-                      something to eat. The user then needs a support in making
-                      that decision.
-                    </li>
-                    <li>
-                      The user recognizes that <b>it spends too much time</b>{" "}
-                      searching for fitting restaurants. The user needs to be
-                      quicker making the decision.
-                    </li>
-                    <li>
-                      There are <b>two different kinds of users</b>: One that
-                      needs the App to make the whole decision. The other has an
-                      idea of the direction but needs finetuning. The user needs
-                      two different usability profiles.
-                    </li>
-                  </ul>
+                  <img src={research1} alt="market research" />
+                  <img src={research2} alt="market research" />
+                  <p>
+                    To back up my assumptions about my potenial user groups I
+                    started a servey.
+                  </p>
                 </Details>
               </Col>
             </Row>
@@ -599,7 +663,7 @@ const Project1 = () => {
                     diagram to visualize the architecture and worked out the
                     following key user story:
                   </p>
-                  <img src={diagram} alt="" />
+
                   <ul>
                     <li>
                       <b>Choose a path.</b> Users can decide if they want quick
@@ -648,7 +712,7 @@ const Project1 = () => {
                     offering support to find movies or short trips in mind and
                     encourage users to click on the button to get started.
                   </p>
-                  <img src={first} alt="red button" />
+
                   <ScreenHeadline>Choose your path</ScreenHeadline>
                   <p>
                     <br />
@@ -656,7 +720,7 @@ const Project1 = () => {
                     option. The buttons are big enough and give a color
                     guidance.
                   </p>
-                  <img src={choose} alt="one yellow button one green button" />
+
                   <ScreenHeadline>Random restaurants</ScreenHeadline>
                   <p>
                     <br />
@@ -664,7 +728,7 @@ const Project1 = () => {
                     the refresh button on the down right side the useres have
                     the possibility to reaload new random restaurants.
                   </p>
-                  <img src={option1} alt="card with restaurant" />
+
                   <ScreenHeadline>Filtering</ScreenHeadline>
                   <p>
                     <br />
@@ -672,7 +736,7 @@ const Project1 = () => {
                     will be displayed the same way like the random results but
                     the guidance color is different.
                   </p>
-                  <img src={option2} alt="filter options" />
+
                   <ScreenHeadline>Details</ScreenHeadline>
                   <p>
                     <br />
@@ -682,7 +746,6 @@ const Project1 = () => {
                     address on google maps, or they click directly on the number
                     to call in for a reservation.
                   </p>
-                  <img src={outcome} alt="card with resataurant details" />
                 </DetailReversed>
               </Col>
             </Row>
@@ -745,176 +808,6 @@ const Project1 = () => {
                     For the development of my App I used the following tools and
                     languages:
                   </p>
-                  <TechStack>
-                    <TooltipCard>
-                      <TooltipSVG>
-                        <a
-                          href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <Html5 />
-                        </a>
-                      </TooltipSVG>
-                      <TooltipBox>
-                        <p>html</p>
-                      </TooltipBox>
-                    </TooltipCard>
-                    <TooltipCard>
-                      <TooltipSVG>
-                        <a
-                          href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <Css3 />
-                        </a>
-                      </TooltipSVG>
-                      <TooltipBox>
-                        <p>css</p>
-                      </TooltipBox>
-                    </TooltipCard>
-                    <TooltipCard>
-                      <TooltipSVG>
-                        <a
-                          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <Javascript />
-                        </a>
-                      </TooltipSVG>
-                      <TooltipBox>
-                        <p>javascript</p>
-                      </TooltipBox>
-                    </TooltipCard>
-                    <TooltipCard>
-                      <TooltipSVG>
-                        <a
-                          href="https://reactjs.org/"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <ReactLogo />
-                        </a>
-                      </TooltipSVG>
-                      <TooltipBox>
-                        <p>react.js</p>
-                      </TooltipBox>
-                    </TooltipCard>
-                    <TooltipCard>
-                      <TooltipSVG>
-                        <a
-                          href="https://styled-components.com/"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <StyledComponents />
-                        </a>
-                      </TooltipSVG>
-                      <TooltipBox>
-                        <p>styled-components</p>
-                      </TooltipBox>
-                    </TooltipCard>
-                    <TooltipCard>
-                      <TooltipSVG>
-                        <a
-                          href="https://storybook.js.org/"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <Storybook />
-                        </a>
-                      </TooltipSVG>
-                      <TooltipBox>
-                        <p>storybook</p>
-                      </TooltipBox>
-                    </TooltipCard>
-                    <TooltipCard>
-                      <TooltipSVG>
-                        <a
-                          href="https://www.adobe.com/de/products/xd.html?promoid=3NQZBBTZ&mv=other"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <Adobexd />
-                        </a>
-                      </TooltipSVG>
-                      <TooltipBox>
-                        <p>adobe XD</p>
-                      </TooltipBox>
-                    </TooltipCard>
-                    <TooltipCard>
-                      <TooltipSVG>
-                        <a
-                          href="https://www.mongodb.com/"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <Mongodb />
-                        </a>
-                      </TooltipSVG>
-                      <TooltipBox>
-                        <p>mongoDB</p>
-                      </TooltipBox>
-                    </TooltipCard>
-                    <TooltipCard>
-                      <TooltipSVG>
-                        <a
-                          href="https://nodejs.org/en/about/"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <NodeDotJs />
-                        </a>
-                      </TooltipSVG>
-                      <TooltipBox>
-                        <p>node.js</p>
-                      </TooltipBox>
-                    </TooltipCard>
-                    <TooltipCard>
-                      <TooltipSVG>
-                        <a
-                          href="https://expressjs.com/de/"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <Express />
-                        </a>
-                      </TooltipSVG>
-                      <TooltipBox>
-                        <p>express</p>
-                      </TooltipBox>
-                    </TooltipCard>
-                    <TooltipCard>
-                      <TooltipSVG>
-                        <a
-                          href="https://reactrouter.com/"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <Reactrouter />
-                        </a>
-                      </TooltipSVG>
-                      <TooltipBox>
-                        <p>react router</p>
-                      </TooltipBox>
-                    </TooltipCard>
-                    <TooltipCard>
-                      <TooltipSVG>
-                        <a
-                          href="https://github.com/Matt-1985"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <Github />
-                        </a>
-                      </TooltipSVG>
-                      <TooltipBox>
-                        <p>GitHub</p>
-                      </TooltipBox>
-                    </TooltipCard>
-                  </TechStack>
                 </DetailReversed>
               </Col>
             </Row>
@@ -931,9 +824,7 @@ const Project1 = () => {
                       href="https://choicely.herokuapp.com/"
                       rel="noreferrer"
                       target="_blank"
-                    >
-                      <MockUp src={choicelyGif} alt="choicely app" />
-                    </a>
+                    ></a>
                     After four months of planning, designing & developing{" "}
                     <b>choicely</b> I can finally present, fully proud, a
                     ready-to-use app that I developed from scratch. <br /> The
