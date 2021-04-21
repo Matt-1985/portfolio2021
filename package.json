@@ -34,7 +34,6 @@
     "react": "^16.13.1",
     "react-chrono": "^1.9.1",
     "react-dom": "^16.13.1",
-    "react-google-charts": "^3.0.15",
     "react-grid-system": "^7.1.2",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",

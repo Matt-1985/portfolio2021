@@ -13,8 +13,6 @@ import local2 from "../images/local_2.png";
 import local3 from "../images/local_3.png";
 import research1 from "../images/research1.png";
 import research2 from "../images/research2.png";
-import { Chrono } from "react-chrono";
-import items from "../components/timeline.js";
 
 const theme = {
   blue: {
