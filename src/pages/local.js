@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { ScreenClassProvider, Container, Row, Col } from "react-grid-system";
@@ -13,6 +14,113 @@ import local2 from "../images/local_2.png";
 import local3 from "../images/local_3.png";
 import research1 from "../images/research1.png";
 import research2 from "../images/research2.png";
+import { ResponsiveBar } from "@nivo/bar";
+import bulb from "../images/bulb.png";
+import marie from "../images/marie.png";
+import dennis from "../images/dennis.png";
+import info from "../images/infoarchi.png";
+import flow1 from "../images/flow1.png";
+import flow2 from "../images/flow2.png";
+
+const MyResponsiveBar = ({ survey }) => (
+  <ResponsiveBar
+    data={survey}
+    keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
+    indexBy="country"
+    margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+    padding={0.3}
+    valueScale={{ type: "linear" }}
+    indexScale={{ type: "band", round: true }}
+    colors={{ scheme: "nivo" }}
+    defs={[
+      {
+        id: "dots",
+        type: "patternDots",
+        background: "inherit",
+        color: "#38bcb2",
+        size: 4,
+        padding: 1,
+        stagger: true,
+      },
+      {
+        id: "lines",
+        type: "patternLines",
+        background: "inherit",
+        color: "#eed312",
+        rotation: -45,
+        lineWidth: 6,
+        spacing: 10,
+      },
+    ]}
+    fill={[
+      {
+        match: {
+          id: "fries",
+        },
+        id: "dots",
+      },
+      {
+        match: {
+          id: "sandwich",
+        },
+        id: "lines",
+      },
+    ]}
+    borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
+    axisTop={null}
+    axisRight={null}
+    axisBottom={{
+      tickSize: 5,
+      tickPadding: 5,
+      tickRotation: 0,
+      legend: "country",
+      legendPosition: "middle",
+      legendOffset: 32,
+    }}
+    axisLeft={{
+      tickSize: 5,
+      tickPadding: 5,
+      tickRotation: 0,
+      legend: "food",
+      legendPosition: "middle",
+      legendOffset: -40,
+    }}
+    labelSkipWidth={12}
+    labelSkipHeight={12}
+    labelTextColor={{ from: "color", modifiers: [["darker", 1.6]] }}
+    legends={[
+      {
+        dataFrom: "keys",
+        anchor: "bottom-right",
+        direction: "column",
+        justify: false,
+        translateX: 120,
+        translateY: 0,
+        itemsSpacing: 2,
+        itemWidth: 100,
+        itemHeight: 20,
+        itemDirection: "left-to-right",
+        itemOpacity: 0.85,
+        symbolSize: 20,
+        effects: [
+          {
+            on: "hover",
+            style: {
+              itemOpacity: 1,
+            },
+          },
+        ],
+      },
+    ]}
+    animate={true}
+    motionStiffness={90}
+    motionDamping={15}
+  />
+);
+
+MyResponsiveBar.propTypes = {
+  survey: PropTypes.string,
+};
 
 const theme = {
   blue: {
@@ -170,9 +278,13 @@ const Details = styled.div`
   }
   img {
     margin-top: 1rem;
-    width: 60%;
-    height: 60%;
+    width: 70%;
+    height: 100%;
     box-shadow: 1px 1px 10px 0 rgb(0 0 0 / 20%);
+    :hover {
+      width: 100vw;
+      height: 100%;
+    }
     ${mediaQueries("sm")`
     :active {
       width: 100vw;
@@ -246,6 +358,35 @@ const P = styled.p`
     `};
 `;
 
+const TextBox = styled.div`
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 250, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 4rem 4rem 4rem 14rem;
+  z-index: 0;
+  ${mediaQueries("sm")`
+  padding: 1rem;
+  `};
+`;
+
+const PNG = styled.div`
+  left: 1rem;
+  bottom: 7rem;
+  position: absolute;
+  z-index: -5;
+  /* img {
+    ${mediaQueries("sm")`
+    height: 50%;
+    width: 100%;
+    `};
+  } */
+`;
+
 const DetailReversed = styled.div`
   display: flex;
   flex-direction: column;
@@ -291,6 +432,18 @@ const DetailReversed = styled.div`
     color: var(--main-font-color);
     text-decoration: none;
   }
+  img {
+    margin-top: 1rem;
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 1px 10px 0 rgb(0 0 0 / 20%);
+    ${mediaQueries("sm")`
+    :active {
+      width: 100vw;
+      height: 100%;
+    }
+    `};
+  }
 `;
 
 const ScreenHeadline = styled.p`
@@ -311,14 +464,14 @@ const CircleContainer = styled.div`
 
 const Circle = styled.div`
   margin-left: 20px;
-  height: 11rem;
-  width: 11rem;
+  height: 9.5rem;
+  width: 9.5rem;
   background-color: #6fc2a7;
   border-radius: 50%;
   box-shadow: 13px 17px 10px -6px rgba(225, 223, 223, 0.63);
   div {
-    height: 11rem;
-    width: 11rem;
+    height: 9.5rem;
+    width: 9.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -535,7 +688,8 @@ const Project1 = () => {
                       <div style={{ color: "var(--secondary-font-color)" }}>
                         <b>
                           Full Project
-                          <br />9 days
+                          <br />
+                          10 days
                         </b>
                       </div>
                     </Circle>
@@ -555,6 +709,13 @@ const Project1 = () => {
                     <Circle>
                       <div>
                         Conduct surveys <br />
+                        <b>1 day</b>
+                      </div>
+                    </Circle>
+                    <Circle>
+                      <div>
+                        Create Personas
+                        <br />
                         <b>1 day</b>
                       </div>
                     </Circle>
@@ -622,128 +783,100 @@ const Project1 = () => {
             <Row sm={2} md={6} xl={12} xxl={12}>
               <Col>
                 <DetailReversed>
-                  <h1>Product vision and solution</h1>
-                  <p>From these findings, I decided to identify key goals:</p>
-                  <ul>
-                    <li>
-                      <b>
-                        I want users to get quick support. Minimalistic and
-                        goal-oriented design that let the user focus on what
-                        matters.
-                      </b>
-                    </li>
-                    <li>
-                      <b>
-                        I want users to have a choice. Two different modes to
-                        allow them to have flexibility but still reach their
-                        goal without time waste.
-                      </b>
-                    </li>
-                  </ul>
+                  <h1>Problem statement</h1>
                   <p>
-                    As a starting point, I did some market research to check if
-                    there are similar products out there.
-                    <br />
-                    Not able to find any product specificly, I took inspiration
-                    from particular features that I found in apps that helps in
-                    decision making combining with apps that offer restaurant
-                    listing.
+                    After I&apos;ve defined my user group I needed to identify
+                    and explain my &quot;problem&quot; in a concise but detailed
+                    way. This included identifying who the problem impacts, what
+                    the impacts are, where the problem occurs and why and when
+                    it needs to be fixed:
                   </p>
+                  <TextBox>
+                    <p>
+                      Like other delivery services for food or groceries there
+                      should be a delivery service for the small, local
+                      businesses too. since these are our vulnerable businesses
+                      of the cities during the COVID crisis and they are
+                      struggling to survive. Imagine how those businesses could
+                      profit if their target group would be able to shop safely
+                      via an app.
+                      <p>
+                        {" "}
+                        There is no such a thing than a central delivery service
+                        for small, local businesses. Long-term our cities will
+                        lose their attractiveness, because all city centers will
+                        look the same and only big chains can afford to have
+                        stores. For the customers that support local businesses
+                        to go to the cities will become less attractive and that
+                        will lead to a chain reaction to more dying businesses.
+                      </p>
+                      <p>
+                        {" "}
+                        Even now, during Corona & lockdown there are up to 30%
+                        less customers in the cities, so Stefan Genth from
+                        Handelsverband Deutschland &#40;HDE&#41; say.
+                      </p>
+                      <p>
+                        What can we do? We should offer a central solution for
+                        those businesses. Allow them to make any profit with the
+                        extra benefit of fast delivery within the city.
+                      </p>
+                      <p>
+                        {" "}
+                        Customers would, like they are used to with Lieferando,
+                        Gorillas or Flaschenpost, take advantage of this system
+                        and automatically help to keep our cities diverse,
+                        create new jobs &#40;bike drivers&#41;, reduce their
+                        delivery times to the customer and have a considerable
+                        reduction of their carbon footprint.
+                      </p>
+                      <p>
+                        <b>The conclusion:</b>
+                        <br /> In hard times like this small businesses are left
+                        out in terms of digital development and its benefits.
+                        They are important for the attractiveness for our cities
+                        and they should have a chance to remain their business.
+                        A simple and effective fix for the local shops would be
+                        a digital solution that will support them to increase
+                        their profit and help them to survive.
+                      </p>
+                    </p>
+                  </TextBox>
+                  <PNG>
+                    <img
+                      style={{ boxShadow: "none" }}
+                      src={bulb}
+                      alt="light bulb"
+                    />
+                  </PNG>
                 </DetailReversed>
               </Col>
             </Row>
             <Row sm={2} md={6} l={12} xl={12} xxl={12}>
               <Col>
                 <Details>
-                  <h1>Defining the diagram</h1>
+                  <h1>Survey</h1>
                   <p>
-                    With all this information in my hands I started with a
-                    diagram to visualize the architecture and worked out the
-                    following key user story:
+                    I asked around 40 people to to answer a few questions from
+                    the online survey form I created. I wanted to get to know
+                    the future user of the app and find out about their
+                    motivations, frustrations and goals:
                   </p>
-
-                  <ul>
-                    <li>
-                      <b>Choose a path.</b> Users can decide if they want quick
-                      support or they can choose between mutliple filters
-                    </li>
-                  </ul>
-                  <p>
-                    In order for me to begin with the development, I created a
-                    mock up of the App based off the diagram and came up with
-                    the following:
-                  </p>
-                  <ul>
-                    <li>First decision screen</li>
-                    <li>Choose your support option</li>
-                    <li>Option 1: random restaurants</li>
-                    <li>
-                      Option 2: Filter your options to get specific restaurants
-                    </li>
-                    <li>Outcome</li>
-                  </ul>
                 </Details>
               </Col>
             </Row>
             <Row sm={2} md={6} xl={12}>
               <Col>
                 <DetailReversed>
-                  <h1>Designs</h1>
+                  <h1>Personas</h1>
                   <p>
-                    With the clock ticking, I went over to the desired styling.
-                    I opted for a minimal & clean look and the simplicity of the
-                    UI. I then created a{" "}
-                    <a href="https://xd.adobe.com/view/44d48e9e-5149-4cc0-b778-ac510462461e-1187/">
-                      clickable prototype in Adobe XD.
-                    </a>{" "}
-                    Since four eyes see more than two I sent the prototype to
-                    check to our coaches and my collegues to get their feedback
-                    on what and how to improve on the design.
-                    <br /> I really appreciate the time that they took and tried
-                    to consider the most of the feedback in the developnment.
-                  </p>
-                  <br />
-                  <ScreenHeadline>First decision screen</ScreenHeadline>
-                  <p>
-                    <br />
-                    This screen was created to deal with future features like
-                    offering support to find movies or short trips in mind and
-                    encourage users to click on the button to get started.
+                    I created a user persona design, based on the survey of the
+                    project.
                   </p>
 
-                  <ScreenHeadline>Choose your path</ScreenHeadline>
-                  <p>
-                    <br />
-                    Users have to choose between a quick support and the filter
-                    option. The buttons are big enough and give a color
-                    guidance.
-                  </p>
+                  <img src={marie} alt="" />
 
-                  <ScreenHeadline>Random restaurants</ScreenHeadline>
-                  <p>
-                    <br />
-                    Users getting now random results on what to choose of. Via
-                    the refresh button on the down right side the useres have
-                    the possibility to reaload new random restaurants.
-                  </p>
-
-                  <ScreenHeadline>Filtering</ScreenHeadline>
-                  <p>
-                    <br />
-                    Users can now choose between max. 3 filter options. They
-                    will be displayed the same way like the random results but
-                    the guidance color is different.
-                  </p>
-
-                  <ScreenHeadline>Details</ScreenHeadline>
-                  <p>
-                    <br />
-                    Users can now push/click on the card and it will turn and
-                    reveal the details on the back. With a click on the name of
-                    the restaurant the users will be redirected to the exact
-                    address on google maps, or they click directly on the number
-                    to call in for a reservation.
-                  </p>
+                  <img src={dennis} alt="" />
                 </DetailReversed>
               </Col>
             </Row>
@@ -751,7 +884,7 @@ const Project1 = () => {
             <Row sm={2} md={6} xl={12}>
               <Col>
                 <Details>
-                  <h1>Development</h1>
+                  <h1>Information architecture & user flow</h1>
                   <p>
                     After I finished the desing I started with the development
                     process. Spoiler Alert! I not only developed an app but also
@@ -759,42 +892,9 @@ const Project1 = () => {
                     the Bootcamp. <br />
                     Here are some key takeaways from it:
                   </p>
-                  <ul>
-                    <li>
-                      <b>Components:</b> Keep your project digistable and build
-                      small. Reuse components. That made my life so much easier!
-                    </li>
-                    <li>
-                      <b>Articles, Docs and a lot of YouTube:</b> Reading is
-                      fundamental, so is understanding and learning how to use
-                      libraries, frameworks or npm packages. Docs are not always
-                      easy to understand, I had to learn to take my own time
-                      while reading and use all tools available to get to the
-                      goal.
-                    </li>
-                    <li>
-                      <b>Obstacles are our friends:</b> Throughout the journey
-                      of developing the app I had to face a couple of challenges
-                      like functions that did not work in the beginning or
-                      trouble to connect the database properly. What I learned
-                      from all this is that those challenges take you also to
-                      the finish line. Rather than a straight line kinda journey
-                      the whole process had its peaks and valleys. I took myself
-                      out of my comfort zone and focused on problem solving
-                      instead of the problem itself.
-                    </li>
-                    <li>
-                      <b>Ask for help:</b> One of my biggest learning was to ask
-                      for help. Since this was my very first project I tried to
-                      find out and implement as much as possible on my own.
-                      Which led to some challenges, especially when it came to
-                      the translation of the backend to the frontend. <br /> I
-                      overcame my own resistance by refocusing from individual
-                      problems to the bigger picture. I then reached out to some
-                      of my collegues and coaches to get support and keep up
-                      with my time shedule.
-                    </li>
-                  </ul>
+                  <img src={info} alt="" />
+                  <img src={flow1} alt="" />
+                  <img src={flow2} alt="" />
                 </Details>
               </Col>
             </Row>
