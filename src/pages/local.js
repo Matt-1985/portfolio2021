@@ -14,113 +14,18 @@ import local2 from "../images/local_2.png";
 import local3 from "../images/local_3.png";
 import research1 from "../images/research1.png";
 import research2 from "../images/research2.png";
-import { ResponsiveBar } from "@nivo/bar";
 import bulb from "../images/bulb.png";
 import marie from "../images/marie.png";
 import dennis from "../images/dennis.png";
 import info from "../images/infoarchi.png";
 import flow1 from "../images/flow1.png";
 import flow2 from "../images/flow2.png";
-
-const MyResponsiveBar = ({ survey }) => (
-  <ResponsiveBar
-    data={survey}
-    keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
-    indexBy="country"
-    margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
-    padding={0.3}
-    valueScale={{ type: "linear" }}
-    indexScale={{ type: "band", round: true }}
-    colors={{ scheme: "nivo" }}
-    defs={[
-      {
-        id: "dots",
-        type: "patternDots",
-        background: "inherit",
-        color: "#38bcb2",
-        size: 4,
-        padding: 1,
-        stagger: true,
-      },
-      {
-        id: "lines",
-        type: "patternLines",
-        background: "inherit",
-        color: "#eed312",
-        rotation: -45,
-        lineWidth: 6,
-        spacing: 10,
-      },
-    ]}
-    fill={[
-      {
-        match: {
-          id: "fries",
-        },
-        id: "dots",
-      },
-      {
-        match: {
-          id: "sandwich",
-        },
-        id: "lines",
-      },
-    ]}
-    borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
-    axisTop={null}
-    axisRight={null}
-    axisBottom={{
-      tickSize: 5,
-      tickPadding: 5,
-      tickRotation: 0,
-      legend: "country",
-      legendPosition: "middle",
-      legendOffset: 32,
-    }}
-    axisLeft={{
-      tickSize: 5,
-      tickPadding: 5,
-      tickRotation: 0,
-      legend: "food",
-      legendPosition: "middle",
-      legendOffset: -40,
-    }}
-    labelSkipWidth={12}
-    labelSkipHeight={12}
-    labelTextColor={{ from: "color", modifiers: [["darker", 1.6]] }}
-    legends={[
-      {
-        dataFrom: "keys",
-        anchor: "bottom-right",
-        direction: "column",
-        justify: false,
-        translateX: 120,
-        translateY: 0,
-        itemsSpacing: 2,
-        itemWidth: 100,
-        itemHeight: 20,
-        itemDirection: "left-to-right",
-        itemOpacity: 0.85,
-        symbolSize: 20,
-        effects: [
-          {
-            on: "hover",
-            style: {
-              itemOpacity: 1,
-            },
-          },
-        ],
-      },
-    ]}
-    animate={true}
-    motionStiffness={90}
-    motionDamping={15}
-  />
-);
-
-MyResponsiveBar.propTypes = {
-  survey: PropTypes.string,
-};
+import bar from "../images/bar.png";
+import bar2 from "../images/bar2.png";
+import bar3 from "../images/bar3.png";
+import motivations from "../images/motivations.png";
+import frustrations from "../images/frustrations.png";
+import goals from "../images/goals.png";
 
 const theme = {
   blue: {
@@ -277,12 +182,12 @@ const Details = styled.div`
     font-size: 1.5rem;
   }
   img {
-    margin-top: 1rem;
+    margin: 1.5rem 0;
     width: 70%;
     height: 100%;
     box-shadow: 1px 1px 10px 0 rgb(0 0 0 / 20%);
     :hover {
-      width: 100vw;
+      width: 95vw;
       height: 100%;
     }
     ${mediaQueries("sm")`
@@ -444,12 +349,6 @@ const DetailReversed = styled.div`
     }
     `};
   }
-`;
-
-const ScreenHeadline = styled.p`
-  margin: 0;
-  text-align: center;
-  font-weight: bold;
 `;
 
 const CircleContainer = styled.div`
@@ -769,14 +668,41 @@ const Project1 = () => {
                     market and their users. Since this project is quite unique
                     &#40;the app is a mashup of a classical food delivery
                     service and local retail-delivery&#41; it was challening to
-                    find somethin fitting. Nevertheless I managed:
+                    find somethin fitting. Nevertheless I managed to stick with
+                    four services and made them my benchmark:
                   </p>
                   <img src={research1} alt="market research" />
                   <img src={research2} alt="market research" />
                   <p>
                     To back up my assumptions about my potenial user groups I
-                    started a servey.
+                    started a servey. I asked 45 participants who they are and
+                    which delivery-service they use. Then I gathered the
+                    responses and analysed them. This is what I learned:
                   </p>
+                  <img src={bar} alt="bar chart" />
+
+                  <img src={bar2} alt="bar chart" />
+
+                  <img src={bar3} alt="bar chart" />
+                  <p>My key learnings after the evaluation:</p>
+                  <ul>
+                    <li>
+                      <b>The identified user is between 20 and 40.</b>
+                    </li>
+                    <li>
+                      <b>
+                        The identified user is currently in a relationship or
+                        married.
+                      </b>
+                    </li>
+                    <li>
+                      <b>
+                        The identified user lives with its partner or by
+                        themselves.
+                      </b>
+                    </li>
+                  </ul>
+                  <p>The learnings will be influencing the design strongly. </p>
                 </Details>
               </Col>
             </Row>
@@ -799,47 +725,47 @@ const Project1 = () => {
                       of the cities during the COVID crisis and they are
                       struggling to survive. Imagine how those businesses could
                       profit if their target group would be able to shop safely
-                      via an app.
-                      <p>
-                        {" "}
-                        There is no such a thing than a central delivery service
-                        for small, local businesses. Long-term our cities will
-                        lose their attractiveness, because all city centers will
-                        look the same and only big chains can afford to have
-                        stores. For the customers that support local businesses
-                        to go to the cities will become less attractive and that
-                        will lead to a chain reaction to more dying businesses.
-                      </p>
-                      <p>
-                        {" "}
-                        Even now, during Corona & lockdown there are up to 30%
-                        less customers in the cities, so Stefan Genth from
-                        Handelsverband Deutschland &#40;HDE&#41; say.
-                      </p>
-                      <p>
-                        What can we do? We should offer a central solution for
-                        those businesses. Allow them to make any profit with the
-                        extra benefit of fast delivery within the city.
-                      </p>
-                      <p>
-                        {" "}
-                        Customers would, like they are used to with Lieferando,
-                        Gorillas or Flaschenpost, take advantage of this system
-                        and automatically help to keep our cities diverse,
-                        create new jobs &#40;bike drivers&#41;, reduce their
-                        delivery times to the customer and have a considerable
-                        reduction of their carbon footprint.
-                      </p>
-                      <p>
-                        <b>The conclusion:</b>
-                        <br /> In hard times like this small businesses are left
-                        out in terms of digital development and its benefits.
-                        They are important for the attractiveness for our cities
-                        and they should have a chance to remain their business.
-                        A simple and effective fix for the local shops would be
-                        a digital solution that will support them to increase
-                        their profit and help them to survive.
-                      </p>
+                      via an app.{" "}
+                    </p>
+                    <p>
+                      {" "}
+                      There is no such a thing than a central delivery service
+                      for small, local businesses. Long-term our cities will
+                      lose their attractiveness, because all city centers will
+                      look the same and only big chains can afford to have
+                      stores. For the customers that support local businesses to
+                      go to the cities will become less attractive and that will
+                      lead to a chain reaction to more dying businesses.
+                    </p>
+                    <p>
+                      {" "}
+                      Even now, during Corona & lockdown there are up to 30%
+                      less customers in the cities, so Stefan Genth from
+                      Handelsverband Deutschland &#40;HDE&#41; say.
+                    </p>
+                    <p>
+                      What can we do? We should offer a central solution for
+                      those businesses. Allow them to make any profit with the
+                      extra benefit of fast delivery within the city.
+                    </p>
+                    <p>
+                      {" "}
+                      Customers would, like they are used to with Lieferando,
+                      Gorillas or Flaschenpost, take advantage of this system
+                      and automatically help to keep our cities diverse, create
+                      new jobs &#40;bike drivers&#41;, reduce their delivery
+                      times to the customer and have a considerable reduction of
+                      their carbon footprint.
+                    </p>
+                    <p>
+                      <b>The conclusion:</b>
+                      <br /> In hard times like this small businesses are left
+                      out in terms of digital development and its benefits. They
+                      are important for the attractiveness for our cities and
+                      they should have a chance to remain their business. A
+                      simple and effective fix for the local shops would be a
+                      digital solution that will support them to increase their
+                      profit and help them to survive.
                     </p>
                   </TextBox>
                   <PNG>
@@ -862,6 +788,61 @@ const Project1 = () => {
                     the future user of the app and find out about their
                     motivations, frustrations and goals:
                   </p>
+                  <img
+                    style={{ boxShadow: "none" }}
+                    src={motivations}
+                    alt="pie chart"
+                  />
+
+                  <img
+                    style={{ boxShadow: "none" }}
+                    src={frustrations}
+                    alt="pie chart"
+                  />
+
+                  <img
+                    style={{ boxShadow: "none" }}
+                    src={goals}
+                    alt="pie chart"
+                  />
+                  <p>My key take aways are:</p>
+                  <ul>
+                    <li>
+                      <b>
+                        Assortment is key.
+                        <br /> Even if there is a lot of choice the wish of more
+                        high quality articles is there.
+                      </b>
+                    </li>
+                    <li>
+                      <b>
+                        Wrong delivery time can be a turn off.
+                        <br /> This feature should be as precise as possible. Or
+                        offer the possibility to call the delivery person.
+                      </b>
+                    </li>
+                    <li>
+                      <b>
+                        Payment options shouldn&apos;t be limited.
+                        <br /> The more options you offer the higher can be the
+                        conversion rate.
+                      </b>
+                    </li>
+                    <li>
+                      <b>
+                        Bike delivery is environmental friendly, easy to track
+                        and makes even the same delivery possible.
+                      </b>
+                    </li>
+                    <li>
+                      <b>
+                        There are factors like the fees or the wages I do not
+                        have any influence of. The only thing what would make
+                        sense here is to keep the communication in the app
+                        regarding this topic as transparent as possible
+                      </b>
+                    </li>
+                  </ul>
                 </Details>
               </Col>
             </Row>
@@ -886,15 +867,25 @@ const Project1 = () => {
                 <Details>
                   <h1>Information architecture & user flow</h1>
                   <p>
-                    After I finished the desing I started with the development
-                    process. Spoiler Alert! I not only developed an app but also
-                    had a growth professionaly and personaly during the time in
-                    the Bootcamp. <br />
-                    Here are some key takeaways from it:
+                    After I defined my fictional users I started with the
+                    information architecture to visualize the hirachi in my app.
+                    It serves as a director and helps to make sense of
+                    information:
                   </p>
-                  <img src={info} alt="" />
-                  <img src={flow1} alt="" />
-                  <img src={flow2} alt="" />
+                  <img src={info} alt="Information hirachi" />
+                  <p>
+                    There are a couple of different pathways a user can take
+                    when interacting with the app. Therefore it was important
+                    for me to understand the possibilities I had to offer. I
+                    also revisited <i>Lieferando</i>,<i>Amazon</i> and{" "}
+                    <i>asos</i> to check how the processes work in detail to
+                    implement these into the app.
+                  </p>
+                  <img src={flow1} alt="user flow log in and sign up process" />
+                  <img
+                    src={flow2}
+                    alt="user flow from startscreen to the live tracker screen"
+                  />
                 </Details>
               </Col>
             </Row>
