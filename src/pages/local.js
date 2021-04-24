@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import ImageSlider from "react-image-comparison-slider";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { ScreenClassProvider, Container, Row, Col } from "react-grid-system";
@@ -26,6 +26,32 @@ import bar3 from "../images/bar3.png";
 import motivations from "../images/motivations.png";
 import frustrations from "../images/frustrations.png";
 import goals from "../images/goals.png";
+import settings from "../images/Settings.png";
+import settingsp from "../images/settingsp.png";
+import onechoosenarticle from "../images/1choosenarticle.png";
+import onechoosenarticlep from "../images/1choosenarticlep.png";
+import basket from "../images/basket.png";
+import basketp from "../images/basketp.png";
+import checkout from "../images/checkout.png";
+import checkoutp from "../images/checkoutp.png";
+import confirmation from "../images/confirmationscreen.png";
+import confirmationp from "../images/confirmationscreenp.png";
+import homescreen from "../images/homescreen.png";
+import homescreenp from "../images/homescreenp.png";
+import shophomescreen from "../images/shophomescreen.png";
+import shophomescreenp from "../images/shophomescreenp.png";
+import productscreen from "../images/productscreen.png";
+import productscreenp from "../images/productscreenp.png";
+
+const CompareContainer = styled.div`
+  margin: 0.5rem 0 2em;
+  padding: 4rem;
+  height: 950px;
+  width: 500px;
+  img {
+    object-fit: fill;
+  }
+`;
 
 const theme = {
   blue: {
@@ -299,6 +325,7 @@ const DetailReversed = styled.div`
   justify-content: center;
   margin: 2rem 0 2em;
   padding: 4rem;
+
   ${mediaQueries("sm")`
     padding: 0.5rem;
     `};
@@ -337,7 +364,7 @@ const DetailReversed = styled.div`
     color: var(--main-font-color);
     text-decoration: none;
   }
-  img {
+  /* img {
     margin-top: 1rem;
     width: 100%;
     height: 100%;
@@ -347,8 +374,7 @@ const DetailReversed = styled.div`
       width: 100vw;
       height: 100%;
     }
-    `};
-  }
+    `}; */
 `;
 
 const CircleContainer = styled.div`
@@ -892,11 +918,99 @@ const Project1 = () => {
             <Row sm={2} md={6} xl={12}>
               <Col>
                 <DetailReversed>
-                  <h1>Tech Stack</h1>
+                  <h1>Wireframes & Prototyes</h1>
                   <p>
                     For the development of my App I used the following tools and
                     languages:
                   </p>
+                  <CompareContainer>
+                    <ImageSlider
+                      image1={settingsp}
+                      image2={settings}
+                      sliderWidth={4}
+                      sliderColor="#0090ff"
+                      handleColor="#0090ff"
+                      handleBackgroundColor="#e879de"
+                      sliderInitialPosition={1}
+                    />
+                  </CompareContainer>
+                  <CompareContainer>
+                    <ImageSlider
+                      image1={homescreenp}
+                      image2={homescreen}
+                      sliderWidth={4}
+                      sliderColor="#0090ff"
+                      handleColor="#0090ff"
+                      handleBackgroundColor="#e879de"
+                      sliderInitialPosition={1}
+                    />
+                  </CompareContainer>
+                  <CompareContainer>
+                    <ImageSlider
+                      image1={shophomescreenp}
+                      image2={shophomescreen}
+                      sliderWidth={4}
+                      sliderColor="#0090ff"
+                      handleColor="#0090ff"
+                      handleBackgroundColor="#e879de"
+                      sliderInitialPosition={1}
+                    />
+                  </CompareContainer>
+                  <CompareContainer>
+                    <ImageSlider
+                      image1={productscreenp}
+                      image2={productscreen}
+                      sliderWidth={4}
+                      sliderColor="#0090ff"
+                      handleColor="#0090ff"
+                      handleBackgroundColor="#e879de"
+                      sliderInitialPosition={1}
+                    />
+                  </CompareContainer>
+                  <CompareContainer>
+                    <ImageSlider
+                      image1={onechoosenarticlep}
+                      image2={onechoosenarticle}
+                      sliderWidth={4}
+                      sliderColor="#0090ff"
+                      handleColor="#0090ff"
+                      handleBackgroundColor="#e879de"
+                      sliderInitialPosition={1}
+                    />
+                  </CompareContainer>
+                  <CompareContainer>
+                    <ImageSlider
+                      image1={basketp}
+                      image2={basket}
+                      sliderWidth={4}
+                      sliderColor="#0090ff"
+                      handleColor="#0090ff"
+                      handleBackgroundColor="#e879de"
+                      sliderInitialPosition={1}
+                    />
+                  </CompareContainer>
+                  <CompareContainer>
+                    <ImageSlider
+                      image1={checkoutp}
+                      image2={checkout}
+                      sliderWidth={4}
+                      sliderColor="#0090ff"
+                      handleColor="#0090ff"
+                      handleBackgroundColor="#e879de"
+                      sliderInitialPosition={1}
+                    />
+                  </CompareContainer>
+                  <CompareContainer>
+                    <ImageSlider
+                      image1={confirmationp}
+                      image2={confirmation}
+                      sliderWidth={3}
+                      sliderColor="#0090ff"
+                      handleColor="#0090ff"
+                      handleBackgroundColor="#e879de"
+                      sliderInitialPosition={1}
+                    />
+                  </CompareContainer>
                 </DetailReversed>
               </Col>
             </Row>
@@ -946,3 +1060,81 @@ const Project1 = () => {
 };
 
 export default Project1;
+
+// firstImgSrc={settings}
+// secondImgSrc={settingsp}
+
+{
+  /* <ReactCompareImage
+  leftImage={settings}
+  rightImage={settingsp}
+  sliderLineColor="var(--secondary-font-color)"
+  sliderLineWidth={3}
+  hover={true}
+  leftImageCss={{ width: "500px", height: "950px" }}
+  rightImageCss={{ width: "500px", height: "950px" }}
+/>
+<ReactCompareImage
+  leftImage={homescreen}
+  rightImage={homescreenp}
+  sliderLineColor="var(--secondary-font-color)"
+  sliderLineWidth={3}
+  hover={true}
+  leftImageCss={{ width: "500px", height: "950px" }}
+  rightImageCss={{ width: "500px", height: "950px" }}
+/>
+<ReactCompareImage
+  leftImage={shophomescreen}
+  rightImage={shophomescreenp}
+  sliderLineColor="var(--secondary-font-color)"
+  sliderLineWidth={3}
+  hover={true}
+  leftImageCss={{ width: "500px", height: "950px" }}
+  rightImageCss={{ width: "500px", height: "950px" }}
+/>
+<ReactCompareImage
+  leftImage={productscreen}
+  rightImage={productscreenp}
+  sliderLineColor="var(--secondary-font-color)"
+  sliderLineWidth={3}
+  hover={true}
+  leftImageCss={{ width: "500px", height: "950px" }}
+  rightImageCss={{ width: "500px", height: "950px" }}
+/>
+<ReactCompareImage
+  leftImage={onechoosenarticle}
+  rightImage={onechoosenarticlep}
+  sliderLineColor="var(--secondary-font-color)"
+  sliderLineWidth={3}
+  hover={true}
+  leftImageCss={{ width: "500px", height: "950px" }}
+  rightImageCss={{ width: "500px", height: "950px" }}
+/>
+<ReactCompareImage
+  leftImage={basket}
+  rightImage={basketp}
+  sliderLineColor="var(--secondary-font-color)"
+  sliderLineWidth={3}
+  hover={true}
+  leftImageCss={{ width: "500px", height: "950px" }}
+  rightImageCss={{ width: "500px", height: "950px" }}
+/>
+<ReactCompareImage
+  leftImage={checkout}
+  rightImage={checkoutp}
+  sliderLineColor="var(--secondary-font-color)"
+  sliderLineWidth={3}
+  hover={true}
+  leftImageCss={{ width: "500px", height: "950px" }}
+  rightImageCss={{ width: "500px", height: "950px" }}
+/>
+<ReactCompareImage
+  leftImage={confirmation}
+  rightImage={confirmationp}
+  sliderLineColor="var(--secondary-font-color)"
+  sliderLineWidth={3}
+  hover={true}
+  leftImageCss={{ width: "500px", height: "950px" }}
+  rightImageCss={{ width: "500px", height: "950px" }}
+/> */
+}
