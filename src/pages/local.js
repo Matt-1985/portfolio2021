@@ -318,6 +318,66 @@ const PNG = styled.div`
   } */
 `;
 
+const PersonaContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0 2em;
+  padding: 4rem;
+
+  ${mediaQueries("sm")`
+    padding: 0.5rem;
+    `};
+  & ul,
+  li,
+  p {
+    font-family: "Montserrat", sans-serif;
+    color: var(--secondary-font-color);
+    font-size: 1rem;
+  }
+  p {
+    line-height: 1.5em;
+  }
+  ul,
+  li {
+    line-height: 40px;
+  }
+  h1 {
+    text-align: center;
+    font-family: "SpaceMonoBold";
+    color: var(--secondary-font-color);
+    text-transform: uppercase;
+    font-size: 3rem;
+    ${mediaQueries("sm")`
+    font-size: 2rem;
+    `};
+  }
+  h2 {
+    margin: 0;
+    font-family: "SpaceMonoRegular";
+    color: var(--secondary-font-color);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+  a {
+    color: var(--main-font-color);
+    text-decoration: none;
+  }
+  img {
+    margin-top: 1rem;
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 1px 10px 0 rgb(0 0 0 / 20%);
+    ${mediaQueries("sm")`
+    :active {
+      width: 100vw;
+      height: 100%;
+    }
+    `};
+  }
+`;
+
 const DetailReversed = styled.div`
   display: flex;
   flex-direction: column;
@@ -874,7 +934,7 @@ const Project1 = () => {
             </Row>
             <Row sm={2} md={6} xl={12}>
               <Col>
-                <DetailReversed>
+                <PersonaContainer>
                   <h1>Personas</h1>
                   <p>
                     I created a user persona design, based on the survey of the
@@ -884,7 +944,7 @@ const Project1 = () => {
                   <img src={marie} alt="" />
 
                   <img src={dennis} alt="" />
-                </DetailReversed>
+                </PersonaContainer>
               </Col>
             </Row>
             <hr />
