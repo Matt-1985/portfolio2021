@@ -1,5 +1,4 @@
 import React from "react";
-import ImageSlider from "react-image-comparison-slider";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { ScreenClassProvider, Container, Row, Col } from "react-grid-system";
@@ -42,16 +41,6 @@ import shophomescreen from "../images/shophomescreen.png";
 import shophomescreenp from "../images/shophomescreenp.png";
 import productscreen from "../images/productscreen.png";
 import productscreenp from "../images/productscreenp.png";
-
-const CompareContainer = styled.div`
-  margin: 0.5rem 0 2em;
-  padding: 4rem;
-  height: 950px;
-  width: 500px;
-  img {
-    object-fit: fill;
-  }
-`;
 
 const theme = {
   blue: {
@@ -437,6 +426,65 @@ const DetailReversed = styled.div`
     `}; */
 `;
 
+const Comparison = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0 2em;
+  padding: 4rem;
+
+  ${mediaQueries("sm")`
+    padding: 0.5rem;
+    `};
+  & ul,
+  li,
+  p {
+    font-family: "Montserrat", sans-serif;
+    color: var(--secondary-font-color);
+    font-size: 1rem;
+  }
+  p {
+    line-height: 1.5em;
+  }
+  ul,
+  li {
+    line-height: 40px;
+  }
+  h1 {
+    text-align: center;
+    font-family: "SpaceMonoBold";
+    color: var(--secondary-font-color);
+    text-transform: uppercase;
+    font-size: 3rem;
+    ${mediaQueries("sm")`
+    font-size: 2rem;
+    `};
+  }
+  h2 {
+    margin: 0;
+    font-family: "SpaceMonoRegular";
+    color: var(--secondary-font-color);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+  a {
+    color: var(--main-font-color);
+    text-decoration: none;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    box-shadow: 1px 1px 10px 0 rgb(0 0 0 / 20%);
+    ${mediaQueries("sm")`
+    :active {
+      width: 50vw;
+      height: 100%;
+    }
+    `};
+  }
+`;
+
 const CircleContainer = styled.div`
   margin: 1rem 0 1rem 0;
   display: flex;
@@ -546,6 +594,49 @@ const Circle = styled.div`
   }
 `;
 
+const FlipCardContainer = styled.div`
+  background-color: transparent;
+  margin: 3rem;
+  height: 950px;
+  width: 450px;
+  border-radius: 12px;
+  display: grid;
+  grid-template-rows: auto auto 3fr;
+`;
+
+const FlipCardInner = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  :hover {
+    transform: rotateY(180deg);
+  }
+`;
+
+const FlipCardFront = styled.div`
+  position: absolute;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+`;
+
+const FlipCardBack = styled.div`
+  position: absolute;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+`;
+
+const FlipCardImage = styled.img`
+  height: 8rem;
+  width: 100%;
+  object-fit: cover;
+`;
+
 // const TooltipSVG = styled.div`
 //   color: var(--main-font-color);
 //   width: 5em;
@@ -600,7 +691,7 @@ const Circle = styled.div`
 //   }
 // `;
 
-const Project1 = () => {
+const Project2 = () => {
   return (
     <ScreenClassProvider>
       <ParallaxProvider>
@@ -977,101 +1068,157 @@ const Project1 = () => {
             </Row>
             <Row sm={2} md={6} xl={12}>
               <Col>
-                <DetailReversed>
+                <Comparison>
                   <h1>Wireframes & Prototyes</h1>
                   <p>
                     For the development of my App I used the following tools and
                     languages:
                   </p>
-                  <CompareContainer>
-                    <ImageSlider
-                      image1={settingsp}
-                      image2={settings}
-                      sliderWidth={4}
-                      sliderColor="#0090ff"
-                      handleColor="#0090ff"
-                      handleBackgroundColor="#e879de"
-                      sliderInitialPosition={1}
-                    />
-                  </CompareContainer>
-                  <CompareContainer>
-                    <ImageSlider
-                      image1={homescreenp}
-                      image2={homescreen}
-                      sliderWidth={4}
-                      sliderColor="#0090ff"
-                      handleColor="#0090ff"
-                      handleBackgroundColor="#e879de"
-                      sliderInitialPosition={1}
-                    />
-                  </CompareContainer>
-                  <CompareContainer>
-                    <ImageSlider
-                      image1={shophomescreenp}
-                      image2={shophomescreen}
-                      sliderWidth={4}
-                      sliderColor="#0090ff"
-                      handleColor="#0090ff"
-                      handleBackgroundColor="#e879de"
-                      sliderInitialPosition={1}
-                    />
-                  </CompareContainer>
-                  <CompareContainer>
-                    <ImageSlider
-                      image1={productscreenp}
-                      image2={productscreen}
-                      sliderWidth={4}
-                      sliderColor="#0090ff"
-                      handleColor="#0090ff"
-                      handleBackgroundColor="#e879de"
-                      sliderInitialPosition={1}
-                    />
-                  </CompareContainer>
-                  <CompareContainer>
-                    <ImageSlider
-                      image1={onechoosenarticlep}
-                      image2={onechoosenarticle}
-                      sliderWidth={4}
-                      sliderColor="#0090ff"
-                      handleColor="#0090ff"
-                      handleBackgroundColor="#e879de"
-                      sliderInitialPosition={1}
-                    />
-                  </CompareContainer>
-                  <CompareContainer>
-                    <ImageSlider
-                      image1={basketp}
-                      image2={basket}
-                      sliderWidth={4}
-                      sliderColor="#0090ff"
-                      handleColor="#0090ff"
-                      handleBackgroundColor="#e879de"
-                      sliderInitialPosition={1}
-                    />
-                  </CompareContainer>
-                  <CompareContainer>
-                    <ImageSlider
-                      image1={checkoutp}
-                      image2={checkout}
-                      sliderWidth={4}
-                      sliderColor="#0090ff"
-                      handleColor="#0090ff"
-                      handleBackgroundColor="#e879de"
-                      sliderInitialPosition={1}
-                    />
-                  </CompareContainer>
-                  <CompareContainer>
-                    <ImageSlider
-                      image1={confirmationp}
-                      image2={confirmation}
-                      sliderWidth={3}
-                      sliderColor="#0090ff"
-                      handleColor="#0090ff"
-                      handleBackgroundColor="#e879de"
-                      sliderInitialPosition={1}
-                    />
-                  </CompareContainer>
-                </DetailReversed>
+                  <FlipCardContainer>
+                    <FlipCardInner>
+                      <FlipCardFront>
+                        <FlipCardImage
+                          src={settings}
+                          alt="image of a wireframe"
+                        />
+                      </FlipCardFront>
+                      <FlipCardBack>
+                        <FlipCardImage
+                          src={settingsp}
+                          alt="image of a prototype"
+                        />
+                      </FlipCardBack>
+                    </FlipCardInner>
+                  </FlipCardContainer>
+                  <FlipCardContainer>
+                    <FlipCardInner>
+                      <FlipCardFront>
+                        <FlipCardImage
+                          src={homescreen}
+                          alt="image of a wireframe"
+                        />
+                      </FlipCardFront>
+                      <FlipCardBack>
+                        <FlipCardImage
+                          src={homescreenp}
+                          alt="image of a prototype"
+                        />
+                      </FlipCardBack>
+                    </FlipCardInner>
+                  </FlipCardContainer>
+                  <FlipCardContainer>
+                    <FlipCardInner>
+                      <FlipCardFront>
+                        <FlipCardImage
+                          src={shophomescreen}
+                          alt="image of a wireframe"
+                        />
+                      </FlipCardFront>
+                      <FlipCardBack>
+                        <FlipCardImage
+                          src={shophomescreenp}
+                          alt="image of a prototype"
+                        />
+                      </FlipCardBack>
+                    </FlipCardInner>
+                  </FlipCardContainer>
+                  <FlipCardContainer>
+                    <FlipCardInner>
+                      <FlipCardFront>
+                        <FlipCardImage
+                          src={productscreen}
+                          alt="image of a wireframe"
+                        />
+                      </FlipCardFront>
+                      <FlipCardBack>
+                        <FlipCardImage
+                          src={productscreenp}
+                          alt="image of a prototype"
+                        />
+                      </FlipCardBack>
+                    </FlipCardInner>
+                  </FlipCardContainer>
+                  <FlipCardContainer>
+                    <FlipCardInner>
+                      <FlipCardFront>
+                        <FlipCardImage
+                          src={onechoosenarticle}
+                          alt="image of a wireframe"
+                        />
+                      </FlipCardFront>
+                      <FlipCardBack>
+                        <FlipCardImage
+                          src={onechoosenarticlep}
+                          alt="image of a prototype"
+                        />
+                      </FlipCardBack>
+                    </FlipCardInner>
+                  </FlipCardContainer>
+                  <FlipCardContainer>
+                    <FlipCardInner>
+                      <FlipCardFront>
+                        <FlipCardImage
+                          src={basket}
+                          alt="image of a wireframe"
+                        />
+                      </FlipCardFront>
+                      <FlipCardBack>
+                        <FlipCardImage
+                          src={basketp}
+                          alt="image of a prototype"
+                        />
+                      </FlipCardBack>
+                    </FlipCardInner>
+                  </FlipCardContainer>
+                  <FlipCardContainer>
+                    <FlipCardInner>
+                      <FlipCardFront>
+                        <FlipCardImage
+                          src={checkout}
+                          alt="image of a wireframe"
+                        />
+                      </FlipCardFront>
+                      <FlipCardBack>
+                        <FlipCardImage
+                          src={checkoutp}
+                          alt="image of a prototype"
+                        />
+                      </FlipCardBack>
+                    </FlipCardInner>
+                  </FlipCardContainer>
+                  <FlipCardContainer>
+                    <FlipCardInner>
+                      <FlipCardFront>
+                        <FlipCardImage
+                          src={settings}
+                          alt="image of a wireframe"
+                        />
+                      </FlipCardFront>
+                      <FlipCardBack>
+                        <FlipCardImage
+                          src={settingsp}
+                          alt="image of a prototype"
+                        />
+                      </FlipCardBack>
+                    </FlipCardInner>
+                  </FlipCardContainer>
+                  <FlipCardContainer>
+                    <FlipCardInner>
+                      <FlipCardFront>
+                        <FlipCardImage
+                          src={confirmation}
+                          alt="image of a wireframe"
+                        />
+                      </FlipCardFront>
+                      <FlipCardBack>
+                        <FlipCardImage
+                          src={confirmationp}
+                          alt="image of a prototype"
+                        />
+                      </FlipCardBack>
+                    </FlipCardInner>
+                  </FlipCardContainer>
+                </Comparison>
               </Col>
             </Row>
             <Row sm={2} xl={8}>
@@ -1119,82 +1266,4 @@ const Project1 = () => {
   );
 };
 
-export default Project1;
-
-// firstImgSrc={settings}
-// secondImgSrc={settingsp}
-
-{
-  /* <ReactCompareImage
-  leftImage={settings}
-  rightImage={settingsp}
-  sliderLineColor="var(--secondary-font-color)"
-  sliderLineWidth={3}
-  hover={true}
-  leftImageCss={{ width: "500px", height: "950px" }}
-  rightImageCss={{ width: "500px", height: "950px" }}
-/>
-<ReactCompareImage
-  leftImage={homescreen}
-  rightImage={homescreenp}
-  sliderLineColor="var(--secondary-font-color)"
-  sliderLineWidth={3}
-  hover={true}
-  leftImageCss={{ width: "500px", height: "950px" }}
-  rightImageCss={{ width: "500px", height: "950px" }}
-/>
-<ReactCompareImage
-  leftImage={shophomescreen}
-  rightImage={shophomescreenp}
-  sliderLineColor="var(--secondary-font-color)"
-  sliderLineWidth={3}
-  hover={true}
-  leftImageCss={{ width: "500px", height: "950px" }}
-  rightImageCss={{ width: "500px", height: "950px" }}
-/>
-<ReactCompareImage
-  leftImage={productscreen}
-  rightImage={productscreenp}
-  sliderLineColor="var(--secondary-font-color)"
-  sliderLineWidth={3}
-  hover={true}
-  leftImageCss={{ width: "500px", height: "950px" }}
-  rightImageCss={{ width: "500px", height: "950px" }}
-/>
-<ReactCompareImage
-  leftImage={onechoosenarticle}
-  rightImage={onechoosenarticlep}
-  sliderLineColor="var(--secondary-font-color)"
-  sliderLineWidth={3}
-  hover={true}
-  leftImageCss={{ width: "500px", height: "950px" }}
-  rightImageCss={{ width: "500px", height: "950px" }}
-/>
-<ReactCompareImage
-  leftImage={basket}
-  rightImage={basketp}
-  sliderLineColor="var(--secondary-font-color)"
-  sliderLineWidth={3}
-  hover={true}
-  leftImageCss={{ width: "500px", height: "950px" }}
-  rightImageCss={{ width: "500px", height: "950px" }}
-/>
-<ReactCompareImage
-  leftImage={checkout}
-  rightImage={checkoutp}
-  sliderLineColor="var(--secondary-font-color)"
-  sliderLineWidth={3}
-  hover={true}
-  leftImageCss={{ width: "500px", height: "950px" }}
-  rightImageCss={{ width: "500px", height: "950px" }}
-/>
-<ReactCompareImage
-  leftImage={confirmation}
-  rightImage={confirmationp}
-  sliderLineColor="var(--secondary-font-color)"
-  sliderLineWidth={3}
-  hover={true}
-  leftImageCss={{ width: "500px", height: "950px" }}
-  rightImageCss={{ width: "500px", height: "950px" }}
-/> */
-}
+export default Project2;
