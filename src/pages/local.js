@@ -281,7 +281,7 @@ const P = styled.p`
   }
   ${mediaQueries("sm")`
     font-size: 1rem;
-    margin-left: 0;
+    padding: 0.4rem;
     `};
 `;
 
