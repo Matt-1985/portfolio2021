@@ -7,7 +7,6 @@ import styled from "styled-components";
 import { mediaQueries } from "../commons/MediaQueries";
 import Cards from "../components/Card";
 import cardImage from "../images/choicely.png";
-import kanye from "../images/Kanye_Quotes.png";
 import p2020 from "../images/Portfolio_2020.png";
 import local from "../images/logo_local.png";
 import responsive from "../commons/Responsive";
