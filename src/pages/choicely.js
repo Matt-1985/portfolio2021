@@ -297,20 +297,13 @@ const Figure = styled.figure`
   font-size: 5rem;
   color: var(--secondary-font-color);
   text-shadow: 2px -1px 3px rgba(0, 0, 0, 0.48);
+  transition: transform 1.3s;
   &:hover {
     font-family: "Times New Roman", serif;
     font-size: 5rem;
     font-style: italic;
     color: var(--main-font-color);
-    animation: scale-down-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    @keyframes scale-down-center {
-      0% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(0.5);
-      }
-    }
+    transform: scale(1.2);
   }
 `;
 
@@ -972,7 +965,7 @@ const Project1 = () => {
                     >
                       <MockUp src={choicelyGif} alt="choicely app" />
                     </a>
-                    After four months of planning, designing & developing{" "}
+                    After one month of planning, designing & developing{" "}
                     <b>choicely</b> I can finally present, fully proud, a
                     ready-to-use app that I developed from scratch. <br /> The
                     actual version of the app includes the possibility to find
