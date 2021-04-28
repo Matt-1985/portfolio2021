@@ -5,7 +5,7 @@ import { ScreenClassProvider, Container, Row, Col } from "react-grid-system";
 import { mediaQueries } from "../commons/MediaQueries";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { GlobalStyle } from "../theme/global-style";
-import { Fab, Action } from "react-tiny-fab";
+import { Fab } from "react-tiny-fab";
 import "react-tiny-fab/dist/styles.css";
 import Contact from "../components/Contact";
 import home from "../images/home.png";
@@ -42,6 +42,10 @@ import shophomescreenp from "../images/shophomescreenp.png";
 import productscreen from "../images/productscreen.png";
 import productscreenp from "../images/productscreenp.png";
 import local from "../images/local1_gif.gif";
+import colors from "../images/colors.png";
+import typo from "../images/typo.png";
+import typoDetail from "../images/typoDetail.png";
+import typoDetail2 from "../images/typoDetail2.png";
 
 const theme = {
   blue: {
@@ -1357,6 +1361,38 @@ const Project2 = () => {
                 </Comparison>
               </Col>
             </Row>
+            <Row sm={2} md={6} xl={12}>
+              <Col>
+                <Details>
+                  <h1 id="userflow">Figma Design system</h1>
+                  <p>
+                    For my last project I worked with Adobe XD, but this time I
+                    wanted to take the chance to learn Figma. Since those tools
+                    operate in a very similar way, I was able to start quickly.
+                    One thing that I felt the need to try was to create a design
+                    system. The design of the App should resemble{" "}
+                    <i>Lieferando`s</i> and so I decided to go into the similar
+                    direction in terms of the colors. <br />
+                    So, for one of the main background colors I chose a warm
+                    linear gradient in orangy red. It is still on the same
+                    design path, but with a warmer touch to it. Besides, red
+                    draws the attention to the design.
+                  </p>
+                  <img src={colors} alt="different colors used for the UI" />
+                  <p>
+                    The typography below was chosen because it offers a good
+                    readability, even when used in a smaller font size.
+                  </p>
+                  <img src={typo} alt="Typography used for the project" />
+                  <img src={typoDetail} alt="Typography used for the project" />
+                  <img
+                    src={typoDetail2}
+                    alt="Typography used for the project"
+                  />
+                </Details>
+              </Col>
+            </Row>
+
             <Row sm={2} xl={8}>
               <Col>
                 <ProductContainer>
