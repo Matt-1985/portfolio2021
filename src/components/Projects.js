@@ -9,6 +9,7 @@ import Cards from "../components/Card";
 import cardImage from "../images/choicely.png";
 import p2020 from "../images/Portfolio_2020.png";
 import local from "../images/logo_local.png";
+import ui from "../images/ui.png";
 import responsive from "../commons/Responsive";
 // import GatsbyLink from "../commons/Link";
 
@@ -178,6 +179,13 @@ const Projects = () => {
               headline="local local"
               p="Support local businesses with your fingertips / April 2021 "
               href={<Link to="/local/">View the case Study</Link>}
+            />
+            <Cards
+              src={ui}
+              alt="app logo"
+              headline="daily ui"
+              p="100 days of UI / April 2021"
+              href={<Link to="/ui/">To the challenges</Link>}
             />
             <Cards
               src={p2020}
