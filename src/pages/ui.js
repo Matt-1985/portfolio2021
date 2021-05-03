@@ -13,6 +13,8 @@ import ui from "../images/ui.png";
 import NewCard from "../components/NewCard";
 import day1 from "../images/day1a.png";
 import day2 from "../images/day2a.png";
+import day3 from "../images/Landing_Page.png";
+import day4 from "../images/Calculator.png";
 
 const theme = {
   blue: {
@@ -292,6 +294,36 @@ const Project3 = () => {
                     p="
 
                     My goal was to recreate a real credit card wallet which, when you slide your cards up, you see all of them at once. I decided not to go with swiping through the options, because I wanted the user to see all payment methods at once.
+                    
+                    "
+                    href={
+                      <a href="https://dribbble.com/Matt_RdF">
+                        View at dribbble
+                      </a>
+                    }
+                  />
+                  <NewCard
+                    src={day3}
+                    alt="app logo"
+                    headline="day 3 - landing page"
+                    p="
+
+                    This days task was to create a landing page. The fictional brand good desire stands for sustainability and fairness and I tried to capture this through organic shapes, warm highlight colors to match the background and a clean look.
+                    
+                    "
+                    href={
+                      <a href="https://dribbble.com/Matt_RdF">
+                        View at dribbble
+                      </a>
+                    }
+                  />
+                  <NewCard
+                    src={day4}
+                    alt="app logo"
+                    headline="day 4 - calculator"
+                    p="
+
+                    When thinking of a calculator I immediately had the picture of lego bricks in my mind. I then used neumorphism to give it the bricky look and feel. The colors of the bricks should give a quick guidance for the user.
                     
                     "
                     href={

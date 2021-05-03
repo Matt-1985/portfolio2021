@@ -27,15 +27,15 @@ const CardsContainer = styled.div`
 
 const CardImage = styled.img`
   border-radius: 10px;
-  width: 100%;
-  height: 100%;
+  width: 19rem;
+  height: 17rem;
   object-fit: cover;
 
-  transform-origin: 50% 65%;
+  transform-origin: 60% 75%;
   transition: transform 1s, 1s ease-in-out;
 
   :hover {
-    transform: scale(1.3);
+    transform: scale(1.5);
   }
   ${mediaQueries("sm")`
     width: 100%;
@@ -54,6 +54,7 @@ const CardContentContainer = styled.div`
 
 const CardText = styled.div`
   width: 80%;
+  line-height: 1.5em;
   text-align: justify;
   align-self: center;
   justify-self: center;
