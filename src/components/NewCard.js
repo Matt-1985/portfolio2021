@@ -62,6 +62,7 @@ const CardText = styled.div`
 
 const CardHeadline = styled.h1`
   text-align: center;
+  line-height: 1.3em;
   font-size: 1rem;
   font-weight: 400;
   color: var(--primary-color);
