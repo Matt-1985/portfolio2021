@@ -15,6 +15,9 @@ import day1 from "../images/day1a.png";
 import day2 from "../images/day2a.png";
 import day3 from "../images/Landing_Page.png";
 import day4 from "../images/Calculator.png";
+import day5 from "../images/app_icon.png";
+import day6 from "../images/user_profile.png";
+import day7 from "../images/UIsettings.png";
 
 const theme = {
   blue: {
@@ -259,8 +262,8 @@ const Project3 = () => {
                         <em>100 days of UI challenge</em>
                       </a>
                       . And what should I say, I do love me some good challenges
-                      😉. I upload now daily one challenge with a small info to
-                      my thought process.
+                      😉. I upload now daily one design with an additional piece
+                      of my thinking process.
                     </P>
                   </TextContainer>
                   <a
@@ -326,6 +329,51 @@ const Project3 = () => {
                     When thinking of a calculator I immediately had the picture of lego bricks in my mind. I then used neumorphism to give it the bricky look and feel. The colors of the bricks should give a quick guidance for the user.
                     
                     "
+                    href={
+                      <a href="https://dribbble.com/Matt_RdF">
+                        View at dribbble
+                      </a>
+                    }
+                  />
+                  <NewCard
+                    src={day5}
+                    alt="app logo"
+                    headline="day 5 - app icon"
+                    p="
+                    During my search of inspiration i found an app icon that I really liked because it was kind of whimsicle.
+                    I tried to give it more depth by creating a cutting out look.
+                    Work-Life Balance is a Health App that helps you with planning your day with focus on you.
+                    
+                    "
+                    href={
+                      <a href="https://dribbble.com/Matt_RdF">
+                        View at dribbble
+                      </a>
+                    }
+                  />
+                  <NewCard
+                    src={day6}
+                    alt="app logo"
+                    headline="day 6 - user profile"
+                    p="
+
+                  For todays task, the user profile, I chose to continue with the cut out approach. This time a bit more elevated and cleaner. I divided the two sections via a dog's ear on the left to continue the paper like feel.                  
+                  "
+                    href={
+                      <a href="https://dribbble.com/Matt_RdF">
+                        View at dribbble
+                      </a>
+                    }
+                  />
+                  <NewCard
+                    src={day7}
+                    alt="app logo"
+                    headline="day 7 - settings"
+                    p="
+
+                The settings are heavily inspired by the settings screen of the Gorillas app.
+                I really liked the look of it. It is clean, the upper part is a bit more different than in usual apps and you see everything at a glance.                
+                "
                     href={
                       <a href="https://dribbble.com/Matt_RdF">
                         View at dribbble
