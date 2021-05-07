@@ -285,7 +285,7 @@ const Project3 = () => {
                     headline="day 1 - sign up"
                     p="I wanted to create a clean, frosted glass look and chose to work with two layers for the component. The first layer is basically a gradient. For the second layer, to give texture, I used a picture to create a more natural feel to it. Furthermore i wanted the user to have the possibility to have a quick sign in and next to the sign up is the sign in to keep ways short."
                     href={
-                      <a href="https://dribbble.com/Matt_RdF">
+                      <a href="https://dribbble.com/shots/15587589-day-1-daily-UI-Sign-up">
                         View at dribbble
                       </a>
                     }
@@ -300,7 +300,7 @@ const Project3 = () => {
                     
                     "
                     href={
-                      <a href="https://dribbble.com/Matt_RdF">
+                      <a href="https://dribbble.com/shots/15587598-day-2-daily-UI-Credit-card-checkout">
                         View at dribbble
                       </a>
                     }
@@ -315,7 +315,7 @@ const Project3 = () => {
                     
                     "
                     href={
-                      <a href="https://dribbble.com/Matt_RdF">
+                      <a href="https://dribbble.com/shots/15587661-day-3-daily-UI-Landing-page">
                         View at dribbble
                       </a>
                     }
@@ -330,7 +330,7 @@ const Project3 = () => {
                     
                     "
                     href={
-                      <a href="https://dribbble.com/Matt_RdF">
+                      <a href="https://dribbble.com/shots/15589458-day-4-daily-UI-Calculator">
                         View at dribbble
                       </a>
                     }
@@ -346,7 +346,7 @@ const Project3 = () => {
                     
                     "
                     href={
-                      <a href="https://dribbble.com/Matt_RdF">
+                      <a href="https://dribbble.com/shots/15603885-day-5-daily-UI-App-icon">
                         View at dribbble
                       </a>
                     }
@@ -360,7 +360,7 @@ const Project3 = () => {
                   For todays task, the user profile, I chose to continue with the cut out approach. This time a bit more elevated and cleaner. I divided the two sections via a dog's ear on the left to continue the paper like feel.                  
                   "
                     href={
-                      <a href="https://dribbble.com/Matt_RdF">
+                      <a href="https://dribbble.com/shots/15605191-day-6-daily-UI-User-Profile">
                         View at dribbble
                       </a>
                     }
@@ -375,7 +375,7 @@ const Project3 = () => {
                 I really liked the look of it. It is clean, the upper part is a bit more different than in usual apps and you see everything at a glance.                
                 "
                     href={
-                      <a href="https://dribbble.com/Matt_RdF">
+                      <a href="https://dribbble.com/shots/15615815-day-7-daily-UI-Settings">
                         View at dribbble
                       </a>
                     }

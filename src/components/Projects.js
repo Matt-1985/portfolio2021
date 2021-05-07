@@ -185,7 +185,7 @@ const Projects = () => {
               alt="app logo"
               headline="daily ui"
               p="100 days of UI / April 2021"
-              href={<Link to="/ui/">To the challenges</Link>}
+              href={<Link to="/ui/">To the challenge</Link>}
             />
             <Cards
               src={p2020}
