@@ -18,6 +18,8 @@ import day4 from "../images/Calculator.png";
 import day5 from "../images/app_icon.png";
 import day6 from "../images/user_profile.png";
 import day7 from "../images/UIsettings.png";
+import day8 from "../images/404page.png";
+import day9 from "../images/musicplayer.png";
 
 const theme = {
   blue: {
@@ -376,6 +378,36 @@ const Project3 = () => {
                 "
                     href={
                       <a href="https://dribbble.com/shots/15615815-day-7-daily-UI-Settings">
+                        View at dribbble
+                      </a>
+                    }
+                  />
+                  <NewCard
+                    src={day8}
+                    alt="app logo"
+                    headline="day 8 - 404 page"
+                    p="
+                    This 404 Page should give some Inception vibes by placing the error page into a mockup.
+                    For the CTA and the search button I choose to stick with the bright colors from the logo to give the user visually guidance.
+                "
+                    href={
+                      <a href="https://dribbble.com/shots/15630509-day-8-daily-UI-404-Page">
+                        View at dribbble
+                      </a>
+                    }
+                  />
+                  <NewCard
+                    src={day9}
+                    alt="app logo"
+                    headline="day 9 - music player"
+                    p="
+
+                    For the Music player I created a natural swipe flow through your library, but with the option to skip songs in the classical way.
+                    The background applies the color from the song you listen to.
+                    Btw this is the first time I tried to design something for the Apple watch.
+                "
+                    href={
+                      <a href="https://dribbble.com/shots/15631362-day-9-daily-UI-Music-Player">
                         View at dribbble
                       </a>
                     }
