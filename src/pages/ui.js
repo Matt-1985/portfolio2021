@@ -20,6 +20,7 @@ import day6 from "../images/user_profile.png";
 import day7 from "../images/UIsettings.png";
 import day8 from "../images/404page.png";
 import day9 from "../images/musicplayer.png";
+import day10 from "../images/socialshare.png";
 
 const theme = {
   blue: {
@@ -408,6 +409,25 @@ const Project3 = () => {
                 "
                     href={
                       <a href="https://dribbble.com/shots/15631362-day-9-daily-UI-Music-Player">
+                        View at dribbble
+                      </a>
+                    }
+                  />
+                  <NewCard
+                    src={day10}
+                    alt="app logo"
+                    headline="day 10 - social share"
+                    p="
+
+                    I placed the social share buttons for G'd News in an ergonomic and organic shape, easy reachable for the thumb.
+
+I got inspired by the app of Medium which structure i really love <3.
+The recipe context was borrowed by Forks over knives :)
+
+
+                "
+                    href={
+                      <a href="https://dribbble.com/shots/15638414-day-10-daily-UI-Social-share">
                         View at dribbble
                       </a>
                     }
